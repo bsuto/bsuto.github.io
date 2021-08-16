@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Classic Mac</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="/text.css" type="text/css">
+<style type="text/css">
+.hero { width: 90%; max-width: 600px; height: auto; margin: 2em auto; }
+.tip { background-color: #ff0; color: #222; }
+.lightbox { display: none; position: fixed; z-index: 999; width: 100%; height: 100%; text-align: center; top: 0; left: 0; background: rgba(0,0,0,0.8); }
+.lightbox img { max-width: 90%; max-height: 80%; margin: 5% auto 0 auto; box-shadow: 0 4px 4px #000; }
+.lightbox:target { outline: none; display: block; }
+@media (prefers-color-scheme: dark) {
+.tip { background-color: #DB3EB1; }
+}
+</style>
+</head>
+<body>
+
+<img src="toasters.gif" alt="Classic Mac" class="hero">
+
+<article>
+<p>I co-hosted <a href="https://simplebeep.com">a podcast</a> about the era of the classic Mac, and long wanted a fun way to run software from then. First there was an old G3 iBook, then an OS 9 emulator on a MacBook Air. This project is a marriage of both: the charm of classic hardware with the convenience of modern hardware and software.</p>
+
+<p>Which classic Mac to use was a no-brainer: there&rsquo;s literally a model <em>named</em> Macintosh Classic, one of the final revisions of the iconic all-in-one design. I found one on eBay &ldquo;for parts only&rdquo;, since it had <a href="#burn" class="tip">caught fire</a> the last time its owner turned it on. During the course of this project, I read many forum posts angry at anyone who dared to ruin one of these relics that still had a chance of being restored. My conscience is clear that I avoided such an ethical dilemma.</p>
+
+<p>Taking the Classic apart wasn&rsquo;t too difficult, and there are <a href="https://www.youtube.com/watch?v=nguN392TH-g">many</a> <a href="https://www.youtube.com/watch?v=mBnQXqRjrCc">videos</a> online to show you how. You need a long <a href="https://www.amazon.com/gp/product/B001M0O17A">T15 Torx screwdriver</a> to remove the two screws under the top handle, and make sure to <a href="https://www.youtube.com/watch?v=Hfook04k1kM">discharge the CRT</a> before mucking around in there. The motherboard, floppy drive, and hard drive are all very easy to remove. The CRT and vertically-mounted analog board are only slightly more complex. I used a flat-tip screwdriver to pry the analog board off its metal frame, preserved the power switch, and screwed that vertical frame back into the main chassis. Then I used that screwdriver to <a href="#chip" class="tip">chisel off the plastic caps</a> securing the fan carriage.</p>
+
+<p>At this point, I had an empty case with its full metal chassis. The exterior was a little yellow from however many years of sun exposure, so I researched a couple <em>retr0bright</em> recipes before finding a <a href="https://happymacs.wordpress.com/2016/09/07/yellowing-retr0bright-and-sally-beauty-supply/">blog post</a> saying off-the-shelf <a href="https://www.amazon.com/gp/product/B004OKDW20">40 Volume Creme Developer</a> from Sally Beauty Supply works just as well. I painted a thin layer on the case exterior with a foam brush and <a href="#retrobright" class="tip">let it dry</a> in direct sunlight for a little over an hour, wiped the residue off with a paper towel, and it looked good as new.</p>
+
+<p>The display was the most difficult part of the whole project. This <a href="https://shop.pimoroni.com/products/hdmi-8-lcd-screen-kit-1024x768">8&rdquo; LCD panel</a> is a common choice because it&rsquo;s closest to the original display&rsquo;s dimensions with the correct aspect ratio. The wonderful Eric at the Palm Beach Gardens Michael&rsquo;s cut me a piece of acrylic to cover the front and some black matte to align it from behind. I layered them on top of a piece of cardboard and sealed <a href="#display" class="tip">the whole sandwich</a> together with some electric tape. Next, I epoxied a 3D-printed <a href="https://www.thingiverse.com/thing:3551263">gap filler</a> to the curved opening where the CRT formerly was, and epoxied the acrylic side of the display sandwich directly to that. If you&rsquo;re more confident than I was, you could drill holes into the corners of your display sandwich and screw it into the mounting points left behind by the CRT.</p>
+
+<p>It&rsquo;s wild how the current form factor of the Mac mini <a href="#fit" class="tip">fits perfectly</a> into the lower area of the metal chassis. I got a mid-2011 model so I wouldn&rsquo;t have to deal with an optical drive, swapped its hard disk for an SSD, and installed the latest version of macOS it supports (10.13 High Sierra). Its built-in speaker is pretty bad, so I got some <a href="https://www.amazon.com/gp/product/B07DDGBL5T">USB-powered ones</a> and mounted them to the top side of the metal chassis. The only special considerations left to make are some 90&deg; cables: <a href="https://www.amazon.com/gp/product/B07K1TRL1V">left-angled USB</a> (to power the speakers and display), <a href="https://www.amazon.com/gp/product/B00QV6Y0X0">HDMI</a>, and <a href="https://www.amazon.com/gp/product/B00C4FU52C">audio</a>. I threaded a third 90&deg; USB extender cable through to the disk slot on the front, for if I ever need a USB port.</p>
+
+<p>As for power, there&rsquo;s a <a href="https://www.amazon.com/dp/B07LBV4NJ4/">90&deg; adapter</a> plugged into a <a href="https://www.amazon.com/dp/B078GNWLX9/">C7 to C14 converter cable</a>, with the C14 socket affixed to where it originally was on the analog board frame. Any old monitor power cable plugs in from here to the wall. The ADB port on the back more or less aligns with the Mac mini&rsquo;s power button, so for now I have <a href="#back" class="tip">a beige plastic bolt</a> sticking out that I fumble around to hit it. A more elegant solution would obviously be nice.</p>
+
+<p>From there, you have a modern macOS machine <a href="#inside" class="tip">fully self-contained</a> in a classic Mac case. For a layer of extra polish, swap out the Torx screws for regular Phillips ones as you put it back together: (4x) #8 x 1/2&rdquo; to connect the chassis to the front face, and (2x) #8-32 x 3/4&rdquo; by the ports. I decided to leave the ones under the top handle out altogether, but they&rsquo;re (2x) #8 x 3/4&rdquo; if you want them. And to go full classic Mac, install <a href="https://www.emaculation.com/doku.php/sheepshaver_mac_os_x_setup">SheepShaver</a> or <a href="https://www.gryphel.com/c/minivmac/">mini vMac</a> and get lost in the <a href="http://macintoshgarden.org">Macintosh Garden</a>.</p>
+</article>
+
+<a href="#_" class="lightbox" id="burn"><img src="burn.jpg"></a>
+<a href="#_" class="lightbox" id="chip"><img src="chip.jpg"></a>
+<a href="#_" class="lightbox" id="retrobright"><img src="retrobright.jpg"></a>
+<a href="#_" class="lightbox" id="display"><img src="display.jpg"></a>
+<a href="#_" class="lightbox" id="fit"><img src="fit.jpg"></a>
+<a href="#_" class="lightbox" id="inside"><img src="inside.jpg"></a>
+<a href="#_" class="lightbox" id="back"><img src="back.jpg"></a>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+body { text-align: center; background-color: #fdfdfd; margin: 0; font: 20px/26px -apple-system, Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif; }
+.card { width: 495px; height: 625px; margin: 50px auto; padding: 10px; background-color: #ffe800; border-radius: 10px; box-shadow: 0 2px 0 #E57300; }
+#bee { width: 475px; height: 475px; margin: 0; padding: 10px; background-color: #fff; }
+.nav { width: 495px; height: 495px; position: relative; top: -500px; z-index: 10; font-size: 0; }
+.nav a, .nav a:visited { height: 495px; }
+.nav a:hover, .nav a:active { border-bottom: 5px solid #E57300; cursor: pointer; }
+#prev { float: left; width: 165px; }
+#next { float: right; width: 330px; }
+#caption { clear: both; text-align: center; color: #222; height: 4em; position: relative; top: -490px; margin-bottom: -490px; }
+#caption:hover { cursor: pointer; }
+textarea { height: 1px; width: 1px; padding: 0; margin: 0 0 -1px 0; border: 0; outline: none; }
+
+@media only screen and (max-device-width: 736px) {
+body { background-color: #ffe800; }
+.card { border-radius: 0; box-shadow: none; }
+.nav a:hover, .nav a:active { border-bottom: none; }
+}

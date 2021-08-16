@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>LOLusers</title>
+<meta charset="utf-8"/>
+<style type="text/css">
+body { display: flex; align-content: space-around; text-align: center; margin: 0; padding: 0; }
+.sidebar { flex: 1; padding: 2em; }
+.content { flex: 4; padding: 2em; }
+h1 { font: bold 72px/72px impact, sans-serif; margin: 25px auto; color: #fff; -webkit-text-stroke: 3px #000; }
+.nav { margin: 0 auto; font-size: 25px; line-height: 25px; vertical-align: top; color: #222; }
+.nav a, .nav a:visited { text-decoration: none; }
+.nav a:active, .nav a:hover { cursor: pointer; }
+#lolcat { display: block; margin: 30px auto; padding: 10px; border: 2px solid #000; }
+.bee { display: inline; margin: 0; padding: 0 10px; height: 25px; width: auto; border: 0; }
+
+@media only screen and (orientation: portrait) {
+body { flex-direction: column; }
+.sidebar { padding-bottom: 0; }
+#lolcat { max-width: 90%; height: auto; }
+}
+</style>
+<script src="cats.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="sidebar">
+<h1>LOLusers</h1>
+<p>Unaltered selections from real customer service emails. Not affiliated with or endorsed by Facebook, Inc.</p>
+<p class="nav"><a onclick="goPrev();" id="prev">⬅️</a> <a href="/"><img src="/tinyb.png" alt="bee" class="bee"></a> <a onclick="goNext();" id="next">➡️</a></p>
+</div>
+
+<div class="content"><img src="giving_birth.jpg" alt="I made a mistake giving birth." id="lolcat"></div>
+
+<script type="text/javascript">load();</script>
+</body>
+</html>

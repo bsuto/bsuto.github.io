@@ -1,0 +1,17 @@
+body { background-color: #fdfdfd; color: #424242; text-align: center; font: 24px/30px Avenir, Futura, Geneva, sans-serif; }
+h1 { font-size: 3em; line-height: 1em; text-transform: uppercase; }
+h2 { color: #4102fe; margin: 0; padding: 0; font-size: 1.4em; line-height: 1.2em; }
+h3 { margin: 0; padding: 0; font-size: 1em; line-height: 1.2em; }
+.entry { clear: both; display: block; width: 800px; margin: 24px auto 96px auto; padding: 0; text-align: left; }
+a, a:active { color: #4102fe; text-decoration: none; }
+a:hover { color: #2700d5; text-decoration: underline; }
+a:visited { color: #465294; }
+img { float: left; width: 200px; height: 200px; margin: 0 24px 96px 0; padding: 0; }
+p a { text-decoration: underline; }
+.bee { display: block; float: none; width: 25px; height: 18px; margin: 24px auto; }
+
+@media only screen and (orientation: portrait) {
+body { width: 900px; font-size: 36px; line-height: 45px; }
+img { margin-bottom: 8px; }
+p { display: block; }
+}

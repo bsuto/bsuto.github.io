@@ -1,0 +1,36 @@
+<!--
+Click/tap right side of photo to go next, left side to go previous.
+Right and left arrow keys work too.
+Click/tap the caption to copy a direct link for sharing.
+-->
+
+<!doctype html>
+<html>
+<head>
+  <title>Spot the Bee</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=525, initial-scale=1">
+  <link rel="stylesheet" href="bees.css" type="text/css">
+  <script src="bees.js"></script>
+  <script src="invisigal.js"></script>
+</head>
+<body>
+
+<div class="card">
+  <img id="bee" src="loading.png" alt="Loading&hellip;">
+  <div class="nav">
+    <a onclick="goPrev();" id="prev">Previous Photo</a>
+    <a onclick="goNext();" id="next">Next Photo</a>
+  </div>
+  <p id="caption" onclick="copyLink();"></p>
+</div>
+
+<!--
+  "Real graffiti is just about putting your name on whatever, as many times as you can." - THE KID MERO
+  https://www.youtube.com/watch?v=3ZhtJ5Uxcn4&t=13m6s
+-->
+
+<textarea id="copyfield"></textarea>
+<script>load();</script>
+</body>
+</html>

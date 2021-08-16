@@ -1,0 +1,15 @@
+set timeBack to (-1 * weeks)
+tell application "iCal"
+activate
+repeat with allCals in calendars
+repeat with myEvent in events of allCals
+set (start date of myEvent) to ((start date of myEvent) + (my timeBack))
+set (end date of myEvent) to ((end date of myEvent) + (my timeBack))
+end repeat
+repeat with myTodo in todos of allCals
+if (due date of myTodo exists) and not (completion date of myTodo exists) then
+set due date of myTodo to (due date of myTodo) + timeBack
+end if
+end repeat
+end repeat
+end tell
