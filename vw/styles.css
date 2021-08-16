@@ -1,0 +1,66 @@
+* { margin: 0; padding: 0; }
+@font-face { font-family: "FuturaBold"; src: url("futurabold.ttf"); }
+body { color: #111; background-color: #fafafa; text-align: center; font: 18px/22px Verdana, sans-serif; }
+.clearfix { clear: both; }
+
+header { position: fixed; top: 1em; left: 50%; width: 776px; padding: 12px; margin-left: -403px; border: 3px solid #333; -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px; background-color: #fff; border-bottom: 6px solid #333; text-align: left; }
+h1 { font: 1.1em/1.1em "FuturaBold", Verdana, sans-serif; color: #222; padding-left: 4px; }
+header ul { margin: 0.5em 0 0 0; }
+header ul li { display: inline; color: #333; font: 12px/12px verdana, sans-serif; text-transform: uppercase; padding: 4px; margin-right: 6px; }
+header ul li:hover { background-color: #ddd; cursor: pointer; }
+header img { display: inline; float: right; }
+.hamburger { display: none; }
+
+#hero { width: 800px; margin: 6em auto 1em auto; padding-bottom: 12px; text-align: right; }
+#hero img { display: inline; float: left; width: 822px; height: 350px; }
+h2 { font: 4em/1.2em "FuturaBold", sans-serif; color: #333; letter-spacing: -3px; }
+h3 { font: 1.5em/1.2em "FuturaBold", sans-serif; color: #777; }
+#hero p { width: 600px; margin: 2em 0 0 auto; }
+
+#blurbs { width: 800px; margin: 4em auto; text-align: center; }
+.pane { width: 240px; min-height: 220px; margin: 0 6px; padding: 6px; display: inline; float: left; background-color: #fff; border: 1px solid #333; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; border-bottom: 3px solid #333; text-align: left; font-size: 0.8em; }
+.tdi { background-color: #215f9c; border-color: #0e2741; color: #fff; }
+.pane img { width: 100%; height: auto; }
+.touareg img, .beetle img { margin-bottom: 1em; }
+
+#hustla { width: 776px; height: 160px; padding: 12px; margin: 4em auto; background-color: #ddd; }
+#hustla p { text-align: left; font-family: "FuturaBold", sans-serif; color: #444; margin-bottom: 1em; }
+#hustla img { height: 160px; width: auto; display: inline; float: left; margin-right: 12px; }
+
+footer { width: 100%; border-top: 2px solid #666; background-color: #eee; font-size: 0.75em; padding: 2em 0; }
+p.left { display: inline; float: left; padding-left: 20%; text-align: left; }
+p.right { display: inline; float: right; padding-right: 20%; text-align: right; }
+.fakelink { text-decoration: underline; }
+.fakelink:hover { cursor: pointer; }
+p.fineprint { display: block; margin-top: 24px; color: #aaa; font: 12px/16px serif; }
+
+@media only screen and (max-device-width: 667px) {
+body { width: 100%; background-color: #fff; text-align: center; }
+header, #hero, #hustla, #blurbs, footer { width: 100%; padding: 0; }
+
+header { position: static; margin: 0; border: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: #eee; text-align: center; }
+h1 { padding: 0.75em 0; }
+.hamburger { display: inline; float: left; padding: 24px 0 0 12px; }
+header img { height: 24px; width: 24px; padding: 24px 12px 0 0; }
+header ul { display: none; }
+
+#hero { margin: 1em 0; padding: 0; text-align: left; }
+#hero img { display: block; float: none; width: 100%; height: auto; }
+h2 { font-size: 2em; letter-spacing: -1px; }
+h2, h3 { text-align: center; }
+#hero p { width: 80%; margin: 1.5em auto 0 auto; }
+
+.pane { width: 80%; min-height: 200px; display: block; float: none; text-align: center; margin: 2em auto; padding: 1em; }
+.pane img { width: 66%; height: auto; margin: 0 auto; }
+.touareg img, .beetle img { margin-bottom: 1em; }
+.pane p { text-align: left; }
+
+#hustla { height: auto; text-align: center; padding-bottom: 1em; }
+#hustla img { display: block; float: none; width: 338px; height: 224px; margin: 0 auto; padding: 1em 0; }
+#hustla p { text-align: left; padding: 0 1em; }
+
+p.left { padding-top: 1em; padding-left: 0; margin-left: 2em; }
+p.right { float: left; padding-right: 0; padding-left: 0; margin-left: 2em; text-align: left; }
+p.right a { color: #111; }
+p.fineprint { padding-bottom: 1em; }
+}
