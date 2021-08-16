@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Pastecard State of the Company, 2016</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="author" content="Brian Sutorius">
+<link rel="stylesheet" href="/text.css" type="text/css">
+</head>
+<body>
+<header>
+<h1>Pastecard State of the Company, 2016</h1>
+<p class="date">February 29, 2016
+<a href="/"><img src="/tinyb.png" alt="bee"></a></p>
+</header>
+
+<article>
+<h2>Highlights</h2>
+<ul>
+<li>YAU steady at 1</li>
+<li>Version 1.3 deployed in January to great success</li>
+<li>Revenue burn rate reduced by 67%</li>
+</ul>
+
+<h2>Company Overview</h2>
+<h3>History</h3>
+<p>Pastecard formally launched in Q4 2010 in Palo Alto, California. In Q1 2012, the company moved its headquarters to Carrboro, North Carolina and is still happily operating there.</p>
+<h3>Staff</h3>
+<ul>
+<li><strong>Brian Sutorius,</strong> Founder, CEO, CFO, CTO, Head Counsel, micro-kitchen stockboy</li>
+<li><strong>Hudson the koala puppet,</strong> Chairman of the Board</li>
+</ul>
+<h3>An aside on diversity</h3>
+<p>Diversity is an incredibly important issue, especially at technology-focused companies. Unfortunately, Pastecard ranks among the least diverse companies in the world. 100% of the staff identifies as a white, heterosexual, cisgender male, from a liberal Christian upbringing in a suburban middle class household. Obviously this is something the company would like to improve.</p>
+
+<h2>Product Engineering</h2>
+<h3>Celebrating Version 1.3</h3>
+<p>Pastecard was completely rewritten in January 2016. From its public launch in 2010 until this rewrite, each user had its own subdirectory on the server, containing its own copy of the application code. In the new architecture, Pastecard actually works as a true web application, with only one instance of the code and a centralized database from which each user&rsquo;s data is requested. In keeping with the company&rsquo;s tradition of sloppy laziness, the database is a directory of plain text files and nothing serious.</p>
+<h3>A Requiem for Stupidity</h3>
+<p>To support the previous architecture, where each new Pastecard user had its own  instance of the application, the sign up workflow would have to create a new directory in the Pastecard filesystem and execute dangerously dumb <span class="code">chmod</span> commands, at the root level, each time. Code changes were deployed by copying and pasting the changes to each copy of the application across all the subdirectories, using an FTP program&rsquo;s built-in text editor. Metrics such as total user count were gathered by counting the number of folders listed in the FTP program&rsquo;s list view. It is a wonder anything worked at all.</p>
+<p>With the new architecture, there is also now a web admin interface for all user operations and data gathering. Because it is 2016, the interface is responsive, meaning Pastecard employees can address user support tickets completely from their phones. So, when that first user support ticket comes in, we&rsquo;ll be ready.</p>
+<h2>Metrics</h2>
+<ul>
+<li>YAU <em>(yearly active users)</em> in 2015: <strong>1</strong></li>
+<li>New users in 2015: <strong>0</strong></li>
+<li>Page views in 2015: <strong>hard to say</strong></li>
+</ul>
+<h3>A look ahead</h3>
+<p>Already in 2016, a bug (usernames were foolishly case sensitive) has caused our new users metric to falsely inflate. One user who had signed up with a capital letter in their username tried returning to their Pastecard using all lowercase characters (boosting our YAU up to 2), assumed their account had been deleted, and created a new account with the same username in all lowercase. The bug has been fixed, the two accounts have been merged, and the responsible engineer has been banished to <a href="http://the-witness.net">a remote island</a>.</p>
+<p>The company expects new user signups to remain stalled at 0, YAU to not climb above the anomalous 2, and page views to remain a mystery only accessible to those rare wizards who know how to use a computer.</p>
+<h2>Financials</h2>
+<h3>Operating Expenses</h3>
+<p>Pastecard switched web hosts simultaneously with the release of version 1.3. The previous host cost the company $25 a year, and the new host is completely free for the same level of service. It helps that the total size of the Pastecard product (application code, user data, admin interface, favicons) is under 50K. Bandwidth is probably in the same ballpark per month. It is a joke that the company had to pay for such infinitesimal requirements in the first place.</p>
+<p>The company still has to pay approximately $12 each year to maintain its domain name registration. And employees are still only compensated with the promise of stock options; no actual salaries or benefit packages are distributed whatsoever. In sum, our operating expenses for 2016 ($12) will be only a third of what they were in 2015 ($37). This marks the only true recognizable progress in the company&rsquo;s entire history.</p>
+<h3>Revenue</h3>
+<p>Pastecard makes no money.</p>
+<h3>Outside Investment</h3>
+<p>In Q4 2012, Pastecard applied for $37 in venture capital funding from the <a href="https://static.pinboard.in/prosperity_cloud.htm">Pinboard Investment Co-Prosperity Cloud</a> and was rightly rejected.</p>
+<p>From Q2 2015 to Q4 2015, Pastecard was subsumed (i.e. acquired for no money) into Fat Toast, a consulting firm also in Carrboro. This company actually made real money, but still operated in the red for its eight-month life span. It was dissolved in October 2015, and Pastecard was spun off back into its own entity.</p>
+<h4>PRIVILEGED AND CONFIDENTIAL</h4>
+<p>In 2016, the company will explore a new revenue stream: sponsored demo videos. Almost all technology products pride themselves on a polished video showing how to use the related hardware or software, and Pastecard wants to be one of them. We plan to open up creative and directorial rights to the highest bidder; allowing them to use product placement for their own goods in our demo video as they desire. If the idea attracts many suitors, we will entertain the idea of creating many sponsored demo videos, as we count our money from a golden standing desk.</p>
+</article>
+</body>
+</html>

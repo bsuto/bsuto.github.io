@@ -1,0 +1,45 @@
+body { text-align: center;  background-color: #fdfdfd; }
+p, .hero, .nav { width: 80%; max-width: 700px; }
+
+h1, h2, .nav { color: #000; font-family: -apple-system, Roboto, "Segoe UI", "Helvetica Neue", sans-serif; }
+h1 { font-size: 2.5em; margin: 1em 0 0.5em 0; }
+h2 { margin: 0; font-weight: normal; }
+a { color: #000080; }
+
+p { margin: 1.5em auto; text-align: left; font: 18px/28px ui-serif, Cambria, Georgia, serif; color: #313131; text-rendering: optimizeLegibility; }
+p.caption { font: 1em/1.4em -apple-system, Roboto, "Segoe UI", "Helvetica Neue", sans-serif; color: #777; text-align: center; margin-top: 0.5em; }
+
+.nav { margin: 3em auto; padding: 2.5em 0 0 0; border-top: 1px solid #ccc; display: grid; grid-template-columns: 2fr 1fr 2fr; grid-gap: 6px; line-height: 1.4em; }
+.prev { text-align: left; }
+.home, .home:active { text-align: center; margin: 0 auto; width: 28px; height: 28px; border-radius: 50%; background-color: #eee; }
+.home:hover { background-color: #ddd; }
+.next { text-align: right; }
+.nav a, .nav a:visited { text-decoration: none; }
+.prev:hover, .next:hover { text-decoration: underline; }
+.prev:active, .next:active { color: #111; }
+
+img.hero { display: block; margin: 1.5em auto 0 auto; }
+img.left { display: inline; float: left; width: 50%; height: auto; margin: 0 1em 1em 0; }
+img.right { display: inline; float: right; width: 50%; height: auto; margin: 0 0 1em 1em; }
+img.poster { display: block; width: 100%; margin: 1.5em auto 0 auto; padding: 0; }
+
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+h1 { font-size: 2em; }
+p, .hero, .nav { width: 90%; }
+.nav { grid-template-columns: repeat(1, 1fr); }
+.prev, .home, .next { text-align: center; margin: 0.5em auto; }
+img.left, img.right { display: block; float: none; width: 90%; margin: 1.5em auto; }
+p.caption { font-size: 0.9em; line-height: 1.3em; }
+}
+
+@media (prefers-color-scheme: dark) {
+body { background-color: #111; }
+p { color: #fafafa; }
+h1, h2 { color: #fff; }
+a, .nav a, .nav a:visited { color: #008AFF; }
+a:hover { color: #eee; }
+a:active, .nav a:active { color: #ddd; }
+.home, .home:active { background-color: #333; }
+.home:hover { background-color: #444; }
+img { filter: brightness(.8) contrast(1.2); }
+}

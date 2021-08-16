@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Pastecard S</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="author" content="Brian Sutorius">
+<link rel="stylesheet" href="/text.css" type="text/css">
+</head>
+<body>
+<header>
+<h1>Pastecard S</h1>
+<p class="date">May 22, 2018
+<a href="/"><img src="/tinyb.png" alt="bee"></a></p>
+</header>
+
+<article>
+<p>A major update to the main Pastecard web app went out this week, which I&rsquo;m calling Pastecard S. Much like the iPhone hardware updates of the same designation, the experience should more or less look and feel the same, with everything souped up under the hood. I also call it Pastecard S because all the new features (can be forced to) start with S.</p>
+
+<h2>Security</h2>
+<p>All of Pastecard&rsquo;s web traffic is over SSL now: start your URLs with <span class="code">https</span> instead of <span class="code">http</span>! A mere four months ago, I figured this would be impossible to do on an operating budget of zero dollars. Not so! My utmost and sincere thanks to <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> for providing SSL certificates absolutely free of charge. And bonus thanks to my web host for having a one-click deploy for the Let&rsquo;s Encrypt certificate. It was literally one click, that cost me nothing, to get this done. I&rsquo;m a dummy.</p>
+
+<h2>Service Workers</h2>
+<p>In another moment of dumb laziness four months ago, I decided making the switch from App Cache to Service Workers would be impossible, as they require <span class="code">https</span> traffic. Once that first piece was in place, creating a simple service worker that did everything the old app cache did was easy &ndash; there are plenty of tutorials and even generators online for this. However, that first service worker only, um, <em>worked</em> for the single-user version of the app I put on Github, where the root is an <span class="code">index.html</span> file.</p>
+
+<p>The Pastecard web app has an <span class="code">index.php</span> root, which takes the username from the URL as a parameter. It took me longer than I&rsquo;d like to admit to figure out how to pass that parameter to the service worker itself, and then instruct it to cache that vanity URL as the root. All of this is to say, Pastecard should still work offline, whether you use it at pastecard.net or your own updated install from Github, as it did before. Only now it&rsquo;s using a modern caching technology instead of one that was deprecated from the start.</p>
+
+<h2>Signups</h2>
+<p>Consider this my GDPR update, coming in right under the wire! Inspired by <a href="https://marco.org/2018/04/27/overcast42">Overcast&rsquo;s related update</a>, I no longer collect email addresses at signup. I initially thought they would be useful to have, in case:</p>
+<ul>
+<li>Someone emailed a support question, and I could identify their account</li>
+<li>Someone created a bunch of accounts, foolishly using the same email address each time</li>
+<li>I wanted to email the whole user base about something</li>
+</ul>
+
+<p>Guess what? None of those situations ever happened. So I no longer write any data to disk other than your username, your card text, and time stamps when anything happens. I am not a lawyer, but I think I&rsquo;m good? (Please don&rsquo;t come after me.)</p>
+
+<h2>So long, div</h2>
+<p>From day one, the underlying HTML structure of Pastecard was a <span class="code">div</span> representing the card out of edit mode, and a visually-identical <span class="code">textarea</span> representing the card in edit mode. This led to a lot of extra code to translate between HTML in the div and plain text in the textarea, among other minor annoyances. As I upgraded the offline caching to a modern method with service workers, I figured I could simplify the whole app by getting rid of the div entirely, and instead apply the similarly modern (to me, at least) <span class="code">readonly</span> attribute to the textarea when it&rsquo;s not in edit mode. So, that&rsquo;s what I did. It might have resulted in the biggest code deletion in Pastecard&rsquo;s (public) history.</p>
+
+<p>There it is, Pastecard S. Leaner, safer, and future-proof. All while looking and feeling the same. Okay, I made the trademark blue border a little bigger.</p>
+
+</article>
+</body>
+</html>

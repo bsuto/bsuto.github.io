@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Pastecard for iOS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="author" content="Brian Sutorius">
+<link rel="stylesheet" href="/text.css" type="text/css">
+</head>
+<body>
+<header>
+<h1>Pastecard for iOS</h1>
+<p class="date">January 12, 2018
+<a href="/"><img src="/tinyb.png" alt="bee"></a></p>
+</header>
+
+<article>
+<p>Pastecard now has a native iPhone app. This is a big departure from the product philosophy of prioritizing a web app experience that works&mdash;without a login or password&mdash;on anything with a modern browser. Before I get to why I made it, I should mention it is not available in the App Store. You have to download the source from <a href="https://github.com/bsuto/Pastecard-iOS">Github</a>, create a project in Xcode, and install it on your phone over a USB cable. This is mainly because Apple charges $99/year<a href="#fn1" id="ip1" class="footlink">1</a> to put apps in the App Store, whether they make money or not. And Pastecard most certainly does not. Furthermore, it would make this small side project feel much more serious and potentially open up my lazy programming to more competent malfeasants.</p>
+
+<p>So why make it at all? Well, it&rsquo;s arguably the best way for me to learn a new programming language, because I know every piece of what the app is supposed to do and how it&rsquo;s supposed to look and feel as it does it. And now, Swift is now the third language Pastecard has been written in, after <a href="https://github.com/bsuto/Pastecard/blob/master/pastecard.js">JavaScript</a> and <a href="https://twitter.com/pastecard/status/549692516380180480">HyperTalk</a>. Did I end up really learning Swift? Absolutely not. My process had three steps:</p>
+<ol>
+<li>Watch some free online videos of how to lay apps out in Interface Builder and connect interface elements to code. Constraints, outlets, and actions, baby!</li>
+<li>Rewrite the JavaScript for each function in remedial Swift. Let Xcode automatically correct the errors it can, Google the answers to the rest (which are almost always on Stack Exchange).</li>
+<li>Run the app in the simulator, try all test cases I can think of, go back and repeat step two until it feels right.</li>
+</ol>
+<p>My programming knowledge and experience have marginally increased from their low initial levels as a result. I don&rsquo;t really know JavaScript, either.</p>
+
+<p>Another reason to make a native app came up as I went. The Pastecard web app uses two separate technologies to function offline: local storage and app cache. The former is how the user&rsquo;s card text is stored on the device, and the latter is how the web app itself is &ldquo;installed&rdquo; on the device. And pretty much the entire time Pastecard has supported going offline, app cache has been a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">deprecated</a> technology and strongly advised against. Whoops!</p>
+
+<p>The replacement for app cache, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers">service workers</a>, I purposefully ignored because they weren&rsquo;t supported in Safari. I am at least half of the Pastecard user base, and I exclusively use Safari! This conveniently let me ignore also that service workers require <span class="code">https</span>, a rabbit hole of time and expense.<a href="#fn2" id="ip2" class="footlink">2</a> And then, as I worked on the iOS app, the Safari beta <a href="https://webkit.org/blog/8042/release-notes-for-safari-technology-preview-46/">added support</a> for service workers, all but signaling that its next major version in 2018 will support them (and maybe stop supporting app cache at the same time). So by the end of the year, I foresee a fork in the road of either rewriting the web app to support service workers, or removing the ability for the web app to function offline altogether&mdash;on iOS <em>and</em> Android&mdash;and asking people to use this new app instead on their iPhones. (Android people would have to make sure their phones were always online. Sorry.)</p>
+
+<p>In summary, I fumbled and bumbled my way through recreating Pastecard as a native iOS app. It began as a learning exercise and may end up the default way to use Pastecard on iPhones, despite my best wishes. Software development is a mystery.</p>
+</article>
+
+<footer><ol>
+<li id="fn1"><a href="https://developer.apple.com/support/membership-fee-waiver/">Not anymore</a> for certain nonprofits or students, neither of which Pastecard really qualifies as. <a href="#ip1">&#8617;</a></li>
+<li id="fn2">Long story short: Pastecard uses a very bare bones shared web host for free, and moving to a different host that supports SSL will likely add a yearly hosting cost as well as a yearly certificate cost. To say nothing of rewriting the backend from a folder of text files to a legitimate database. <a href="#ip2">&#8617;</a></li>
+</ol></footer>
+
+</body>
+</html>
