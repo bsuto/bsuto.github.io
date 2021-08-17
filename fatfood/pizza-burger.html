@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; Pizza inside a Burger</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'pizzaburger.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'pizzaburger.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> Pizza inside a Burger</h1>
+<img src="pizzaburger.jpg" alt="Pizza inside a Burger" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">March 7, 2013</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>Pizza Hut introduced &ldquo;Pizza Sliders&rdquo; so I bought nine and put one of them in a burger patty. The standard cheese slider went between two circles of ground beef and I griddled that over some onions. Slap on some cheese and a toasted bun, and you have a real pizza slider.</p>
+</article>
+</body>
+</html>

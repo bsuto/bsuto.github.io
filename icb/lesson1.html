@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 1: Baby Web Page</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 1: Baby Web Page
+</header>
+<article>
+<section>
+<h2 id="introduction">Introduction</h2>
+<p>Remember <a href="colorbynumbers.html">Color by Numbers</a> coloring books? HTML and CSS kind of work like that. Bear with me: a Color by Numbers picture is a black and white drawing, with a number inside each closed space, and a table showing which color corresponds to which number. In this analogy, HTML represents the black and white drawing, and CSS represents the table of colors.</p>
+<p>Let&rsquo;s start with HTML. HTML stands for <b>H</b>yper<b>t</b>ext <b>M</b>arkup <b>L</b>anguage. Basically, it&rsquo;s text that can link to other texts. So since it&rsquo;s text-based, you don&rsquo;t need any fancy software to write it. Notepad (on Windows) or TextEdit (on Mac OS X) will do the job just fine. If you use TextEdit, you need to follow <a href="http://support.apple.com/kb/ta20406">some quick instructions</a> to set it up for HTML first.</p>
+<p>The key concept of HTML is <b>tags</b>. Tags encompass your content, and define its structure on the page. Let&rsquo;s jump right into some of them. In HTML, a tag is always formed by bookending a term with less-than and greater-than symbols. So, a &ldquo;highlight&rdquo; tag would look like <code>&lt;highlight&gt;</code>. (Note, there is no <i>actual</i> highlight tag&hellip; yet).</p>
+<p>Since tags encompass unique sections of content, there must be a beginning tag and an ending tag (for most things, but we&rsquo;ll get more into this later). The beginning tag is what we already know: <code>&lt;highlight&gt;</code>. The ending tag looks very similar, but adds a forward slash (same key as the question mark) before the tag name: <code>&lt;/highlight&gt;</code>.</p>
+<p>So let&rsquo;s say we have a sentence of really exciting text that we want highlighted when we drop it into our HTML document. The coding is simple! It would look just like this:</p>
+<pre>&lt;highlight&gt;the sandwich uses mayo, not mustard!&lt;/highlight&gt;</pre>
+<p>As an aside, there are different schools of thought on how to layer and present your tags. You can either put them directly around the content (like above), or separate the tag from the content with hard returns and tab indents. Personally, I use a mix of both (and you&rsquo;ll see examples as we go on), but what you do is your decision.</p>
+</section>
+<section>
+<h2 id="gettingstarted">Getting Started</h2>
+<p>Now we have the building blocks for our first HTML page. I suggest that you open up a new text window and copy my steps as I go. Whenever I show code in these lessons, it will always be in the <code>Courier</code> font. Code examples that are greyer in color represent code that&rsquo;s previously been shown, so you can focus on the new additions which will be black.</p>
+<p>The first tag that you always use in an HTML document is the <code>&lt;html&gt;</code> tag, believe it or not. So you can begin by typing <code>&lt;html&gt;&lt;/html&gt;</code>. And look: there&rsquo;s your page! Right now there&rsquo;s no content, because there&rsquo;s nothing in between the tags, but that is a web page, in the absolute worst definition possible. For the sake of clarity, enter a couple hard returns in between your tags so we have room for content:</p>
+<pre>&lt;html&gt;
+
+
+
+&lt;/html&gt;</pre>
+<p>Here&rsquo;s an important note: anything more than one space (hard returns, double spaces, tabs) has no extra effect in HTML output. There is no functional difference between what you have now and the original <code>&lt;html&gt;&lt;/html&gt;</code> code you used at first.</p>
+<p>The next step is to divide your page into actual content and behind-the-scenes magic. I&rsquo;m referring to are the <b>body</b> and <b>head</b> of the document, respectively. Yes, there are two parts to every HTML site: the head and the body. Their tags are what you&rsquo;d expect, <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>. The head always comes before (or rather, on top of) the body, which is conveniently intuitive. So let&rsquo;s insert the head portion and the body portion within our html tags. Remember that since the head and the body will eventually encompass more stuff, they each need a beginning and an end.</p>
+<pre><span class="faded">&lt;html&gt;</span>
+
+&lt;head&gt;&lt;/head&gt;
+
+&lt;body&gt;&lt;/body&gt;
+
+<span class="faded">&lt;/html&gt;</span></pre>
+<p>You can space them out too, so we have more room to work.</p>
+<pre><span class="faded">&lt;html&gt;
+
+&lt;head&gt;
+
+
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</span></pre>
+<p>Why, that&rsquo;s a good-looking web page you have going there! It seems to be coming along nicely. Take a break if you want to, I&rsquo;m not going anywhere.</p>
+</section>
+<section>
+<h2 id="head">The head</h2>
+<p>Let&rsquo;s focus on the head first. Most of the stuff in the head section does not appear directly on the page, but rather helps your browser figure out how to present the body. If you&rsquo;re playing along, this is where we will load up the CSS later, and so this is like the little table that tells you which color goes with which number.</p>
+<p>Another important thing in the head section is the <b>title</b> of your page; that is, what displays in your browser&rsquo;s title bar. And of course, there is a <code>&lt;title&gt;</code> tag to wrap around whatever you&rsquo;d like your title to be. So let&rsquo;s add a title to our head section, remembering to close the tag at the end.</p>
+<pre><span class="faded">&lt;html&gt;
+
+&lt;head&gt;</span>
+
+&lt;title&gt;my first web page&lt;/title&gt;
+
+<span class="faded">&lt;/head&gt;
+
+
+&lt;body&gt;
+
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</span></pre>
+<p>This is now almost a complete page. If you were to load this HTML file in your browser, you&rsquo;d get a blank window with your custom title at the top. Congratulations, you&rsquo;ve just done some real programming!</p>
+<p>Like I said, there&rsquo;s more stuff that we can put in the head, including our CSS code, but let&rsquo;s leave it at the title for now. On to the content, the meat of the page.</p>
+</section>
+<section>
+<h2 id="body">The body</h2>
+<p>When you think about it, the content of a web page is usually text and graphics. Sure, there are also movies and music increasingly more often, but for the scope of these lessons, we&rsquo;re going to focus on text and graphics. As you can imagine, these are all loaded up in the body of the HTML page. Actually, we could just insert some text between the body tags right now and leave it at that. Your browser would load it up and have no trouble displaying the text right back at you.</p>
+<p>Let&rsquo;s do it! For whatever reason, a programmer&rsquo;s first program always outputs the text &ldquo;hello world.&rdquo; I don&rsquo;t get it, but who am I to break tradition, so let&rsquo;s make our web page contain the text &ldquo;hello world.&rdquo; Remember that anything more than one space, like a tab or a hard return, will have no effect on the final rendering of the page. Capitalization <i>will</i> carry over, however.</p>
+<pre><span class="faded">&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;my first web page&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;</span>
+
+hello world
+
+<span class="faded">&lt;/body&gt;
+
+&lt;/html&gt;</span></pre>
+<p>Stop right there and pour a celebratory beverage. You&rsquo;ve made a complete web page, all by yourself, in raw code without the help of any outside software. Let&rsquo;s save our progress and see how it looks. When you save the file, be sure to add the extension &ldquo;.html&rdquo;, and avoid spaces or fancy symbols (the &amp; symbol is a particular offender). Letters and numbers are nice. I suggest &ldquo;first.html&rdquo;.</p>
+<img src="first.png" alt="my first web page" class="screenshot" />
+<p>And that&rsquo;s it! In your browser, choose &ldquo;Open&rdquo; or &ldquo;Open File&rdquo; from the File menu and choose your HTML file. It might not be much, but it&rsquo;s still pretty cool to see. Let&rsquo;s stop there for now.</p>
+</section>
+<section>
+<h2 id="keyconcepts">Key Concepts</h2>
+<ul>
+<li>HTML as &ldquo;uncolored&rdquo; content, CSS as the coloring scheme</li>
+<li><b>Tags</b><ul>
+  <li>tags have a beginning and an end (for most content)</li>
+  <li>tags within tags are fine as long as they&rsquo;re nested in order</li>
+  <li>tags define the content they encompass</li>
+</ul></li>
+<li>Every page is contained in the <code>&lt;html&gt;</code> tag</li>
+<li>Every page has a <code>&lt;head&gt;</code> section and a <code>&lt;body&gt;</code> section in that order, within the <code>&lt;html&gt;</code> tag</li>
+<li><code>&lt;head&gt;</code> content doesn&rsquo;t show up in the browser; <code>&lt;body&gt;</code> content does</li>
+</ul>
+</section>
+<section>
+<h2 id="homework">Homework</h2>
+<p>First, <a href="lesson1.zip">download the materials for this lesson</a>. Then from scratch, make a web page with the title &ldquo;this was easy&rdquo; and the body text &ldquo;At first, I was intimidated about creating a website. BUT THEN I BECAME EXCITED!&rdquo;</p>
+<p>When you&rsquo;ve finished, name your file &ldquo;homework1.html&rdquo; and check it against the similarly named file in the Answers folder of the lesson materials.</p>
+</section>
+</article>
+</body>
+</html>

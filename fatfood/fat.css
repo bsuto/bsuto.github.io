@@ -1,0 +1,19 @@
+body { background-color: #fdfdfd; font-family: "helvetica neue", helvetica, arial, sans-serif; text-align: center; }
+h1 { margin: 24px auto; font-size: 48px; line-height: 56px; letter-spacing: -2px; }
+h1 a, h1 a:visited { background-color: #c00; color: #fff; padding: 6px 12px; margin: 0 24px 0 0; text-shadow: 0 1px 1px #000; -webkit-border-radius: 18px; -moz-border-radius: 18px; border-radius: 18px; text-decoration: none; }
+h1 a:hover { background-color: #d00; box-shadow: 0 0 10px #d00; -webkit-box-shadow: 0 0 10px #d00; -moz-box-shadow: 0 0 10px #d00; }
+h1 a:active { background-color: #b00; box-shadow: 0 0 10px #b00; -webkit-box-shadow: 0 0 10px #b00; -moz-box-shadow: 0 0 10px #b00; }
+#finished { width: 500px; margin: 24px auto; background-color: #c00; padding: 10px; webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; cursor: pointer; }
+article { background-color: inherit; color: #222; width: 500px; margin: 0 auto; padding: 10px; padding-bottom: -8px; text-align: left; }
+p { clear: both; margin: 0 0 18px 0; padding: 0; font-size: 18px; line-height: 22px; }
+#date { float: left; font-weight: bold; }
+#gif { float: right; font-style: italic; background-color: #FFFC8D; }
+
+@media only screen and (max-device-width: 480px) {
+body { text-align: center; margin: 0; padding: 0; width: 540px; }
+h1 { font-size: 36px; line-height: 42px; letter-spacing: -1px; margin-bottom: 0; }
+h1 a, h1 a:visited { background-color: inherit; color: #c00; padding: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; text-decoration: underline; text-shadow: none; }
+#finished { background-color: inherit; padding: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+p { font-size: 24px; line-height: 30px; }
+#gif { margin-right: 5px; }
+}

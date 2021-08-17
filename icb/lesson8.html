@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 8: Wrapping it up</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 8: Wrapping it up
+</header>
+<article>
+<section>
+<h2 id="doctype">Doctype</h2>
+<p>Up until this point, I&rsquo;ve told you that all HTML documents start the same: an <code>&lt;html&gt;</code> tag, and then the <code>&lt;head&gt;</code> section. I hope this doesn&rsquo;t make you hate me, but I&rsquo;ve been telling you the wrong thing. There&rsquo;s another tag that is supposed to come before the <code>&lt;html&gt;</code> tag in every web page you write: the <code>&lt;doctype&gt;</code> tag. There are a variety of <b>Doc</b>ument <b>Types</b>, and they all depend on the version of HTML that you use. That&rsquo;s right, there are multiple kinds of HTML. Dialects, if you will. You may see websites using plain HTML version 4.0, or a more modern XHTML (and within XHTML, either Strict or Transitional), or perhaps the new HTML5 that is frequently discussed these days.</p>
+<p>You may be wondering what the big deal is, and that&rsquo;s okay. Keeping strict rules on HTML (and XHTML) allows the software companies that make web browsers to keep the browsing experiences consistent. Imagine if all the programs on your computer didn&rsquo;t have to adhere to a set of rules for their respective programming languages&mdash;you&rsquo;d have a tough time getting anything done. All these flavors of HTML have very similar code by appearance, the same code we&rsquo;ve been using so far. They&rsquo;re separated by rules on which tags are acceptable and other syntax guidelines.</p>
+<p>I&rsquo;ve actually been teaching in the style of HTML5 throughout these lessons, so rest assured that your knowledge is future-proof for now. What makes all of this HTML5? For one, you have to always close your tags, as seen by the slash in single-tag elements like <code>&lt;img&gt;</code> and <code>&lt;br&gt;</code>. Older versions of HTML do not require this. There are other finer points too, and you can <a href="http://dev.w3.org/html5/spec/Overview.html">read about them</a> if you&rsquo;re very bored.</p>
+<p>There are some special tags only available in HTML5, like <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code>, to compliment <code>&lt;img&gt;</code> in this post-YouTube world we live in. There are also new tags for building the foundation of your page, like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code>. Instead of using a format like <code>&lt;div id="header"&gt; &lt;/div&gt;</code> like in the previous lesson, you can use the much simpler <code>&lt;header&gt; &lt;/header&gt;</code> in HTML5. I&rsquo;m sorry for holding out on this until now.</p>
+<p>Anyway, back to this <code>&lt;doctype&gt;</code> tag. You put this before the <code>&lt;html&gt;</code> tag to alert the browser as to which version of HTML you&rsquo;ve written in. For HTML5, it&rsquo;s pretty simple. This is all you need:</p>
+<pre>&lt;!doctype html&gt;</pre>
+<p>This tag breaks all the rules we&rsquo;ve talked about, like not having a closing slash and having an exclamation point at the beginning but not being a full comment. I can&rsquo;t explain why it&rsquo;s this way. Just make sure you copy and paste it as it&rsquo;s written here when you use it.</p>
+</section>
+<section>
+<h2 id="metatags">Meta Tags</h2>
+<p>There&rsquo;s a bunch of other behind-the-scenes stuff that you can put in your <code>&lt;head&gt;</code> section. So far, we have the page&rsquo;s <code>&lt;title&gt;</code> and a <code>&lt;link&gt;</code> to our stylesheet. There are also <code>&lt;meta&gt;</code> tags, which hold information about your website such as who wrote it, what it&rsquo;s about, and what language encoding it&rsquo;s in. These tags are never shown to your viewers, but other computers (like search engines! Hello, Google) read them and use them to help determine the site&rsquo;s material. Again, these <code>&lt;meta&gt;</code> tags reside within the <code>&lt;head&gt;</code> section of your web page, and look something like this:</p>
+<pre>&lt;meta name="description" content="This website is about puppies" /&gt;</pre>
+<p>Note that <code>&lt;meta&gt;</code> tags are self-closing and need the trailing slash at the end. A <code>&lt;meta&gt;</code> tag for keywords could look like:</p>
+<pre>&lt;meta name="keywords" content="puppies, doggies, kibble" /&gt;</pre>
+<p>Particularly of note, there&rsquo;s a <code>&lt;meta&gt;</code> tag required by HTML5 which tells browsers how the page has been encoded. Web page data is compressed, turned into zeroes and ones as it zooms through the Internet tubes, and it helps the browser understand it quicker if it knows how to read it. I&rsquo;ll give you the standard <code>&lt;meta&gt;</code> tag I always use for my websites, and feel free to copy and paste it directly into yours:</p>
+<pre>&lt;meta charset="utf-8" /&gt;</pre>
+<p>I realize that was a lot to take in all at once. So here&rsquo;s a complete beginning to an HTML5 page that uses an external CSS stylesheet, as a guideline for you to use in the future.</p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Puppy Power&lt;/title&gt;
+&lt;meta charset="utf-8" /&gt;
+&lt;meta name="description" content="This website is about puppies" /&gt;
+&lt;meta name="keywords" content="puppies, doggies, kibble" /&gt;
+&lt;link rel="stylesheet" href="dogstyles.css" type="text/css" /&gt;
+&lt;/head&gt;
+<span class="faded">&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span></pre>
+</section>
+<section>
+<h2 id="validation">Validation</h2>
+<p>If you&rsquo;ve been using a modern browser like Firefox, Chrome, or Safari, you may not notice any difference between the way your homework HTML pages looked before and the way they&rsquo;ll look after you add all these fancy behind-the-scenes tags. Why bother then, right? While it&rsquo;s true that modern browsers can do a lot of auto-detection that theoretically eliminates the need for these <code>&lt;DOCTYPE&gt;</code> and <code>&lt;meta&gt;</code>tags, there&rsquo;s still a chance that your distant relative is dialing onto the interwebs with a modem on their 1998 PC. Using these extra tags may not help them much, but it will give their browser a fighting chance.</p>
+<p>An organization called the <b>World Wide Web Consortium</b> is the reason we have all these rules for different HTML dialects. They provide a little tool that lets you see whether your code is free of errors and should therefore work well across most browsers. This tool is the <a href="http://validator.w3.org/">W3C Validator</a>.</p>
+<p>You can upload an HTML file directly from your computer, or point it to a web page already on the Internet. If all goes well, you&rsquo;ll see the following green message. Fun fact: this tool can validate your CSS too!</p>
+<img src="validated.png" alt="OH THANK GOD" class="screenshot" />
+<p>You may have noticed that I said that validation guarantees that your web page will function in most browsers. The notable exception is Internet Explorer, especially when it comes to CSS. There are many web developers cursing IE&rsquo;s deficiencies all over the Internet, and a comparable number of &ldquo;hacks&rdquo; have been created to make otherwise-valid designs compatible. Some of these are included in the links section at the bottom.</p>
+</section>
+<section>
+<h2 id="teachyourself">Go Teach Yourself</h2>
+<p>The dynamic nature of the Internet means millions of websites are changing daily. Every so often, the rules of making websites will change as well. While I&rsquo;ve attempted to teach you the basics of coding web pages from scratch, it&rsquo;s possible that some part of this guide will be outdated when you read it. With that in mind, I must mention it&rsquo;s just as important to know how to teach yourself additional HTML and CSS as it has been to get started.</p>
+<p>For example, there are CSS properties that allow designers to get very precise with the layout of their pages like <code>position</code> and <code>z-index</code>. Then, there are advanced CSS techniques like <code>-animation</code> and <code>-transform</code> that can move content around the page in real-time. However, I haven&rsquo;t gotten into these in this series because I&rsquo;m still figuring them out myself. This doesn&rsquo;t mean you have to wait for me, though! Search for &ldquo;HTML tutorial&rdquo; or &ldquo;CSS tutorial&rdquo; and pick from one of the many results. It will most likely be more comprehensive than this one. The same goes for other web languages, such as PHP or Ruby on Rails, if you&rsquo;re looking to get into advanced web programming.</p>
+<p>If you&rsquo;re ever stuck, don&rsquo;t be afraid to look at the source code of a website you like and copy their code to figure out how they did something interesting. Be sure to practice your own code often as well. I now pass the torch to you &mdash; go out there and make something cool!</p>
+</section>
+<section>
+<h2 id="links">Useful Links</h2>
+<ul>
+<li><a href="http://www.w3schools.com/html/">HTML Tutorial at W3Schools</a> &mdash; a great resource for learning about every HTML tag and how they&rsquo;re used together</li>
+<li><a href="http://www.w3schools.com/css/">CSS Tutorial at W3Schools</a> &mdash; another great resource from the same people, but for CSS</li>
+<li><a href="http://validator.w3.org/">W3C Validator</a> &mdash; see if your HTML and CSS adhere to the official rules</li>
+<li><a href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">Recommended Doctype Declarations</a> &mdash; a list of all possible <code>DOCTYPE</code>s from the W3C, so you can see the other flavors of HTML</li>
+<li><a href="http://www.webdevout.net/css-hacks">CSS Hacks</a> &mdash; a list of hacks to make rules-compliant CSS work in finicky browsers like Internet Explorer</li>
+<li><a href="http://24ways.org/2005/avoiding-css-hacks-for-internet-explorer">Avoiding CSS Hacks for Internet Explorer</a> &mdash; a worthwhile counterpoint to the above</li>
+<li><a href="http://www.impressivewebs.com/replace-flash-with-css3-animation/">Replacing Subtle Animations with CSS3</a> &mdash; just one example of advanced CSS in use to create animations</li>
+<li><a href="http://37signals.com/svn/posts/3003-css-taking-control-of-the-cascade">Taking Control of the Cascade</a> &mdash; a great overview on how cascading works</li>
+<li><a href="http://www.csszengarden.com/">The CSS Zen Garden</a> &mdash; an awesome example of how the same HTML file can be presented a million different ways, just by using different stylesheets</li>
+<li><a href="http://www.alistapart.com/">A List Apart</a> &mdash; intelligent and thoughtful essays about the world of web design</li>
+</ul>
+</section>
+</article>
+</body>
+</html>

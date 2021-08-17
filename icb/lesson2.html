@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 2: Structure Tags</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 2: Structure Tags
+</header>
+<article>
+<section>
+<h2 id="headers">Headers</h2>
+<p>In this lesson, we&rsquo;ll add a couple more tags to our <code>&lt;body&gt;</code> in order to display and organize our content a little better. Speaking of organization, when you examine it closely, an HTML page is a lot like an outline you used to make for your essays in high school. Let&rsquo;s take a look at a sample outline:</p>
+<ol style="list-style-type:upper-roman;">
+  <li>Pierre&rsquo;s Trip Abroad
+    <ol style="list-style-type:upper-alpha;margin-bottom:0;">
+      <li>Cleveland
+        <ol style="list-style-type:decimal;margin-bottom:0;">
+          <li>burning river</li>
+          <li>other garbage</li>
+        </ol>
+      </li>
+      <li>New York
+        <ol style="list-style-type:decimal;margin-bottom:0;">
+          <li>people cussing at me</li>
+          <li>skyscrapers
+            <ol style="list-style-type:lower-roman;margin-bottom:0;">
+              <li>Empire State Building</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>Boston
+        <ol style="list-style-type:decimal;margin-bottom:0;">
+          <li>Baked Beans</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+<p>There are tags in HTML that let you structure your document in the same way. They&rsquo;re called <b>header</b> tags, and they offer six levels of importance: <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>. So if we wanted to structure the above page in HTML, and maintain the relative hierarchies, it would look like this:</p>
+<pre>
+&lt;h1&gt;Pierre&rsquo;s Trip Abroad&lt;/h1&gt;
+  &lt;h2&gt;Cleveland&lt;/h2&gt;    &lt;h3&gt;burning river&lt;/h3&gt;    &lt;h3&gt;other garbage&lt;/h3&gt;
+  &lt;h2&gt;New York&lt;/h2&gt;
+</pre>
+<p>&hellip;and so on. However, header tags do <i>not</i> actually create an outline, with leading numbers and letters and such. They simply denote levels of importance, and by default make the text they contain bigger and bolder for emphasis. Remember, the indented spacing in the HTML above has no effect on the browser output, but is added for clarity &mdash; anything more than one space has no effect on the final page.</p>
+<p>You may wonder why you&rsquo;d want to structure your HTML this way. One reason is that it allows search engines like Google to figure out what&rsquo;s important on your page. (Seriously! They look at header tags and weigh the text between them a little heavier than other text.) Also, it lets you style your important text easily when we move on to CSS. You can imagine headers creating this kind of common structure:</p>
+<pre>
+&lt;h1&gt;name of your website&lt;/h1&gt;
+&lt;h2&gt;name of the current page&lt;/h2&gt;&lt;h3&gt;navigation menu header&lt;/h3&gt;&lt;h3&gt;title of blog post&lt;/h3&gt;
+</pre>
+<p>Time for some hands-on fun! Create a new HTML document, using the basic <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tag structure introduced in the previous lesson. Within the <code>&lt;body&gt;</code> tag, enter some sample headers like the ones shown above. Be sure to close your header tags after each statement. When you&rsquo;re finished, save your file (include the &ldquo;.html&rdquo; extension) and open it in your browser. Notice how the text size varies depending on the number used in your header tag, and that each header begins on a new line.</p>
+</section>
+<section>
+<h2 id="paragraphs">Paragraphs</h2>
+<p>So now we have header tags, and in them a great way to lay out a page&rsquo;s information. Let&rsquo;s actually put some content in there! The best way to insert a block of text onto a web page is to wrap it in the <code>&lt;p&gt;</code> tag, as shown below:</p>
+<pre>&lt;p&gt;P most likely stands for "paragraph." but there are 
+other words it could stand for, like pea or pee or 
+princess. or, how about psychology? pneumatics? i guess 
+it could really stand for anything.&lt;/p&gt;</pre>
+<p>On a side note, depending on which version of HTML you use (There are versions? What? We&rsquo;ll get to this much later), you may sometimes omit the closing <code>&lt;/p&gt;</code> tag. Most browsers are smart enough to close the <code>&lt;/p&gt;</code> tag themselves when they see a new open <code>&lt;p&gt;</code> tag later on, but you should use closing <code>&lt;/p&gt;</code> tags anyway. It&rsquo;s for the best.</p>
+<p>Another hands-on experiment! Open the file you were using before in your text editor, and insert a paragraph after your headers. Be sure to wrap it in <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> tags. Save the file and open it in your browser to see the results.</p>
+</section>
+<section>
+<h2 id="links">Links</h2>
+<p>So now we have big text and blocks of text. What about <i>hypertext</i> &mdash; the HT in HTML? I&rsquo;m talking about links, which of course we need on our page! Links are made with the <b>anchor</b> tag, or <code>&lt;a&gt;</code>. Now, stay with me here. In addition to tag names, like <code>a</code>, <code>p</code>, <code>h1</code> and <code>body</code>, there are also tag <b>attributes</b>, or additional tag information that doesn&rsquo;t actually show up on the page. Attributes are written inside the less-than and greater-than symbols.</p>
+<p>For example, the <code>&lt;a&gt;</code> tag, which creates links, has an attribute called <code><b>href</b></code> that tells the link where to go. Here&rsquo;s an example of the <code>&lt;a&gt;</code> tag in action: if you wanted to link the phrase &ldquo;click here to go home&rdquo; to <a href="http://www.google.com">http://www.google.com</a>, you would format the whole <code>&lt;a&gt;</code> tag like this:</p>
+<pre>&lt;a href="http://www.google.com"&gt;click here to go home&lt;/a&gt;</pre>
+<p>Let&rsquo;s study that a bit. The content that actually resides between the beginning and closing tags is the &ldquo;click here to go home&rdquo; text. So for all links, the text that you wish to represent your link goes between the <code>&lt;a&gt;</code> tags. The attribute, however, contains the actual link URL and looks like this: <code>href="http://www.google.com"</code>. The quotes are absolutely necessary; so make sure to put the entire link in quotes. Finally, note that the attribute is completely contained within the opening <code>&lt;a&gt;</code> tag, and that there <i>is</i> a space between the letter <code>a</code> and <code>href</code>, so as not to confuse the browser.</p>
+<p>Let&rsquo;s do a quick review of our tags so far in this lesson. <b>Header</b> tags <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> serve to organize your page. <b>Paragraph</b> tags <code>&lt;p&gt;</code> allow you to insert blocks of text. <b>Anchor</b> tags <code>&lt;a href=""&gt;</code> insert links. If you&rsquo;re confused, try inserting some of these tags (with appropriate content) into the <code>&lt;body&gt;</code> of the HTML document you created at the beginning of this lesson, and opening it in your browser. The best way to learn HTML and CSS is by doing and doing again.</p>
+</section>
+<section>
+<h2 id="directories">Web Directories</h2>
+<p>We&rsquo;re going to take a little detour from writing code and learn something about maintaining a web site. Take a look at this sample URL:</p>
+<pre>http://www.george.com/blog/july/monday.html</pre>
+<p>Let&rsquo;s break it down like it was your computer. &ldquo;www.george.com/&rdquo; is the main <b>server</b>, and this is like your computer&rsquo;s hard disk. &ldquo;blog/&rdquo; represents a <b>directory</b>, and this is like a folder on the root level of your hard disk. &ldquo;july/&rdquo; is another directory, within the &ldquo;blog/&rdquo; directory. Or, to keep it going, like having a folder called &ldquo;july&rdquo; in the folder called &ldquo;blog&rdquo; on your hard disk. Finally, &ldquo;monday.html&rdquo; is a <b>page</b> in the &ldquo;july/&rdquo; directory, just like having a file called &ldquo;monday.html&rdquo; in your &ldquo;july&rdquo; folder.</p>
+<p>So, when you use a forward slash ( / ) in a URL, it&rsquo;s saying that the file or directory to the right of the slash is contained <i>inside</i> the directory to the left of the slash. Again, this means that in the example above, there&rsquo;s a file called &ldquo;monday.html&rdquo; in a &ldquo;july&rdquo; directory, which itself is in a &ldquo;blog&rdquo; directory on a server called &ldquo;www.george.com&rdquo;.</p>
+<p>This is a key concept for a lot of reasons. First, when using the <code>href</code> attribute (or the <code>src</code> attribute, which we&rsquo;ll get to in a little bit), you have to make sure that you&rsquo;re linking to the correct destination that you want. Let&rsquo;s say that the domain for your website&rsquo;s server is <code>http://www.mysite.com</code>. Let&rsquo;s also say that you have a directory on your website called <code>blog</code> for, well, your blog. Finally, consider that the first page you see when reading your blog is called <code>page1.html</code>. When you want to link to <code>page2.html</code> from <code>page1.html</code>, you do not need to write out the entire URL, because <i>both files are in the same blog directory</i>. So your <code>href</code> attribute would be <code>href="page2.html"</code> instead of the full <code>href="http://www.mysite.com/directory/page2.html"</code>.</p>
+<p>On the other hand, if it&rsquo;s in a <i>different</i> directory or on a <i>different server</i>, you must use a complete URL (as in the second example above) to make sure the browser knows exactly where it&rsquo;s going. <i>Only</i> use <code>http://</code> when you include the full URL, or your browser will not know where to go, and your link (or image, as explained below) will not work.</p>
+</section>
+<section>
+<h2 id="pictures">Pictures</h2>
+<p>Without pictures, the Internet would be useless. How else would we look at cats? You better believe that you can insert pictures using HTML. The catch here is that each picture is saved in a separate file. Since it&rsquo;s a picture, there&rsquo;s no text to write in between two tags, so how are we going to do it?</p>
+<p>The <b>image</b> tag <code>&lt;img&gt;</code> is its own beginning and end tag. Here&rsquo;s a sample <code>&lt;img&gt;</code> tag to get us started:</p>
+<pre>&lt;img src="arrow.gif" alt="Arrow" /&gt;</pre>
+<p>We&rsquo;re going to go through this piece by piece. First you have the <code>img</code> name, nothing special there. Next you have the <code><b>src</b></code> attribute. This is similar to the <code>href</code> attribute we use for links: it tells the browser where the image file is located. In our example, the image is called &ldquo;arrow.gif&rdquo; and it is located in the same directory as our HTML file. (If it weren&rsquo;t, we would need to provide the whole path, including the server and directories).</p>
+<p>Next we have the <code><b>alt</b></code> attribute. This provides some text in case the image doesn&rsquo;t load. Some people will tell you this is optional, but let&rsquo;s just consider it mandatory. You&rsquo;ve probably encountered a broken image before, where it&rsquo;s an empty box with a red X or a blue question mark, right? The <code>alt</code> attribute at least gives a suggestion of what should be there. Finally, we have a lone forward slash. This little guy closes the tag all by himself, with no need for a separate <code>&lt;/img&gt;</code> tag. Nice and clean.</p>
+<p>There&rsquo;s an image called &ldquo;arrow.gif&rdquo; along with this lecture&rsquo;s downloadable materials, at the bottom of this page. Make sure you download these materials and move at least the image to the same folder as your current HTML file. Then, add the example <code>&lt;img&gt;</code> code above into your file. Save it and open it in your browser, and bask in the glow of your first web page picture. If you have other pictures laying around, make sure they&rsquo;re properly formatted for the web (i.e. no spaces in their file name, and saved as a GIF or JPEG) and copy them to the same folder as your HTML file. You can then insert them into your HTML file by adding a new <code>&lt;img&gt;</code> tag and putting the picture&rsquo;s filename in the <code>src</code> attribute.</p>
+</section>
+<section>
+<h2 id="alltogether">Putting this all together</h2>
+<p>We now have some great tags at our disposal: headers, paragraphs, links, and images. On their own, they&rsquo;re certainly powerful and capable of displaying a fully functional page. But what if you wanted to put a link within a paragraph of text? Or, what if you wanted an image to link somewhere? Tags can be combined, or nested, to achieve this effect. Let&rsquo;s solve both of these problems right now.</p>
+<p>Remember, the text between the <code>&lt;a&gt;</code> tags turns into clickable links that we&rsquo;re all familiar with. If a section of a paragraph needs to turn into a link, simply surround it with the opening and closing <code>&lt;a&gt;</code> tags, like so:</p>
+<pre>&lt;p&gt;do you want an incredible machine that tones your abs and 
+makes milkshakes at the same time? guaranteed to help you 
+lose 15 pounds a week, or your money back! to order, simply 
+&lt;a href="http://www.abshaker.com"&gt;click this link&lt;/a&gt; and 
+have your credit card ready.&lt;/p&gt;</pre>
+<p>That&rsquo;s not so bad. There is one thing to look out for, however: I placed a space before the opening <code>&lt;a&gt;</code> tag, and a space after the closing <code>&lt;/a&gt;</code> tag. This preserves the original appearance of the sentence in the paragraph. If you simply deleted the <code>&lt;a&gt;</code> tags from the example, the sentence would still be perfectly readable. Always have an idea of how you want your page to appear when you add a tag.</p>
+<p>What about making an image link somewhere? Well, as we&rsquo;ve discovered, anything that is placed between the <code>&lt;a&gt;</code> tags is turned into a link, so let&rsquo;s try inserting the entire <code>&lt;img&gt;</code> tag in there!</p>
+<pre>&lt;a href="http://www.arrows.com"&gt;&lt;img src="arrow.gif" alt="arrow" /&gt;
+&lt;/a&gt;</pre>
+<p>Or, what if you wanted your top-level header to link somewhere? Many sites have their <code>&lt;h1&gt;</code> tag link back to their home page. To do this, you can put the whole <code>&lt;a&gt;</code> tag within the <code>&lt;h1&gt;</code> tag:</p>
+<pre>&lt;h1&gt;&lt;a href="http://www.mysite.com"&gt;My Site&lt;/a&gt;&lt;/h1&gt;</pre>
+<p>Sure enough, these examples work exactly like you&rsquo;d expect them to, and I encourage you to try these combinations in your HTML file. If you suddenly see a colored border around your image after you&rsquo;ve made it link somewhere, don&rsquo;t worry. Some browsers automatically place such a border around images to distinguish them as links. What a day, though! Look at all we&rsquo;ve accomplished!</p>
+</section>
+<section>
+<h2 id="keyconcepts">Key Concepts</h2>
+<ul>
+<li><b>Header</b> tags <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code></li>
+<li><b>Paragraph</b> tag <code>&lt;p&gt;</code> to place blocks of text</li>
+<li><b>Anchor</b> tag <code>&lt;a&gt;</code> to create links
+  <ul><li>Use the <code>href</code> attribute to point to the actual link</li>
+  <li>Web directories: servers, folders, and files</li>
+</ul></li>
+<li><b>Image</b> tag <code>&lt;img&gt;</code> for displaying graphics
+  <ul><li>Use the <code>alt</code> attribute to provide a short description</li>
+  <li>There is no closing tag, just stick a forward slash at the end</li>
+</ul></li>
+<li>Tag combinations</li>
+</ul>
+</section>
+<section>
+<h2 id="homework">Homework</h2>
+<p>For this assignment, first <a href="lesson2.zip">download the lesson&rsquo;s materials</a>. Then, write an HTML page that produces output like the screenshot below. Make sure to include these extra details:</p>
+<ol>
+<li>The page&rsquo;s title is &ldquo;homework 2&rdquo;</li>
+<li>The links point to Google and NASA&rsquo;s websites respectively</li>
+<li>The arrow&rsquo;s alt text is &ldquo;deco&rdquo;</li>
+</ol>
+<img src="homework2.png" alt="Homework 2" class="screenshot" />
+<p>Again, that arrow picture is included with the download, and its filename is &ldquo;arrow.gif&rdquo;. When you&rsquo;re finished, compare your HTML file to the &ldquo;homework2.html&rdquo; file in the Answers folder.</p>
+</section>
+</article>
+</body>
+</html>

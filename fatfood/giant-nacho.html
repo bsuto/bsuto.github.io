@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; Giant Stuffed Nacho</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'giantnacho.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'giantnacho.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> Giant Stuffed Nacho</h1>
+<img src="giantnacho.jpg" alt="Giant Stuffed Nacho" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">January 25, 2013</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>What if all the good nacho toppings were <em>inside</em> the chip? Cut two tortillas to chip shapes, and put taco meat, onions, refried beans and queso dip on one. Cover it with the other, crimp them shut, and brush vegetable oil over the top. Bake in the oven and it&rsquo;ll crisp like a chip. Then you can top with sour cream, salsa, guacamole, and more cheese.</p>
+</article>
+</body>
+</html>

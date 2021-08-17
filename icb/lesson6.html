@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 6: Lists and Links in Style</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 6: Lists and Links in Style
+</header>
+<article>
+<section>
+<h2 id="orderedlists">Ordered Lists</h2>
+<p>In the previous lesson, we learned how to use CSS to apply the box model and position our elements. Our first introduction to CSS showed how to style basic site elements. This lesson will focus especially on lists and links, and how to get them to do some crazy and/or useful things.</p>
+<p>Hopefully you remember the basic list structure, where HTML that looks like this:</p>
+<pre>&lt;ol&gt;
+&lt;li&gt;Put your right hand in&lt;/li&gt;
+&lt;li&gt;Put your right hand out&lt;/li&gt;
+&lt;li&gt;Put your right hand in&lt;/li&gt;
+&lt;li&gt;Shake it all about&lt;/li&gt;
+&lt;/ol&gt;</pre>
+<p>produces web page output that looks like this:</p>
+<pre>1. Put your right hand in
+2. Put your right hand out
+3. Put your right hand in
+4. Shake it all about</pre>
+<p>We already know how to change the color or font of the text, and how to position it on the page, and how to give it width, but we can also use CSS to have fun with the numbers, since they&rsquo;re generated automatically. So, assuming you&rsquo;ve created a full HTML page with the code above, let&rsquo;s start a stylesheet to mess around with the <code>ol</code> tag. As always, begin with the tag and curly brackets. The property that determines what kind of numbering system you use is <code><b>list-style-type</b></code>, and there are a couple of self-explanatory values that it can take. For example:</p>
+<pre>ol {list-style-type: upper-roman; 
+}</pre>
+<p>turns your list into:</p>
+<pre>I. Put your right hand in
+II. Put your right hand out
+III. Put your right hand in
+IV. Shake it all about</pre>
+<p>The default style is <code>decimal</code> (1, 2, 3). Then there are <code>upper-roman</code> (I, II, III) and <code>lower-roman</code> (i, ii, iii), and <code>upper-alpha</code> (A, B, C) and <code>lower-alpha</code> (a, b, c). That one line of CSS, though, is all it takes to style what kind of list numbering system displays on the page. That&rsquo;s not all you can do with lists, though. Read on!</p>
+</section>
+<section>
+<h2 id="unorderedlists">Unordered Lists</h2>
+<p>Just as you can change the color, border, and font of regular paragraph and header text on a web page, you can also change these properties for your lists. This has led web designers to use unordered lists as the foundation for navigation menus on their pages. Let&rsquo;s create one now. In your HTML document, create an unordered list where each <code>&lt;li&gt;</code> only contains a link (remember, the <code>&lt;a href=""&gt;</code> business). Oh fine, here&rsquo;s an example:</p>
+<pre>&lt;ul&gt;
+&lt;li&gt;&lt;a href="home.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="pics.html"&gt;Pictures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="links.html"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+<p>Now, open your stylesheet file in your text editor. As with ordered lists, we can style the bullet that appears before each list item. The code is similar:</p>
+<pre>ul {list-style-type: circle; 
+}</pre>
+<p>The <code>circle</code> value produces the familiar bullet that we&rsquo;re all familiar with. You can also choose <code>disc</code> for a circle outline, <code>square</code> for a solid square, or <code>none</code> for no marking. There&rsquo;s <i>also</i>a separate property that lets you use your own image as the bullet. Instead of using the <code>list-style-type</code> property, you can use <code>list-style-image</code> instead. The value has to include the name of the image, in the format shown below, and be sure that if you don&rsquo;t include a full URL that the image is in the same directory on your server as your stylesheet.</p>
+<pre><span class="faded">ul {</span>
+list-style-image: url('triangle.gif');
+<span class="faded">}</span></pre>
+<p>But as we&rsquo;re making a menu and not a list of things, let&rsquo;s choose <code>none</code> for now. If you save your stylesheet and HTML page, and load the HTML in web browser, it&rsquo;ll look like three normal links on three lines. Using the CSS you already know to change background colors, fonts, and sizes, apply some formatting rules to the <code>li</code> tag in your stylesheet, which will determine how each link displays. For example, I used the following CSS to make my three-link menu from before look like the image below:</p>
+<pre>ul {list-style-type: none;}
+li {color: yellow;background-color: gray;border: 1px solid yellow;width: 100px;height: 20px;padding: 4px;margin: 4px;text-align: center;float: left;}</pre>
+<img src="6.1.png" alt="menu list" class="screenshot" />
+<p>You may be wondering, even though the text color is declared to be yellow, why is it still blue? That is going to be answered in the next section, so hang on. You may also wonder how I got the menu to be horizontal rather than vertical. That comes from the <code>float: left;</code> CSS. Recall from lesson five that declaring <code>float</code> properties cause elements to wrap around other elements on the page, rather than displaying each on their own line. Telling each <code>&lt;li&gt;</code> to float left means that they&rsquo;ll try to stay on the same horizontal line, each one as far to the left of the page as they can go without bumping into the previous one. To make this menu vertical, just delete the <code>float: left;</code> line.</p>
+</section>
+<section>
+<h2 id="cascades">Cascades</h2>
+<p>The C in CSS stands for Cascading, which is a fancy way of saying that you can have CSS code that overrides earlier code. One example of this is why the links in the above picture are blue instead of yellow. The quick and dirty explanation is that all browsers have internal CSS that define links to be blue. Since the text inside each menu item is itself within an <code>&lt;a&gt;</code> tag, and we have not defined what we want our links to look like yet, the browser&rsquo;s CSS for blue links overrides my CSS for yellow list items.</p>
+<p>So the quick fix is to add some CSS of our own, declaring links to be yellow. However, all of the links on our page will then be yellow. And truthfully, nobody wants that. How can we make it so that just the links in our menu are yellow? We double up our tags outside of the curly braces, that&rsquo;s how. See the following example:</p>
+<pre>li a {
+color: yellow;
+}</pre>
+<p>The order is very important. <code><b>li a</b></code> means &ldquo;<code>a</code> tags nested <i>inside</i> of <code>li</code> tags,&rdquo; like <code>&lt;li&gt; &lt;a href=""&gt;&lt;/a&gt; &lt;/li&gt;</code>. So, if you add the above code into the stylesheet from before, you get the following result:</p>
+<img src="6.2.png" alt="better links" class="screenshot" />
+<p>Magnificent! This trick can be used in all sorts of ways, like if you only want links within your <code>&lt;h1&gt;</code> tags to look special, you would use <code>h1 a { }</code> in your CSS, and so on.</p>
+</section>
+<section>
+<h2 id="links">Links</h2>
+<p>Now that we&rsquo;ve learned how to double up tags for one style declaration, we can move on to <b>pseudo-classes</b>, which are separate instances of the same style tag. The biggest use of pseudo-classes is the link rollover effect. For example, a link might be blue on a page, but when you move your cursor over it, it turns red, even before you click. That&rsquo;s CSS at work. There are pseudo-classes for different states of elements, such as when your mouse hovers over them, when you click on them, or when you&rsquo;ve already clicked on them.</p>
+<p>To define a pseudo-class, add a colon and the pseudo-class&rsquo; name to the tag where it applies. For example, to define how a link should appear when the viewer hovers their cursor over it, you use <code>a:hover { }</code>. Below is an example where normal links are blue, hovering links are green, active links (links that are currently being clicked on) are red, and visited links (links the user has already seen) are purple.</p>
+<pre>a { color: blue; }a:hover { color: green; } 
+a:active { color: red; } 
+a:visited { color: purple; }</pre>
+<p>Naturally, you don&rsquo;t have to stop at colors. All normal CSS can be used in pseudo-classes. You could even have the font completely change when the user hovers over a link, or the width of the <code>li</code> expand when a user hovers over it (which would go inside <code>li:hover</code>). What if you want to define the hover behavior for links within a list item? As we already know, you can double up on tags to achieve this, so the logical next step is just to add the pseudo-class to the second tag. The answer, then, is <code>li a:hover { }</code>.</p>
+<p>Now you&rsquo;re really rocking in CSS! The method of using unordered lists to create navigation menus is used by paid professionals, and now you can also style them to look the way you want. Not to forget, you already know the CSS to layout a page with floats, widths, heights, padding and margins. Also, you have the skills to define colors and fonts. Get excited&mdash;this lesson is now over and there are only two more after it.</p>
+</section>
+<section>
+<h2 id="keyconcepts">Key Concepts</h2>
+<ul>
+<li><b>Ordered Lists</b> can use a variety of numbering methods, as defined by the <code>list-style-type</code> property.</li>
+<li><b>Unordered Lists</b> also have different styles of bullets, as defined by the <code>list-style-type</code> and <code>list-style-image</code> properties, but you can also set the style type to <code>none</code> in order to set up a navigation menu.</li>
+<li>You can double up tags in a CSS declaration to make the style apply to specifically-nested HTML elements.</li>
+<li><b>Pseudo-classes</b> are used to style a tag at different stages of user interaction, such as hovering over an element or clicking on an element. They are coded by simply adding a colon and the pseudo-class to the end of a tag in a stylesheet.</li>
+</ul>
+</section>
+<section>
+<h2 id="homework">Homework</h2>
+<p>I have included an HTML file with this <a href="lesson6.zip">lesson&rsquo;s materials download</a> called &ldquo;homework6.html&rdquo;. For your assignment, write a stylesheet called &ldquo;styles6.css&rdquo; so that when you open the HTML file in your browser, it looks like the screenshot below and follows these behaviors:</p>
+<ol>
+<li>The link in the text paragraph should turn red when hovered over</li>
+<li>Links in the menu should turn black when hovered over</li>
+<li>The link in the text paragraph should also turn black when it has already been visited</li>
+</ol>
+<p>Again, you do not need to modify the HTML at all; just create the stylesheet. Remember to double up on tags to create different behaviors for similar elements. For example, if you want <code>li</code>&rsquo;s to be different in each type of list, try putting their list type&rsquo;s tag (either <code>ol</code> or <code>ul</code>) before the <code>li</code> in your stylesheet. Also, if you want your horizontal break to fit all the way across the screen, you will have to tell it to <code>clear: both;</code> in your stylesheet. (See <b>Floats</b> in lesson five for more details.) When you&rsquo;re done, compare your CSS file to the one in the Answers folder.</p>
+<img src="homework6.png" alt="homework 6" class="screenshot" />
+</section>
+</article>
+</body>
+</html>

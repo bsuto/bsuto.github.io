@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 7: Cascading Sections</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 7: Cascading Sections
+</header>
+<article>
+<section>
+<h2 id="divsandspans">Divs and Spans</h2>
+<p>At this point, we&rsquo;ve learned most of basic HTML and a lot of CSS. To beat my metaphor to death, HTML is the black and white outline and CSS is the color table in a color-by-numbers drawing. The two languages can exist without the other: you can have your plain HTML document to display the webpage and your stand-alone stylesheet that does, well, nothing. For the beginning of this lesson, we&rsquo;ll learn a little bit of HTML that exists purely because of CSS. Without CSS there is really no reason to use these two HTML tags: <code><b>&lt;div&gt;</b></code> and <code><b>&lt;span&gt;</b></code>.</p>
+<p>These two tags allow you to create more structure than the basic header, paragraph, and list tags allow. <code>&lt;div&gt;</code> tags are used to wrap around large amounts of content, like a menu bar or a footer. <code>&lt;span&gt;</code> tags are used to wrap around small amounts of content, like a word or a sentence. For example, if you want your webpage to be contained in a box that&rsquo;s centered on the screen, you can wrap all of your content in a <code>&lt;div&gt;</code> that you style later to be centered. If you want to highlight one word in your paragraph, you can wrap the word in a <code>&lt;span&gt;</code> that&rsquo;s styled to be highlighted. Let&rsquo;s start with a basic example:</p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;divs and spans&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;This box is 200 pixels wide.&lt;/div&gt;
+&lt;p&gt;The final word of this sentence has
+&lt;span&gt;emphasis!&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>You may ask, why not just wrap the first sentence in a paragraph tag and then define the tag to be 200 pixels wide in CSS? The answer is, since <code>&lt;div&gt;</code> doesn&rsquo;t intrinsically mean anything, you could actually place paragraph tags within it. Use <code>&lt;div&gt;</code>s to lay out the basic foundation of your page. To complete the example, here is our CSS:</p>
+<pre>div {width: 200px;}span {background-color: yellow; 
+}</pre>
+<p>Now you may be thinking, if I&rsquo;m going to use <code>&lt;div&gt;</code> tags to lay out my entire page, chances are I will have more than one section. This is a problem, because all <code>&lt;div&gt;</code>s will look the same because their CSS will apply to each one. I want some <code>&lt;div&gt;</code>s to look one way, and other <code>&lt;div&gt;</code>s to look different! Well, CSS has a solution. Read on.</p>
+</section>
+<section>
+<h2 id="idsandclasses">IDs and Classes</h2>
+<p>What if you could label HTML tags and then reference them separately in your CSS? For example, a normal webpage usually has a &ldquo;header&rdquo; <code>&lt;div&gt;</code> for the page title, a &ldquo;nav&rdquo; <code>&lt;div&gt;</code> for the navigation menu, an &ldquo;article&rdquo; <code>&lt;div&gt;</code> for the main content, and a &ldquo;footer&rdquo; <code>&lt;div&gt;</code> for the bottom. Each of these sections should have a different appearance, though, because the header may have a colorful background and the footer may have tiny text. Using labels for each <code>&lt;div&gt;</code> tag allows you to style each <code>&lt;div&gt;</code> separately in the CSS, simply and cleanly.</p>
+<p>There are two types of these labels, <b>ID</b> and <b>class</b>. The difference between them is subtle: an ID is a label that is only used once on the whole HTML page, and a class may be used as many times as you need. In the HTML, you insert the label <i>inside</i> the beginning target tag. For example, if you wanted to give a paragraph the ID &ldquo;aboutme&rdquo;, your beginning paragraph tag would look like <code>&lt;p id="aboutme"&gt;</code>. The closing tag remains the same: <code>&lt;/p&gt;</code>. If your &ldquo;aboutme&rdquo; label was a class (and therefore was going to be used again later), the HTML would only change to <code>&lt;p class="aboutme"&gt;</code>.</p>
+<p>Below, you&rsquo;ll find the HTML for a sample webpage, using <code>&lt;div&gt;</code> tags with unique ID labels to lay out the foundation. Drawing from your previous experience, you can imagine inserting a <code>&lt;h1&gt;</code> in the header, a <code>&lt;ul&gt;</code> list in the navigation menu, some <code>&lt;p&gt;</code> paragraphs in the article, and a <code>&lt;p&gt;</code> as well in the footer. Notice that I&rsquo;ve also included the reference to the stylesheet in the <code>&lt;head&gt;</code> already.</p>
+<pre>&lt;html&gt;
+
+&lt;head&gt;
+&lt;title&gt;My Web Page&lt;/title&gt;
+&lt;link rel="stylesheet" ref="ids.css" type="text/css" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div id="header"&gt;
+&lt;/div&gt;
+
+&lt;div id="nav"&gt;
+&lt;/div&gt;
+
+&lt;div id="article"&gt;
+&lt;/div&gt;
+
+&lt;div id="footer"&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>Now let&rsquo;s explore the CSS side of IDs and classes. In the CSS file (named &ldquo;ids.css&rdquo;) accompanying the above HTML, you would probably have style rules for the body, paragraphs, links, etc. In addition, you now get to create style rules for the labels as well. To style an ID, you use a number symbol (#) followed by its name; to style a class, you use a period (.) followed by its name. Observe:</p>
+<pre>#header {background-color: blue;}
+#nav {height: 20px;background-color: gray;}
+#article { 
+background-color: white; 
+border: 1px solid red;}
+#footer {font-size: 8px;}
+.highlight { 
+background-color: yellow; 
+}</pre>
+<p>(I threw in the <i>highlight</i> class as an example.) Notice that in the CSS, you&rsquo;ve just defined that label itself: not the label&rsquo;s behavior as it applies to a <code>&lt;div&gt;</code> or any other specific tag. That means that if you labeled a <code>&lt;a&gt;</code> tag with the <code>footer</code> ID, the resulting link&rsquo;sfont size would be 8 pixels even if it wasn&rsquo;t within the <code>footer &lt;div&gt;</code>. Of course, you wouldn&rsquo;t use the <code>footer</code> label more than once in this example, because we made it an ID, and those can only be used once per page, remember?</p>
+<p>Let&rsquo;s recap: you can label tags with IDs and classes to allow the same tag to have different styles. This is especially handy when using <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags to lay out your content. In the HTML, be sure to include the label within its corresponding beginning tag, such as <code>&lt;h1 class="large"&gt;</code>. In the CSS, preface IDs with number signs and classes with periods.</p>
+</section>
+<section>
+<h2 id="howtocascade">How to Cascade</h2>
+<p>As we started to explore in the previous lesson, the C in CSS stands for Cascading. Here is the rest of how it comes into play. The word Cascading is used in reference to how styles override each other&mdash;in a cascade of tags, if you will&mdash;and it&rsquo;s all based on the order they are listed in your HTML. The first place you probably reference any CSS in your HTML document is in the <code>&lt;head&gt;</code> tag, when you link to your <b>external</b> stylesheet.</p>
+<p>You can also type CSS directly within your HTML document, in the <code>&lt;head&gt;</code> tag. This is called <b>internal</b> CSS, and if you only have a couple style rules and don&rsquo;t feel like you need a completely separate stylesheet, it&rsquo;s a reasonable way to go. Since it is an HTML document, you have to wrap all the CSS within a special tag: the <code>&lt;style&gt;</code> tag. Internal CSS within the <code>style</code> tag also requires the <code>type</code> attribute so that the browser knows how to read it. Here is an example:</p>
+<pre><span class="faded">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;example&lt;/title&gt;</span>
+&lt;style type="text/css"&gt;
+p {
+background-color: pink;
+}
+&lt;/style&gt;
+<span class="faded">&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;blah blah blah&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span></pre>
+<p>Hold on &mdash; there&rsquo;s still one more way to inject CSS directly into your HTML document, and it&rsquo;s called <b>inline</b> CSS. This is very similar to using a <code>&lt;span&gt;</code>, because it applies CSS to one specific HTML tag, and <code>&lt;span&gt;</code>s are usually wrapped around a small piece of the page, like one tag&rsquo;s worth of content. Inline CSS is where the style that we used before becomes an attribute. You then paste the CSS you desire directly into the tag, so line breaks are usually omitted to avoid confusion and clutter. For example, say you wanted to make a second-level header tag blue. The HTML with inline CSS would look like this:</p>
+<pre>&lt;h2 style="color: blue;"&gt;This header is blue&lt;/h2&gt;</pre>
+<p>Why am I telling you about this now? These three levels allow you to cascade your CSS to override previous styles in special cases. Let&rsquo;s say that in your stylesheet, you define all <code>&lt;h1&gt;</code> tags to be red. However, you want one special <code>&lt;h1&gt;</code> tag to be green. You can use inline CSS to override your stylesheet, and this works because the inline CSS is located after the link to the stylesheet. Your browser loads the stylesheet, thinks &ldquo;All <code>&lt;h1&gt;</code> tags are red,&rdquo; and chugs along until it sees the inline style, and then thinks &ldquo;Aha! This one is green!&rdquo; Seriously. The HTML would look like this:</p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;example&lt;/title&gt;
+&lt;link rel="stylesheet" href="red.css" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Red News&lt;/h1&gt;
+&lt;h1 style="color: green;"&gt;Surprise Green News&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>and as you can guess, the external stylesheet &ldquo;red.css&rdquo; would simply be:</p>
+<pre>h1 {
+color: red;
+}</pre>
+</section>
+<section>
+<h2 id="keyconcepts">Key Concepts</h2>
+<ul>
+<li><code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags are meaningless HTML tags that you can use to structure your page beyond the basic tags. Combined with CSS, these tags allow you to design your page with a lot of control.</li>
+<li>Use ID and class labels to apply different styles to repeated instances of the same tag, especially for <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>.
+<ul>
+<li>An ID label can only be used once per HTML document and is prefaced by a # sign in CSS.</li>
+<li>A class label can be used multiple times in an HTML document and is prefaced by a period in CSS.</li>
+</ul></li>
+<li>CSS code will override any previously-written CSS style rules on the same page.
+<ul>
+<li><b>External</b> CSS are the stylesheet files that we&rsquo;ve been linking to in the <code>&lt;head&gt;</code> section.</li>
+<li><b>Internal</b> CSS is like a small stylesheet completely written within the <code>&lt;head&gt;</code> section.</li>
+<li><b>Inline</b> CSS is applied directly to one specific tag, and it will override both internal and external CSS.</li>
+</ul></li>
+</ul>
+</section>
+<section>
+<h2 id="homework">Homework</h2>
+<p>The assignment for this lesson is more about becoming familiar with the topics introduced than creating your own. An HTML document and stylesheet are included with the <a href="lesson7.zip">materials download</a>. There is one mistake in the stylesheet; find it and figure out how to fix it. (Hint: the mistake is only one character.) Also, after studying the included files, add a little bit of inline CSS that makes the page looks like the screenshot below. You can look up the answers in the included Answers text file.</p>
+<img src="homework7.png" alt="homework 7" class="screenshot" />
+</section>
+<section>
+<h2 id="inpagelinking">Appendix: In-page Linking</h2>
+<p>Have you ever wanted to link to a specific section of an HTML page? For example, if an entire calendar is printed within one HTML file, how do you direct a reader to a specific month? Now that we know about IDs, we can do this. Since an ID can only be used once per page, the browser should have no problem figuring out where on the page a certain ID is. All you do then is make sure important HTML elements have a unique ID, and then add the appropriate ID (with its leading number symbol) to the URL: <code>calendar.html#october</code>.</p>
+<p>I&rsquo;ve been adding an ID to each section of every lesson, even though I don&rsquo;t use CSS to style each section differently. Try it with this lesson: add <code>#idsandclasses</code> to the end of the URL in your browser window (so the end of the URL looks like <code>lesson7.html#idsandclasses</code>) and press return. You should jump to that section, like magic.</p>
+<p>You can create <code>&lt;a&gt;</code> tags that take advantage of this too, of course. <a href="#idsandclasses">Here&rsquo;s a link to that same IDs and Classes section.</a> To link to a different section within the <i>same</i> HTML file, just set the <code>href</code> parameter to the ID:</p>
+<pre>&lt;a href="#lunch"&gt;Lunch&lt;/a&gt;</pre>
+<p>If you want to link to a specific section of another page, include as much of the page&rsquo;s URL as you need (remember, if it&rsquo;s in the same directory, you just need the filename) and then add the ID:</p>
+<pre>&lt;a href="meals.html#lunch"&gt;Lunch&lt;/a&gt;</pre>
+<p>Again, this will not work with classes since there may be more than one on a given page, and the browser wouldn&rsquo;t know which one to go to. However, it doesn&rsquo;t matter what kind of tag has the linked-to ID. You can use it on divs, spans, headers, paragraphs, links, and more!</p>
+</section>
+</article>
+</body>
+</html>

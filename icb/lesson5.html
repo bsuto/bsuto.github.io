@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 5: CSS Box Model</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 5: CSS Box Model
+</header>
+<article>
+<section>
+<h2 id="boxmodel">The Box Model</h2>
+<p>In the previous lesson, we were introduced to CSS as a means of styling your HTML. Specifically, we learned how to make our plain old text more colorful, bordered, and in pretty fonts. The great thing about CSS is that it also lets you position your HTML tags on the page. That&rsquo;s right&mdash;CSS handles layout. For example, you may have previously used multiple <code>&lt;br/&gt;</code> tags to move a paragraph or image further down the page, but now, with CSS, you can place anything pretty much wherever you want.</p>
+<p>To understand precise CSS positioning, you gotta understand the <b>Box Model</b>. CSS has two positioning characteristics for each unique HTML element, <b>padding</b> and <b>margin</b>. I&rsquo;ve drawn up a guide to the box model below, and it centers on a black rectangle&mdash;let&rsquo;s say a paragraph in HTML&mdash;defined in CSS to be 600 pixels wide.</p>
+<img src="boxmodel.png" alt="Box Model graphic" class="screenshot" />
+<p>Keep this image accessible as you read on. You can <a href="boxmodel.png">open it</a> in a new window or tab if it helps.</p>
+<p>So, to reiterate, the black box represents some <i>content</i>; here, a paragraph of text that we have defined in CSS to be 600 pixels wide. Surrounding the paragraph is a gray-colored area. This is the content&rsquo;s <i>padding</i>. In CSS, padding is the distance between the content and its border. In this example, I&rsquo;ve set the padding to be 10 pixels. These means that there is 10 pixels&rsquo; worth of padding on each side&mdash;top, bottom, left, and right&mdash;of the content. Therefore, the distance from the left edge of the padding to the right edge of the padding is 620 pixels: 600 for the content in the middle, and 10 on each side.</p>
+<p>The thin yellow line represents the content&rsquo;s <i>border</i>, which is defined here to be 5 pixels wide. We covered borders in the previous lesson, but it&rsquo;s worth further explaining here that a border doesn&rsquo;t necessarily sit on the very edge of your content&mdash;remember, there is padding in the way. So with a border 5 pixels wide, the distance from the left edge of the border to the far right edge of the border is 630 pixels: the 620 from last time bordered on each side by 5.</p>
+<p>That brings us to the aqua area outside of the border. This is the content&rsquo;s <i>margin</i>. The margin is the area between one piece of content and the next piece of content (and that second piece of content may have margins of its own). Here, the margin is set to be 10 pixels wide, meaning 10 pixels on all sides of the border. Therefore, the distance from the left edge of the margin to the far right edge of the margin is 650 pixels: the 630 from last time plus 10 each on the left and right.</p>
+<p>We started with an HTML element, a paragraph, that we defined to be only 600 pixels wide. Then, we gained 50 pixels in width from these spacing and positioning properties in CSS. That&rsquo;s the box model: the complete, overall box of space surrounding an HTML element.</p>
+</section>
+<section>
+<h2 id="marginpadding">Margin and Padding</h2>
+<p>So now we know that when we say a paragraph is 600 pixels wide, we&rsquo;re only talking about the inner width of the paragraph element, or the black box in the picture above. So let&rsquo;s say that we already have this CSS code in place for our paragraphs:</p>
+<pre>p {
+width: 600px;
+}</pre>
+<p>Defining the margin and padding is just as simple as writing a new line of CSS for each property:</p>
+<pre><span class="faded">p {
+width: 600px;</span>
+margin: 10px;
+padding: 10px;
+<span class="faded">}</span></pre>
+<p>For consistency, we can add in our border and background color to match the example above. Very important to note: margins and padding cannot take on separate colors. I just used different colors to set them apart in the diagram above. Padding will take on the same background color as its element (in this case, a paragraph) and the margin will take on the same background color as the surrounding element (just the body in this case).</p>
+<pre><span class="faded">p {
+width: 600px;
+margin: 10px;
+padding: 10px;</span>
+border: 5px solid yellow;
+background-color: black;
+<span class="faded">}</span></pre>
+<p>What if, for some reason, you wanted your top and bottom margins to be different than your left and right margins (or the same for padding)? You know, lots of horizontal buffer space, but not a lot of space between one item and the item below it? Lucky you, CSS lets you assign different values to the top/bottom and the left/right. You just add in another value to the property (but with no comma). If there are two values instead of one, CSS will assign the <i>first</i> one to top and bottom, and the <i>second</i> one to left and right.</p>
+<pre>p {width: 600px; 
+padding: 5px 25px; 
+margin: 1px 5px;}</pre>
+<p>Note that margin and padding don&rsquo;t have to be the same. Pop quiz: now how wide would this paragraph be total? The answer is in a file with your homework answers. And now for a hypothetical question: what if you wanted the spacing to be different for each of the four sides? If you answered, write in four values instead of two, you win! If CSS sees four values, it will assign them in this order: top, right, bottom, left. That&rsquo;s clockwise from the top, if that&rsquo;s easier to remember. So let&rsquo;s get a little crazy!</p>
+<pre>p {width: 600px;padding: 5px 25px 10px 15px; 
+margin: 1px 2px 3px 4px;}</pre>
+<p>Pop quiz part two: what is the total width of <i>this</i> paragraph? Hopefully you didn&rsquo;t see the answer when you were checking your previous one, because then you would be totally cheating. That&rsquo;s the basic box model though: content, padding, border, and margin. It&rsquo;s one of the fundamental things that every CSS designer has to learn, and now you&rsquo;re one of them.</p>
+</section>
+<section>
+<h2 id="display">Display</h2>
+<p>Something you may have noticed when doing your previous homework is how each paragraph box was automatically placed below the one before it. Even if your browser window was wide enough to fit two of them side by side, it didn&rsquo;t give them the chance. It booted them onto the next line. This is because they, and all elements in CSS, have a <b>display</b> property that controls how they wrap down the screen.</p>
+<p><code>Display</code> has three main values: <code>block</code>, <code>inline</code>, and <code>none</code>. I&rsquo;ll describe each, one at a time. <b>Block</b> display is the default display value for most elements. In other words, if you don&rsquo;t specify otherwise in your CSS, things like paragraphs and headers will always cause the next object to sit below them (like building blocks). This is because when an element is a block, it reserves the rest of the horizontal space in the browser window for itself, even if it doesn&rsquo;t use it all up. Here&rsquo;s an example of two paragraphs using a block display:</p>
+<img src="5.1.png" alt="pink paragraphs" class="screenshot" />
+<p>Clearly, there is room for both of them to fit next to each other on one line. But here is all the CSS used right now for the <code>&lt;p&gt;</code> tags on that HTML page:</p>
+<pre>p {width: 40px;padding: 0;margin: 10px;color: black; 
+background-color: pink; 
+}</pre>
+<p>(An aside: if you use zero for any measure, you don&rsquo;t need to write the units. Because hey, zero of one thing is the same as zero of another thing).</p>
+<p>On the other hand, <b>inline</b> display means that the element only uses as much horizontal space as it needs (including padding and margin, remember!), and then the next element can continue after it on the same line. So watch as I only insert one line of CSS, how the web page changes:</p>
+<pre><span class="faded">p {width: 40px;padding: 0;margin: 10px;color: black; 
+background-color: pink;</span>
+display: inline;
+<span class="faded">}</span></pre>
+<img src="5.2.png" alt="pink paragraphs inline" class="screenshot" />
+<p>See how that one line of code changes everything? Computers are magical! And if you really want magic, here&rsquo;s how you make something disappear: just add in the <code>display: none;</code> property. This won&rsquo;t create an empty space where it used to be; it will make the browser think that it was never there in the first place.</p>
+</section>
+<section>
+<h2 id="floats">Floats</h2>
+<p>Unfortunately, this section isn&rsquo;t about ice cream and soda. CSS <b>floats</b> let you push entire elements to the right side or left side of the page. The CSS code is easy, simply write either <code>float: right;</code> or <code>float: left;</code> inside the curly brackets for the element of your choice. When you tell an element to float, it will go as far in that direction as it can. Say you tell an element to float left. If there&rsquo;s nothing to the left of it, it will hug the left side of the page. If there is something to the left of it (and that something is not in <code>block</code> display) then it will hug the <i>right edge</i> of that element. It&rsquo;s trying to float towards the left of the screen, but there&rsquo;s something in the way, so it stops on the right edge of that obstacle.</p>
+<p>The same behavior applies to right-floating objects: if nothing&rsquo;s in the way, they will head all the way to the right edge of the screen. If something is in the way, they will hug the <i>left edge</i> of that something. However, if the floating element is too wide to fit on the same line as the obstacle, it will move down to the next line (and usually be free to float all the way to the edge of the page).</p>
+<p>For multiple objects to float next to each other on the same line, they all must be in <code>inline</code> display, so that each one doesn&rsquo;t boot the next onto its own line. There may come a time, however, when you want all the floating to end. There is a counterpart to the <code>float</code> property, and it is the <code><b>clear</b></code> property. You can tell an element to clear <code>left</code>, <code>right</code>, or <code>both</code>. If you <code>clear: left;</code>, for example, it will never obey a <code>float: left;</code> command. And if you <code>clear: both;</code>, it will never obey the floats at all!</p>
+<p>Why is this necessary? Say you have an image within a paragraph, and the paragraph is coded to float to the right. But you want your image to stay on the left side of the screen. Since the <code>&lt;img&gt;</code> tag is <i>nested</i> within the <code>&lt;p&gt;</code> tag, the image will follow the <i>same</i> CSS rules as the paragraph unless instructed otherwise. <b>This is very important to remember:</b> an HTML tag within another HTML tag will always apply the same CSS code as its &ldquo;parent&rdquo; tag unless new CSS code is specified.</p>
+<p>So if your paragraph is set to <code>float: right;</code> and your image tag is within the paragraph tag, you can tell your image to go its own way by typing<code>clear: right;</code> into the curly brackets for <code>img</code>. The <code>clear</code> property is not used on its own very often, just when you need to reset your floats for something else on the page. And that&rsquo;s all for this time! Not as bad as the last lesson, I hope.</p>
+</section>
+<section>
+<h2 id="keyconcepts">Key Concepts</h2>
+<ul>
+<li><b>The box model</b>
+<ul>
+<li>Each element has multiple parts to its size: width and height, padding, border, and margin. All four of these parts contribute to an element&rsquo;s total size on the page.</li>
+<li>Margin is especially used to space multiple elements apart from each other.</li>
+<li>You can assign different values to the top, right, bottom, and left sides of padding and margin, or even top and bottom together and left and right together.</li>
+</ul></li>
+<li><b>Display</b> has three properties:
+<ul>
+<li><b>block</b>, which reserves the rest of the horizontal space on a line for the current element and dumps following elements onto the next line</li>
+<li><b>inline</b>, which lets following elements start immediately after thecurrent one</li>
+<li><b>none</b>, which hides the element completely</li>
+</ul></li>
+<li><b>Floats</b> send an element as far left or right as they can go, and arecancelled out by <b>clears</b>.</li>
+</ul>
+</section>
+<section>
+<h2 id="homework">Homework</h2>
+<p>In the <a href="lesson5.zip">materials download</a> for this lesson, there&rsquo;s a pre-written HTML file called &ldquo;homework5.html&rdquo;. For your assignment, write a stylesheet called &ldquo;styles5.css&rdquo; so that when you open the HTML file in your browser, it looks like the screenshot below. You do not need to modify the HTML at all, <i>just</i> the stylesheet. Hint: <code>display</code> and <code>float</code> are probably the most important points to hit. Basic size properties are necessary too. I won&rsquo;t be too picky about fonts or colors, but make sure that there are different colors for different elements. You may need to play around with the size of your browser&rsquo;s window to achieve the results exactly like the shot below.</p>
+<p>Basically, just play around with floats. When you&rsquo;re done, compare your CSS file to the one in the Answers folder.</p>
+<img src="homework5.png" alt="homework 5" class="screenshot" />
+</section>
+<section>
+<h2 id="percents">Appendix: Percents</h2>
+<p>Hello! Here are two little topics that I couldn&rsquo;t figure out where to put in the lesson. As with anything else in CSS at this point, adding these tools to your arsenal is just refining your skill set. The more you know&hellip;</p>
+<p>Up until this point, we&rsquo;ve been labeling sizes in <i>pixels</i>. CSS also allows you to label sizes in <i>percents</i>! So, instead of writing a value like <code>600px</code>, you can instead write <code>50%</code>. Percent of what, you may ask? CSS assigns the parent element a value of 100%, and then uses that to measure the relative size of the current element. Usually, your parent element is just going to be the <code>&lt;body&gt;</code> tag, so you can think of 100% as meaning the full height or width of the screen. Although, if you have an image within a paragraph for example, and apply <code>width: 50%;</code> to the image, it will be half as wide as the paragraph. Sound good? Good.</p>
+</section>
+<section>
+<h2 id="textalign">Appendix: Text Align</h2>
+<p>We learned about floats, which allow you to send entire elements towards the right or left edges of the screen. There is also a <code>text-align</code> property, which works the same way as aligning text does in a word processor. There are four possible values: <code>right</code>, <code>center</code>, <code>left</code> and <code>justify</code>, and they&rsquo;re pretty self-explanatory. The default is <code>text-align: left;</code> so your paragraphs, headers and all other text will behave this way unless coded otherwise.</p>
+<p>One way to use the <code>text-align</code> property in design is to center your elements on the page. This is a bit of trickery that I won&rsquo;t go into great detail explaining, so I&rsquo;ll just provide an example of centering a <code>&lt;h1&gt;</code> tag that is 500 pixels wide:</p>
+<pre>body {text-align: center;}
+h1 {width: 500px;margin: 0 auto;text-align: left;}</pre>
+<p>The <code>text-align: center;</code> in <code>body</code> means that all content in the body is centered. This means that all elements are centered, not just all text. The <code>0 auto</code> margins in <code>h1</code> are the trick: <code><b>auto</b></code> in CSS means &ldquo;take up as much space as you can.&rdquo; Since there are two values in <code>margin</code>, the first applies to the top and bottom, and the second applies to the left and right. Having <code>auto</code> left and right margins basically means that your <code>h1</code> is kept in the center of the page. The zero can be anything you want, though&mdash;for this example, I don&rsquo;t need any vertical margins. Finally, I want the actual <code>h1</code> <i>text</i> to be left-aligned, so I redefine it in the last line of CSS.</p>
+<p>It&rsquo;s getting late, so I won&rsquo;t go into greater detail, but this is a neat little trick to center whole elements on your page using just the <code>text-align</code> property and some clever margins. Play around with this technique (and with percents) on your own time. They&rsquo;re not necessary to finish the homework.</p>
+</section>
+</article>
+</body>
+</html>

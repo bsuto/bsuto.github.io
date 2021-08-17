@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 4: CSS Crash Course</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 4: CSS Crash Course
+</header>
+<article>
+<section>
+<h2 id="introduction">Introduction</h2>
+<p>Hopefully, you can remember back to the first lesson, where I suggested that HTML and CSS are a lot like a color-by-numbers books from the days of Highlights magazine. HTML represents the black and white picture with numbers, and CSS represents the table that matches the numbers up with different colors. At this point, we&rsquo;re able to paint a pretty complex black and white picture: one with paragraphs, links, headers, lists, and images. Now we get to color them in!</p>
+<p>CSS stands for <b>C</b>ascading <b>S</b>tyle<b>s</b>heets, and the C we&rsquo;ll specifically address later. It is a different computer language than HTML, so we&rsquo;re going to be starting from square one here. We&rsquo;re at an advantage though, because CSS still depends on HTML, so there are some similarities. With that said, let&rsquo;s make an HTML document to base our CSS skills on. Of course, start with the <code>&lt;html&gt;</code> tag, and add in a <code>&lt;head&gt;</code> (with a <code>&lt;title&gt;</code>) and <code>&lt;body&gt;</code>.</p>
+<pre>&lt;html&gt;&lt;head&gt;&lt;title&gt;CSS at last&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+<p>Now, let&rsquo;s drop in some content to style. Because it&rsquo;s good practice, let&rsquo;s start with a <code>&lt;h1&gt;</code> header that announces the name of our site. There&rsquo;s probably an introductory paragraph, then a horizontal rule, then an image and another horizontal rule, and then a list of links. Please follow along with me in your HTML document, but feel free to substitute your own content. For example, a well-rounded page:</p>
+<pre><span class="faded">&lt;html&gt;&lt;head&gt;&lt;title&gt;CSS at last&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;</span>
+&lt;h1&gt;My First CSS Page&lt;/h1&gt;&lt;h2&gt;Introduction&lt;/h2&gt;&lt;p&gt;Now that I know HTML, I&rsquo;m making it look pretty with CSS. 
+Join me for some styled links and images!&lt;/p&gt;
+&lt;hr/&gt;&lt;h2&gt;Rejoice! An Image&lt;/h2&gt;&lt;img src="apple.jpg" alt="an apple" /&gt;&lt;hr/&gt;&lt;h2>Now Go Places!&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.youtube.com"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;<span class="faded">&lt;/body&gt;&lt;/html&gt;</span></pre>
+<p>Save your HTML document, and open it in your browser. This is the last time you&rsquo;ll be seeing plain HTML output! Take a mental picture if you&rsquo;re the sentimental type. Now go back to your text editor, and create a new document. Here we go!</p>
+</section>
+<section>
+<h2 id="stylesheet">Your Stylesheet</h2>
+<p>A <b>stylesheet</b>, or CSS document, is at its core just a list of tags. Here&rsquo;s a quick quiz for you: how many unique tags did I use in my HTML document above? (Remember, a beginning tag and a closing tag still only count as one tag). The answer is with your homework download. There are a couple tags in HTML that cannot be styled by CSS, like tags that fall within <code>&lt;head&gt;</code> and <code>&lt;head&gt;</code> itself. Remember, the HTML data in the <code>&lt;head&gt;</code> section is behind-the-scenes information for the browser. There&rsquo;s also debate about whether you can style the <code>&lt;html&gt;</code> tag itself, and while it&rsquo;s certainly possible, many people choose not to. So, let&rsquo;s cross <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;title&gt;</code> off our list. We still have a good number of tags left from our page, so let&rsquo;s start our stylesheet with that list:</p>
+<pre>body
+h1
+h2phr
+img
+ul
+li
+a</pre>
+<p>That&rsquo;s a good start. Copy that list into your blank document, and save it with a &ldquo;.css&rdquo; extension. Something like &ldquo;styles.css&rdquo; is always appropriate. Notice how it already looks kind of like a table&mdash;if this were on a color by numbers picture, each of those tag names could just as easily be a number. Now we get to fill in how each tag looks. In CSS, we use curly brackets to achieve this, rather than HTML&rsquo;s greater-than and less-than symbols. So add a set of curly brackets <code>{ }</code> next to&mdash;not around&mdash;each tag in the list.</p>
+<pre><span class="faded">body</span> { }
+<span class="faded">h1</span> { }
+<span class="faded">h2</span> { }<span class="faded">p</span> { }<span class="faded">hr</span> { }
+<span class="faded">img</span> { }
+<span class="faded">ul</span> { }
+<span class="faded">li</span> { }
+<span class="faded">a</span> { }</pre>
+<p>All we need to do from here is fill in the brackets with information like the font, the text color, the background color, the size, and so on. CSS is that straightforward. The only complicated part is learning all of the different ways you can style a tag, and the ways that they can work together. For this first lesson, we&rsquo;re just going to focus on color, font, basic size, and borders.</p>
+</section>
+<section>
+<h2 id="color">Color</h2>
+<p>A CSS statement (something that you put in the curly brackets) follows this general rule: <code>property: value;</code>. A <b>property</b> is something like &ldquo;color&rdquo; or &ldquo;font,&rdquo; and a <b>value</b> is something like &ldquo;black&rdquo; or &ldquo;Arial.&rdquo; Always put a colon between the property and the value, and always put a semi-colon after the value. For now, there are only two things we want to color in CSS: the background, and the text. There are then two different properties for color: <code>background-color</code> and <code>color</code>, respectively.</p>
+<p>Let&rsquo;s dig a little deeper: the <code>&lt;body&gt;</code> tag in HTML represents all of the viewable area on the page. So, to make the background color of our page black, we must put a <code>background-color</code> statement in the curly brackets next to <code>body</code>, like so:</p>
+<pre><span class="faded">body { </span>background-color: black;<span class="faded"> }</span></pre>
+<p>That&rsquo;s really all it takes! If we wanted to make the background color gray and all of the text on the page fuschia, we would simply put both of those statements in the curly brackets for body. At this point, it might get a little messy to read, so we put each statement on its own line, like so:</p>
+<pre><span class="faded">body {</span>background-color: gray;color: fuschia;<span class="faded">}</span></pre>
+<p>Like in HTML, hard returns, tabs, and double spaces all have the same effect as a single space in CSS. Now, you may have noticed that we&rsquo;re writing all of this in plain English. Isn&rsquo;t programming supposed to be harder? Isn&rsquo;t there supposed to be more, well, <i>code?</i> Gibberish? Well, this comes in when you want to get creative with your colors. CSS only supports English names for 16 colors: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow. If you want to venture beyond this palette, you need to start describing your colors in <b>hex</b>.</p>
+<p>Hexadecimal is a code language that consists of the numbers 0-9 and the letters A-F. Color hex codes are six characters long and preceded by a pound sign. For example, the hex code for white is #ffffff. To give a complete list of common hex codes and the colors they correspond to would take up too much space. Instead, you can find hex color tables at many websites like <a href="http://html-color-codes.com/">this one</a>.</p>
+<p>Getting back to CSS though, if you want to use a non-English color, the code simply looks like this:</p>
+<pre><span class="faded">body { background-color: </span>#ccffff<span class="faded">; }</span></pre>
+<p>Okay, let&rsquo;s move back to our main stylesheet. We currently have a gray background and fuschia text (ugly, I know). Letʼs move on to our next tag, <code>&lt;h1&gt;</code>. We can give our big header its own background color (which will just color the rectangle of space behind the text, no taller or shorter and the whole width of the page) and text color. I&rsquo;ll choose yellow on black, and I&rsquo;ll use English colors for the rest of the lesson, for simplicity&rsquo;s sake.</p>
+<pre><span class="faded">body {background-color: gray; 
+color: fuschia;}h1 {</span>background-color: black; 
+color: yellow;<span class="faded">}h2 { }p { }hr { }img { }ul { }li { }a { }</span></pre>
+<p>While I&rsquo;m at it, I&rsquo;ll make my second-level headers <code>&lt;h2&gt;</code> green on black and my paragraphs blue on white. I&rsquo;ll also make my list have a white background, and my list items red. Follow along with me, using the same colors that I do for now.</p>
+<pre><span class="faded">body {background-color: gray; 
+color: fuschia;}h1 {background-color: black; 
+color: yellow;
+}h2 {</span>
+background-color: black; 
+color: green; 
+<span class="faded">}p {</span>
+background-color: white; 
+color: blue; 
+<span class="faded">}hr { }img { }ul {</span>
+background-color: white;
+<span class="faded">}li {</span>
+color: red; 
+<span class="faded">}a { }</span></pre>
+<p>The last three tags in this example are tricky, because in the HTML, <code>&lt;a&gt;</code> is nested within <code>&lt;li&gt;</code>, which is nested within <code>&lt;ul&gt;</code>. <b>Nested</b>, by the way, is when a tag is completely enclosed (both beginning and end tag) within another tag&rsquo;s beginning and end. CSS will always override a value for certain property if, later, that property is defined for a different element. Take the background color, for example. We define it first to be gray, in <code>body</code>. Yet, we say that the background color is black in <code>h1</code>. Since the <code>&lt;h1&gt;</code> tag is nested within the <code>&lt;body&gt;</code> tag in our HTML, <code>h1</code>&rsquo;s CSS overrules <code>body</code>&rsquo;s CSS.</p>
+<p>This doesn&rsquo;t mean that the background color will be black for the rest of the page, though. Since we have clearly marked the beginning and end of our <code>h1</code> with beginning and closing tags, the background color will only be black in that enclosed area, and go back to gray afterwards, until some new tag comes in with its own value for background color.</p>
+<p>This order of importance works in the same way for tags that are immediately nested within each other. If we put a different background color value in <code>ul</code>, <code>li</code>, and <code>a</code>, only the background color defined in <code>a</code> will show up, since it is deepest-nested tag in our HTML. Since I haven&rsquo;t styled the <code>a</code> tag above, the statements I&rsquo;ve made in the <code>ul</code> and <code>li</code> tags will be safe.</p>
+<p>That last bit may have been confusing. Hopefully, once we start looking at how our CSS is changing the web page, it&rsquo;ll become clearer. So let&rsquo;s take a detour and go back to our HTML document and set it up to load our stylesheet. Be sure to save your CSS file before moving on!</p>
+</section>
+<section>
+<h2 id="cssinhtml">CSS in HTML</h2>
+<p>Linking your HTML page to your stylesheet is easy, and only takes one line of code. Since it&rsquo;s part of the behind-the-scenes magic that occurs as the page loads, this line of code goes in the <code>&lt;head&gt;</code> section. I like to insert it after the title. It looks just like this:</p>
+<pre><span class="faded">&lt;head&gt;&lt;title&gt;My First CSS Page&lt;/title&gt;</span>&lt;link rel="stylesheet" href="styles.css" type="text/css" /&gt;<span class="faded">&lt;/head&gt;</span></pre>
+<p>Okay, there are a couple things to look at here. First, you notice two new attributes, <code><b>rel</b></code> and <code><b>type</b></code>. You don&rsquo;t need to worry about their greater meaning, just make sure that they have these same values when you refer to a stylesheet. Second, you may notice that the tag itself, the <code>&lt;link&gt;</code> tag, is new. Why didn&rsquo;t they use the <code>&lt;link&gt;</code> tag for text links instead of the <code>&lt;a&gt;</code> tag? Beats me. The <code>&lt;link&gt;</code> tag is used to <i>link</i> your HTML file to other behind-the-scenes files (like CSS files) in order for the whole package to perform as it should.</p>
+<p>You probably recognize the <code>href</code> attribute, and it&rsquo;s pointing to the CSS file itself. Recall from lesson two that in this example, the HTML file and CSS file must be in the same directory (or folder) for this <code>href</code> to point to the right place. Otherwise, you&rsquo;d need the whole URL, pointing to the other directory where the CSS file was located. So make sure that your HTML file and CSS file are in the same folder. Finally, you&rsquo;ll notice that the <code>&lt;link&gt;</code> tag closes itself with a slash at the end, rather than using a separate <code>&lt;/link&gt;</code> tag.</p>
+<p>So there it is! Now our HTML page is linked to our stylesheet, and the colors are ready to fly. Save your HTML document, make sure it&rsquo;s in the same folder as your stylesheet (which should be saved too), and open the HTML file in your internet browser. If everything&rsquo;s gone right, your window will look something like this:</p>
+<img src="csseg1.png" alt="first page with CSS" class="screenshot" />
+</section>
+<section>
+<h2 id="fonts">Fonts</h2>
+<p>Back to our stylesheet. Colors are great and they certainly make our website more appealing, but Times New Roman is a boring font. Let&rsquo;s start using some wacky fonts on our page. There are multiple font properties, including <code>font-family</code>, <code>font-size</code>, <code>font-style</code>, and <code>font-weight</code>. Respectively, those dictate the actual Font, the size, whether it&rsquo;s italic or not, and whether it&rsquo;s bold or not. Let&rsquo;s run through some examples.</p>
+<p><code>Font-family</code> is interesting because it can take on multiple values, separated by a comma. CSS will always try to use the first one you name, but if the computer doesn&rsquo;t have that font, it will try to use the next one, and so on. Traditionally, web designers include either <code>serif</code> or <code>sans-serif</code> as the last value in the <code>font-family</code> property. Serifs are the little tails on the ends of letters—for example, <span style="font-family: 'times new roman';">Times New Roman</span> is a <i>serif</i> font and <span style="font-family: 'comic sans ms', 'comic sans';">Comic Sans</span> is a <i>sans-serif</i> font. Throwing either of these as your last value makes CSS tell the browser &ldquo;Hey, I don&rsquo;t care what font you use, just make sure it has serifs (or doesn&rsquo;t have them).&rdquo; So, let&rsquo;s insert a sample <code>font-family</code> statement for our <code>h1</code>:</p>
+<pre><span class="faded">h1 {background-color: black;color: yellow;</span>font-family: Helvetica, Arial, "Comic Sans", sans-serif; 
+<span class="faded">}</span></pre>
+<p>This is saying, &ldquo;make the font Helvetica, if you have it. If you don&rsquo;t have Helvetica, then use Arial instead. If you don&rsquo;t have either of those two, I guess Comic Sans is okay. If you don&rsquo;t have any of these fonts, just use any sans-serif font that you want to.&rdquo; Note that Comic Sans is in quotes. When you have to include a space in a font name, you must include the whole value in quotes, otherwise CSS might get confused and think it&rsquo;s two separate values. The separating comma goes outside of the quotes, though.</p>
+<p>Say I want my <code>&lt;h1&gt;</code> font to be 36 pixels tall. We then add in the <code>font-size</code> property:</p>
+<pre><span class="faded">h1 {background-color: black;color: yellow;font-family: Helvetica, Arial, "Comic Sans", sans-serif; </span>
+font-size: 36px;
+<span class="faded">}</span></pre>
+<p><code>px</code> stands for <i>pixels</i>, and it must be connected (no space) to the number for it to count. That one&rsquo;s pretty simple. Finally, let&rsquo;s say I want my <code>&lt;h1&gt;</code> to be bold and italic. We add in the <code>font-weight</code> and <code>font-style</code> properties:</p>
+<pre><span class="faded">h1 {background-color: black;color: yellow;font-family: Helvetica, Arial, "Comic Sans", sans-serif; 
+font-size: 36px;</span>
+font-weight: bold;
+font-style: italic;
+<span class="faded">}</span></pre>
+<p>That&rsquo;s a lot of code to define a font! It does look straight-forward laid out like that, but you can condense all of these things into one <code>font</code> property. It contains all the values for these four properties, but in a specific order: style, weight, size, font family. If you don&rsquo;t care about a property like weight or style, you can just skip it. For example, the above four properties can be condensed into this one line:</p>
+<pre>font: italic bold 36px Helvetica, Arial, "Comic Sans", sans-serif;</pre>
+<p>Right now, you may be wondering why I lied to you about the commas earlier. It turns out that the <code>font</code> property only uses commas to separate different font names, not every separate style value. It&rsquo;s the exception to the rule. Trust me, the above code is the way to go.</p>
+<p>I&rsquo;m going to make my <code>&lt;h2&gt;</code> a little smaller and in Marker Felt and my list items even smaller and in bold Georgia. I&rsquo;ll just make my paragraphs italic. So now, my stylesheet mirrors this CSS:</p>
+<pre><span class="faded">body {background-color: gray;color: fuschia;}h1 {background-color: black;color: yellow;</span>font: italic bold 36px Helvetica, Arial, "Comic Sans", sans-serif;<span class="faded">}h2 {background-color: black;color: green;</span>font: 24px "Marker Felt", sans-serif; 
+<span class="faded">}p {background-color: white; 
+color: blue;</span>font-style: italic; 
+font-size: 12px;<span class="faded">}hr { }img { }ul { background-color: white; }li {color: red;</span>font: bold 12px Georgia, serif; 
+<span class="faded">}a { }</span></pre>
+<p>And the page now looks like this in the browser:</p>
+<img src="csseg2.png" alt="first page revised" class="screenshot" />
+</section>
+<section>
+<h2 id="size">Size</h2>
+<p>We&rsquo;re already doing much more in this lesson than in the previous ones, but there is more to go. Hang in there. Fonts are pretty complicated properties, but size is relatively simpler. There are only two properties: <code>width</code> and <code>height</code>. They take pixel dimensions, similar to <code>font-size</code>, and look like this:
+<pre>width: 500px;
+height: 400px;</pre>
+<p><code>Width</code> and <code>height</code> apply to boxy objects, like images and paragraphs. If you assign them to things like headers, they&rsquo;ll control the space of the box around the text, not the text height itself&mdash;that&rsquo;s for <code>font-size</code>. Be careful when you assign both a height and a width, because you can create too small a box for your content (for example, if you have more words in your paragraph that will fit in 500px by 400px). If you leave one dimension undefined, the browser will scale the box in that dimension to fit the content inside.</p>
+<p>If you define the height and width of an image, and what you define is different than the image&rsquo;s actual dimensions, the browser will stretch and distort the image to fit the dimensions you specify in your CSS. For this reason, height and width aren&rsquo;t used a lot on <code>&lt;img&gt;</code> tags.</p>
+<p>I&rsquo;m just going to define the width on my <code>&lt;h2&gt;</code> tags, and define both the height and width of my paragraphs, despite what I just told you. I won&rsquo;t include mywhole stylesheet here, just these additions:</p>
+<pre><span class="faded">h2 {background-color: black;color: green;font: 24px "Marker Felt", sans-serif; </span>
+width: 500px;<span class="faded">}p {background-color: white;color: blue;font-style: italic;font-size: 12px;</span>width: 500px;height: 300px;<span class="faded">}</span></pre>
+<p>When you save the changes and reload your HTML document into your browser, notice how the boxes around the <code>&lt;h2&gt;</code> tags and your paragraph are now restricted to certain sizes. Also notice that all three <code>&lt;h2&gt;</code> tags follow the same rules. It would be the same if you had multiple <code>&lt;p&gt;</code> tags&mdash;each would be the same size and color. Finally, note that the height for your <code>&lt;h2&gt;</code> tags is unspecified&mdash;when this is the case, the browser will only make it as tall as it needs to be (say, one or two lines of text).</p>
+</section>
+<section>
+<h2 id="borders">Borders</h2>
+<p>One last CSS property for today. Like I said earlier, understanding the general technique behind CSS is easy, but learning all the properties and all the values takes a long time. <code><b>Border</b></code> is like the <code>font</code> property: it can include multiple properties on one line. These three properties are <code>border-width</code>, <code>border-style</code>, and <code>border-color</code>, used in that order. The first is how thick the border should be in pixels. The second can be one of many things: <code>dotted</code>, <code>dashed</code>, <code>solid</code>, or <code>double</code>. The final can either be one of our special 16 English colors or a hex color. Here&rsquo;s a sample border property:</p>
+<pre>border: 4px dashed blue;</pre>
+<p>and it looks like this:</p>
+<img src="borders.png" alt="blue border" class="screenshot" />
+<p>You can apply a <code>border</code> to almost any tag, and it will wrap around the guidelines set by <code>height</code> and <code>width</code> if there are any. I&rsquo;m going to add a two-pixel-wide, red dotted border to my <code>&lt;h1&gt;</code> tag, but I won&rsquo;t post it here for you. I&rsquo;m getting tired. What do you think it would look like? Go ahead and add it to your own stylesheet.</p>
+<p>That wraps up our first go at CSS! It&rsquo;s a lot to take in all at once, but it&rsquo;s a strong start to a powerful language.</p>
+</section>
+<section>
+<h2 id="keyconcepts">Key Concepts</h2>
+<ul>
+<li>CSS begins as a list of the tags in your HTML document, followed by curly braces <code>{ }</code>. Inside the braces, you put descriptive statements as to how each tag should appear.</li>
+<li>Each statement is made up of <b>properties</b> and their <b>values</b>. An example property is <code>color</code>, and an example value is <code>black</code>. There&rsquo;s always a colon between the property and the values, and there&rsquo;s always a semi-colon after the last value, at the end of the statement.</li>
+<li>You use the <code>&lt;link&gt;</code> tag in the <code>&lt;head&gt;</code> of your HTML document to link your web page to your stylesheet. Make sure that the <code>href</code> points to the correct directory!</li>
+<li>For our purposes, there are two color properties: <code>color</code> and <code>background-color</code>.</li>
+<li>For fonts, you can use individual <code>font-style</code>, <code>font-weight</code>, <code>font-size</code>, <code>font-family</code> properties, or combine them all (in that order) into one <code>font</code> property.</li>
+<li>For size, you can use the <code>height</code> and <code>width</code> properties.</li>
+<li>For borders, you can use the <code>border-width</code>, <code>border-style</code>, and<code>border-color</code> properties, in that order, in one single <code>border</code> property.</li>
+</ul>
+</section>
+<section>
+<h2 id="homework">Homework</h2>
+<p>First <a href="lesson4.zip">download this lesson&rsquo;s materials</a>. Next, using HTML and CSS, create a web page that looks like the screenshot below. Hint: you will only have to use the <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> tags in your HTML <code>&lt;body&gt;</code>. The font, in case you can&rsquo;t tell, is Comic Sans (or Comic Sans MS. Why not include both of those names in your <code>font</code> property to be safe?). Name your HTML page &ldquo;homework4.html&rdquo; and your stylesheet &ldquo;styles4.css&rdquo;. When you&rsquo;re finished, compare them to the similarly named files in the Answers folder.</p>
+<img src="homework4.png" alt="homework 4" class="screenshot" />
+</section>
+</article>
+</body>
+</html>

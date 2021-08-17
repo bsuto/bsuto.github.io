@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; Fried Burger topped with Burgers</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'friedburgerburger.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'friedburgerburger.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> Fried Burger topped with Burgers</h1>
+<img src="friedburgerburger.jpg" alt="Fried Burger topped with Burgers" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">September 18, 2012</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>I celebrated my birthday this year by making myself a cheeseburger, topping it with two microwaved sliders, dunking the whole thing in a coca-cola based batter, and deep-frying it. Hope I make it to the next birthday!</p>
+</article>
+</body>
+</html>

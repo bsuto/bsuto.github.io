@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; Pizza on Pizza-Stuffed Pizza</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'pizzapizza.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'pizzapizza.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> Pizza on Pizza-Stuffed Pizza</h1>
+<img src="pizzapizza.jpg" alt="Pizza on Pizza-Stuffed Pizza" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">August 15, 2012</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>The crust is stuffed with pizza rolls, and the pizza is topped with pizza bagel bites (and extra cheese).</p>
+</article>
+</body>
+</html>

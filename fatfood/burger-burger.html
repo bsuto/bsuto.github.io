@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; Burger within a Burger</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'burgerburger.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'burgerburger.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> Burger within a Burger</h1>
+<img src="burgerburger.jpg" alt="Burger within a Burger" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">May 21, 2011</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>First you make a little burger out of a little bit of beef and a little piece of cheese and a little part of a bun. Then you encase it within a huge burger patty, grill that with some onions and cheese, and put it on a real bun.</p>
+</article>
+</body>
+</html>

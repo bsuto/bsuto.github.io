@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Coloring Book &mdash; Lesson 3: Even More Tags</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="screen.css" type="text/css"/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+<h1 id="top"><a href="/icb/">Internet Coloring Book</a></h1>
+Lesson 3: Even More Tags
+</header>
+<article>
+<section>
+<h2 id="breaks">Breaks</h2>
+<p>In the last lesson, we learned how to use the <code>&lt;p&gt;</code> tag to arrange blocks of text on a page. I&rsquo;ve also pointed out over the past two lessons that typing out hard returns in your HTML does nothing to the final page output. What if you don&rsquo;t want to separate short text snippets by placing each one in its own <code>&lt;p&gt;</code> tag? HTML includes a <b>line break</b> tag <code>&lt;br/&gt;</code>, which turns into a hard return.</p>
+<p>Notice that the <code>&lt;br/&gt;</code> tag includes a slash, so it &ldquo;closes&rdquo; itself like the <code>&lt;img&gt;</code> tag – there is no need for a separate <code>&lt;/br&gt;</code> tag. To use it, just insert it in your HTML anywhere you would want to normally hit the return key. You can repeat it as much as you want, just like hitting the return key multiple times keeps moving down one line.</p>
+<p>To create two full lines of space between two sentences, you need three <code>&lt;br/&gt;</code> tags: one to move on to a new line, and two for the empty lines in between.</p>
+<pre>for example, there are two lines of space between here...
+
+
+...and here</pre>
+<p>The equivalent in HTML code:</p>
+<pre>&lt;p&gt;for example, there are two lines of space between here...
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;...and here&lt;/p&gt;</pre>
+<p>I wrapped the whole thing in a paragraph tag to show that you can use line breaks within paragraphs. Now would be a good time to create a new HTML document, with the normal <code>&lt;html&gt;</code> <code>&lt;head&gt;</code> <code>&lt;body&gt;</code> structure. Make sure it has a title too! Experiment by inserting your own <code>&lt;br/&gt;</code> tags to break up lines of text, and get a feel for how line breaks work.</p>
+<p>That&rsquo;s not the only break you get! Well, they&rsquo;re not called breaks, but HTML also has <b>horizontal rule</b> tags <code>&lt;hr/&gt;</code>. These will also seriously break up whatever you have going at the time, because they insert a straight line clear across the page. Just like <code>&lt;br/&gt;</code> tags, they include a slash and therefore close themselves (no need for a <code>&lt;/hr&gt;</code> tag).</p>
+<p>Try inserting a <code>&lt;hr/&gt;</code> tag in your HTML document between two paragraphs, and save your file and open it in your browser. Yeah, it&rsquo;s not very good-looking. These tags aren&rsquo;t even used very frequently anymore, because similar effects can be done better through CSS. We&rsquo;ll get there soon.</p>
+</section>
+<section>
+<h2 id="lists">Lists</h2>
+<p>Now that we know how to insert hard returns into our pages, it&rsquo;s a lot easier to create lists, right? Lets say we wanted to make a shopping list that looked like this:</p>
+<pre>&bull; Eggs
+&bull; Milk
+&bull; Butter</pre>
+<p>You could just write each item on its own line, and separate it with a break:</p>
+<pre>&lt;p&gt;&bull; Eggs&lt;br/&gt;&bull; Milk&lt;br/&gt;&bull; Butter&lt;/p&gt;</pre>
+<p>That actually kind of works, but good luck getting your bullet point symbol to look the same in every browser. Also, lists tend to look nicer when they&rsquo;re aligned neatly. You might guess where I&rsquo;m going with this, and if you guessed a list tag, you&rsquo;re right.</p>
+<p>The kind of list we see above is an <b>unordered list</b>. That is, the items don&rsquo;t need to be in any particular order. You wouldn&rsquo;t use an unordered list with a list of driving directions, because certain steps need to be taken before others. So if you want to create an unordered list in HTML, you use the <code>&lt;ul&gt;</code> tag. This tag has a beginning and an end, so put a <code>&lt;ul&gt;</code> and a <code>&lt;/ul&gt;</code> in your HTML document, with some space between to work.</p>
+<pre>&lt;ul&gt;
+
+
+&lt;/ul&gt;</pre>
+<p>Each bullet point on our list is a separate item, so let&rsquo;s call each one a <b>list item</b>. Similarly in HTML, you must declare each bullet point in your list a separate list item with the <code>&lt;li&gt;</code> tag. The <code>&lt;li&gt;</code> tag has a separate beginning and end, and wraps around the entire item. You must create a new <code>&lt;li&gt; &lt;/li&gt;</code>entry for each item on your list. So for our grocery list above, the HTML code would look like this:</p>
+<pre><span class="faded">&lt;ul&gt;</span>
+
+&lt;li&gt;Eggs&lt;/li&gt;
+&lt;li&gt;Milk&lt;/li&gt;
+&lt;li&gt;Butter&lt;/li&gt;
+
+<span class="faded">&lt;/ul&gt;</span></pre>
+<p>This code, believe it or not, is way better than our first attempt at creating the list in HTML. When the browser sees the <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags, it will <i>automatically</i> create a bullet point before each list item and handle all the indenting itself, as well as putting each list item on its own line. Very efficient! Try inserting a couple list items into your empty <code>&lt;ul&gt; &lt;/ul&gt;</code>, making sure to wrap each separate item between its own <code>&lt;li&gt;</code> and <code>&lt;/li&gt;</code> tags.</p>
+</section>
+<section>
+<h2 id="smartlists">Smart Lists</h2>
+<p>It would be weird if HTML only offered unordered lists, right? Why not just call them lists? Of course there are <b>ordered lists</b> in HTML too, and not surprisingly, they use the <code>&lt;ol&gt;</code> tag, with the mandatory <code>&lt;/ol&gt;</code> closer. The big difference between ordered lists and unordered lists is the symbol before each list item. As we already know, unordered lists use bullet points. Ordered lists, on the other hand, use numbers. And HTML is smart enough to increase the numbers for you with each list item.</p>
+<p>Let&rsquo;s look at a list of directions for making a peanut butter and jelly sandwich:</p>
+<pre>1. Take two slices of bread2. Put peanut butter on one slice3. Put jelly on the other slice4. Eat and enjoy</pre>
+<p>The code for creating this list in HTML is almost the same as before, except that we use <code>&lt;ol&gt;</code> instead of <code>&lt;ul&gt;</code>:</p>
+<pre>&lt;ol&gt;
+
+&lt;li&gt;Take two slices of bread&lt;/li&gt;
+&lt;li&gt;Put peanut butter on one slice&lt;/li&gt;
+&lt;li&gt;Put jelly on the other slice&lt;/li&gt;
+&lt;li&gt;Eat and enjoy&lt;/li&gt;
+
+&lt;/ol&gt;</pre>
+<p>This example is on me. Go ahead, copy the above code and paste it into the <code>&lt;body&gt;</code> of your HTML document. Save your work and open it in your browser. Neato! Look at our well-formed list.</p>
+<p>Wait, we missed a step. Someone could easily make a mistake reading those directions, and eat each slice of bread independently, therefore missing out on the whole sandwich experience. We need to insert a step before the final step to clarify ourselves:</p>
+<pre><span class="faded">1. Take two slices of bread2. Put peanut butter on one slice3. Put jelly on the other slice</span>4. Mush the two slices together
+<span class="faded">5. Eat and enjoy</span></pre>
+<p>When editing this list in something like Microsoft Word, you may be lucky enough that the computer will re-number the list items for you. If not though, you have to go through and re-number the last two steps yourself. Here&rsquo;s where the power of HTML lists comes in, when we insert just one list item in our code, as shown below, the browser still maintains the correct order of the list! Try it out for yourself by inserting the new line below into the same spot in your HTML document.</p>
+<pre><span class="faded">&lt;ol&gt;
+
+&lt;li&gt;Take two slices of bread&lt;/li&gt;
+&lt;li&gt;Put peanut butter on one slice&lt;/li&gt;
+&lt;li&gt;Put jelly on the other slice&lt;/li&gt;</span>
+&lt;li&gt;Mush the two slices together&lt;/li&gt;
+<span class="faded">&lt;li&gt;Eat and enjoy&lt;/li&gt;
+
+&lt;/ol&gt;</span></pre>
+<p>In our first ordered list, &ldquo;Eat and enjoy&rdquo; was step four. In our second ordered list, &ldquo;Eat and enjoy&rdquo; is moved down to step five, automatically. HTML will always treat ordered lists this way: the first list item gets number one, the next gets number two, and so on, regardless of when you type them into the document. Pretty cool, huh?</p>
+</section>
+<section>
+<h2 id="comments">Comments</h2>
+<p>This last tag I&rsquo;m going to teach you is special for a couple reasons. First, its end tag doesn&rsquo;t include a slash, which is weird. Second, it completely prevents the content it surrounds from being shown in the browser. That&rsquo;s right, it causes text to disappear. It&rsquo;s called the <b>comment</b> tag, and it has an <code>&lt;!--</code> open tag and a <code>--&gt;</code> close tag (those are two dashes). Why even use this, if it doesn&rsquo;t even show up on the web page? You very well may never use the comment tag, and that&rsquo;s fine.</p>
+<p>However, you can use the comment tag to leave secret messages to yourself. For example, if you were a big time web developer, and you were designing a site for a client that you knew you would revise later, you could toss in a little comment to let you know what you were thinking at the time:</p>
+<pre>&lt;!-- insert an ordered list after this paragraph --&gt;</pre>
+<p>Or you can simply put in something that a user will only see if they use the browser&rsquo;s &ldquo;View Source&rdquo; command:</p>
+<pre>&lt;!-- I still watch my Barney videos. --&gt;</pre>
+<p>Finally, you can use it to completely cancel out a part of your site, including tags, if you&rsquo;re focusing on another area or just want to hide a section for a while:</p>
+<pre>&lt;!-- &lt;h1&gt;Movie Reviews&lt;/h1&gt;&lt;p&gt;This is the part of my site where 
+I critique the latest Hollywood has to offer.&lt;/p&gt; --&gt;</pre>
+<p>That&rsquo;s right, anything within comment tags does not show up at all. Make sure not to split a normal tag in half, by enclosing the beginning part in a comment but leaving the closing part alone. Again, you may never use a comment tag in your life, but it&rsquo;s there if you need it.</p>
+</section>
+<section>
+<h2 id="keyconcepts">Key Concepts</h2>
+<ul>
+<li><b>Breaks</b>
+  <ul><li>Line breaks <code>&lt;br/&gt;</code> are like hitting the return key</li>
+  <li>Horizontal rules <code>&lt;hr/&gt;</code> insert a line across the page</li>
+</ul></li>
+<li><b>Lists</b>
+  <ul><li>Unordered lists <code>&lt;ul&gt;</code> create lists of bulleted list items <code>&lt;li&gt;</code></li>
+  <li>Ordered lists <code>&lt;ol&gt;</code> create lists of numbered list items</li>
+  <li>The number scheme of ordered lists always stays in order</li>
+</ul></li>
+<li><b>Comments</b> &mdash; hide text from the web browser</li>
+</ul>
+</section>
+<section>
+<h2 id="homework">Homework</h2>
+<p>Now that you have a full arsenal of HTML tags, you can make a page full of different kinds of content. First, <a href="lesson3.zip">download this lesson&rsquo;s materials</a> and then create an HTML page that looks like the screenshot on the following page. Make sure to include these details:</p>
+<ol>
+<li>Make the page&rsquo;s title &ldquo;homework 3&rdquo;</li>
+<li>Set the link <code>href</code> to a real website</li>
+<li>Include one comment</li>
+</ol>
+<p>I have included the silly drawing shown below with the download, and it&rsquo;s called &ldquo;face.gif&rdquo;. When you&rsquo;re finished, name your HTML file &ldquo;homework3.html&rdquo; and compare it to the similarly named file in the Answers folder.</p>
+<img src="homework3.png" alt="Homework 3" class="screenshot" />
+</section>
+</article>
+</body>
+</html>

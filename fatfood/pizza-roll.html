@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; Giant Pizza Roll</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'pizzaroll.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'pizzaroll.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> Giant Pizza Roll</h1>
+<img src="pizzaroll.jpg" alt="Giant Pizza Roll" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">August 31, 2012</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>Stretch a pizza crust into a rectangle and stuff it with sauce, cheese, pepperoni, onions, and pizza rolls. Fold it in half, crimp the sides shut, and bake. </p>
+</article>
+</body>
+</html>

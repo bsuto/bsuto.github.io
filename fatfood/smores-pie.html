@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; S&rsquo;mores Pie</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'smorespie.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'smorespie.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> S&rsquo;mores Pie</h1>
+<img src="smorespie.jpg" alt="S&rsquo;mores Pie" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">March 15, 2012</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>Graham cracker pie crust from the store, brownie batter from a box, baked in the oven and topped with marshmallow fluff.</p>
+</article>
+</body>
+</html>

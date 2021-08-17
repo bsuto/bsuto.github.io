@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>Fat Food &ndash; Big Mac Casserole</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="fat.css" />
+<meta name="viewport" content="width=device-width"/>
+<script type="text/javascript">
+var stopped = new Boolean(true);
+function swapGif(){ if(stopped){ document.getElementById('finished').src = 'bigmac.gif'; stopped = false; }
+else{ document.getElementById('finished').src = 'bigmac.jpg'; stopped = true; } }
+</script>
+</head>
+<body>
+<h1><a href="/fatfood/">Fat Food</a> Big Mac Casserole</h1>
+<img src="bigmac.jpg" alt="Big Mac Casserole" onclick="swapGif();" id="finished"/>
+<article>
+<p><span id="date">February 5, 2013</span><span id="gif">(click image to load gif)</span></p>
+<br/>
+<p>Admittedly, I found this recipe online. You cook ground beef, onions, and pickles and put them in a casserole dish. Then layer american cheese and croissant dough over it, and bake. Take it out and cover with shredded lettuce and thousand island dressing. Each bite tastes like a Big Mac!</p>
+</article>
+</body>
+</html>
