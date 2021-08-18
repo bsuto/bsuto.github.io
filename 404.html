@@ -6,24 +6,44 @@
 <meta name="viewport" content="width=device-width">
 <link rel="icon" href="/files/favicon.ico" type="image/x-icon">
 <style type="text/css">
-h1 { color: #B11100; }
+body { background-color: #fafafa; color: #222; font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; text-align: left;}
+main { width: 50%; min-width: 30rem; max-width: 50rem; margin: 2rem auto; padding: 2rem; border: 0.25rem solid #222; border-radius: 2rem; }
+h1 { color: #B11100; margin: 0; padding: 0; font-size: 3rem; font-weight: 900; }
+a { color: #000080; }
+ul.hero { text-align: center; margin: 1rem auto 3rem auto; padding: 0; list-style-type: none; }
+ul.hero li { display: inline-block; margin: 1rem 0.5rem; }
+ul.hero li a, ul.hero li a:visited { font-weight: 600; border: 0.125rem solid #222; border-radius: 0.75rem; text-decoration: none; color: #222; padding: 0.3rem 0.6rem; }
+ul.hero li a:hover { background-color: #eee; }
+ul.hero li a:active { text-decoration: underline; }
+.rest { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; justify-content: space-between; }
 
 @media (prefers-color-scheme: dark) {
+body { background-color: #111; color: #f8f8f8; }
+main { border-color: #f8f8f8; }
+a { color: #41B6E6; }
+ul.hero li a, ul.hero li a:visited { border-color: #f8f8f8; color: #f8f8f8; }
+ul.hero li a:hover { background-color: #000; }
+}
 
+@media only screen and (orientation: portrait) {
+main { min-width: 0; width: 96%; border: none; border-radius: 0; padding: 0; }
 }
 </style>
 </head>
 <body>
+<main>
 <h1>404</h1>
 <p>There&rsquo;s nothing (anymore) at this URL, sorry! You can <a href="/">go home</a> or go through the following list of everything published on this web site.</p>
 
-<ul>
+<ul class="hero">
 <li><a href="/about/">About</a></li>
 <li><a href="/articles/">Articles</a></li>
 <li><a href="/boardtrip/">Board Trip</a></li>
 <li><a href="/likes/">Likes</a></li>
 </ul>
 
+<div class="rest">
+<div>
 <h2>Image Galleries</h2>
 <ul>
 <li><a href="/spotthebee/">Spot the Bee</a></li>
@@ -32,7 +52,9 @@ h1 { color: #B11100; }
 <li><a href="/slidershots/">Slider Shots</a></li>
 <li><a href="/fatfood/">Fat Food</a></li>
 </ul>
+</div>
 
+<div>
 <h2>Old Stuff</h2>
 <ul>
 <li><a href="/buttshow/">The Butt Show</a></li>
@@ -42,5 +64,9 @@ h1 { color: #B11100; }
 <li><a href="/vw/">www.wwvvvwwv.com</a></li>
 <li><a href="/procrastinatr/">Procrastinatr</a></li>
 </ul>
+</div>
+
+</div>
+</main>
 </body>
 </html>
