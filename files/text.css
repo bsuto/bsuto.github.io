@@ -1,7 +1,7 @@
 body { background-color: #fbfbfb; text-align: center; font-size: 18px; }
 header, article, footer { width: 80%; max-width: 700px; margin: 0 auto 3em auto; padding: 0; }
 
-h1, h2, h3, h4, .date, footer { font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", sans-serif; }
+h1, h2, h3, h4, .date, footer { font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
 p, ul, ol { line-height: 1.6em; margin: 0 0 1.6em 0; padding: 0; }
 a { color: #000080; }
 
@@ -16,16 +16,21 @@ article { text-align: left; font-family: ui-serif, cambria, georgia, serif; colo
 ul, ol { list-style-position: outside; margin-left: 1.25em; }
 li { margin: 0 0 1em 0; padding: 0; }
 ul li ul { margin-top: 0.4em; margin-bottom: 0; }
-.code { font-family: monospace; }
+.code { font-family: ui-monospace, monospace; }
 
 img { display: block; margin: 0 0 1em 0; }
 img.left { display: inline; float: left; margin: 0 1em 1em 0; }
 img.right { display: inline; float: right; margin: 0 0 1em 1em; }
 img.center { display: block; text-align: center; margin: 0 auto 1em auto; }
 
-footer { padding: 1em 0; border-top: 1px dotted #666; font-size: 14px; text-align: left; color: #3d3d3d; }
-footer ol { margin-left: 1.25em; }
+footer { display: grid; grid-template-columns: 2fr 1fr; padding: 1em 0; border-top: 1px dotted #666; font-size: 14px; text-align: left; color: #3d3d3d; }
+footer ol { margin: 0 0 2rem 1.25rem; grid-column: 1 / span 2; }
 .footlink { vertical-align: super; padding-left: 2px; font-size: 0.8em; line-height: 0.8em; }
+
+/* CSS Lightbox from codepen.io/gschier */
+.lightbox { display: none; position: fixed; z-index: 100; width: 100%; height: 100%; text-align: center; top: 0; left: 0; background: rgba(0,0,0,0.8); }
+.lightbox img { max-width: 90%; max-height: 80%; margin: 5% auto 0 auto; box-shadow: 0 4px 4px #000; }
+.lightbox:target { outline: none; display: block; }
 
 @media (prefers-color-scheme: dark) {
 body { background-color: #111; }
