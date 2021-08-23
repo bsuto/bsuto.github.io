@@ -1,14 +1,11 @@
 body { background-color: #fbfbfb; text-align: center; font-size: 18px; }
-header, article, footer { width: 80%; max-width: 700px; margin: 0 auto 3em auto; padding: 0; }
+article, footer { width: 80%; max-width: 700px; margin: 0 auto 3rem auto; padding: 0; }
 
-h1, h2, h3, h4, .date, footer { font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
-p, ul, ol { line-height: 1.6em; margin: 0 0 1.6em 0; padding: 0; }
+h1, h2, h3, h4, .date, footer { font-family: ui-system, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
+p, ul, ol { line-height: 1.6rem; margin: 0 0 1.6rem 0; padding: 0; }
 a { color: #000080; }
 
-header { display: flex; align-items: baseline; margin-top: 2em; }
-h1 { flex: 5; text-align: left; color: #222; font-weight: 900; font-size: 2em; line-height: 1.2em; margin: 0; padding: 0; }
-.date { flex: 2; text-align: right; color: #666; font-size: 14px; line-height: 14px; }
-header img { display: inline; width: 17.5px; height: 14px; vertical-align: text-bottom; margin-bottom: auto; padding-left: 4px; filter: invert(.4); }
+h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 1.2rem; margin: 2rem auto 3rem auto; padding: 0; padding: 0; }
 h2 { color: #333; font-size: 1.4em; line-height: 1.2em; margin: 0 0 1em 0; padding: 0; }
 h3 { color: #333; font-size: 1.2em; line-height: 1.2em; margin: 0 0 0.5em 0; padding: 0; }
 
@@ -23,9 +20,10 @@ img.left { display: inline; float: left; margin: 0 1em 1em 0; }
 img.right { display: inline; float: right; margin: 0 0 1em 1em; }
 img.center { display: block; text-align: center; margin: 0 auto 1em auto; }
 
-footer { display: grid; grid-template-columns: 2fr 1fr; padding: 1em 0; border-top: 1px dotted #666; font-size: 14px; text-align: left; color: #3d3d3d; }
+footer { display: grid; grid-template-columns: 2fr 1fr; padding: 1em 0; border-top: 1px dotted #666; font-size: 0.8rem; text-align: left; color: #3d3d3d; }
+footer img { display: inline; margin: 0; height: 0.8rem; width: auto; }
 footer ol { margin: 0 0 2rem 1.25rem; grid-column: 1 / span 2; }
-.footlink { vertical-align: super; padding-left: 2px; font-size: 0.8em; line-height: 0.8em; }
+.footlink { vertical-align: super; padding-left: 0.1rem; font-size: 0.6rem; line-height: 0.6rem; }
 
 /* CSS Lightbox from codepen.io/gschier */
 .lightbox { display: none; position: fixed; z-index: 100; width: 100%; height: 100%; text-align: center; top: 0; left: 0; background: rgba(0,0,0,0.8); }
@@ -36,16 +34,13 @@ footer ol { margin: 0 0 2rem 1.25rem; grid-column: 1 / span 2; }
 body { background-color: #111; }
 article, footer { color: #fafafa; }
 h1 { color: #fff; }
-.date { color: #999;}
-header img { filter: invert(.6); }
 h2, h3, h4 { color: #DB3EB1; }
 a { color: #41B6E6; }
 footer { border-color: #999; }
+footer img { filter: invert(.6); }
 }
 
 @media only screen and (orientation: portrait) {
-header, article, footer { width: 90%; min-width: 0; }
-header { flex-direction: column; }
-.date { margin-top: 1.6em; }
+article, footer { width: 90%; min-width: 0; }
 img.left, img.right, img.center { width: 100%; display: block; float: none; text-align: center; margin: 0 auto 1em auto; filter: brightness(.8) contrast(1.2); }
 }
