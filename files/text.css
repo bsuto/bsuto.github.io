@@ -1,11 +1,11 @@
 body { background-color: #fbfbfb; text-align: center; font-size: 18px; }
-article, footer { width: 80%; max-width: 700px; margin: 0 auto 3rem auto; padding: 0; }
+article, footer { width: 80%; margin: 0 auto 3rem auto; padding: 0; }
 
-h1, h2, h3, h4, .date, footer { font-family: ui-system, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
+h1, h2, h3, h4, .date, footer { font-family: system-ui, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
 p, ul, ol { line-height: 1.6rem; margin: 0 0 1.6rem 0; padding: 0; }
 a { color: #000080; }
 
-h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 1.2rem; margin: 2rem auto 3rem auto; padding: 0; padding: 0; }
+h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 1.2rem; margin: 4rem auto; padding: 0; padding: 0; }
 h2 { color: #333; font-size: 1.4em; line-height: 1.2em; margin: 0 0 1em 0; padding: 0; }
 h3 { color: #333; font-size: 1.2em; line-height: 1.2em; margin: 0 0 0.5em 0; padding: 0; }
 
@@ -20,8 +20,9 @@ img.left { display: inline; float: left; margin: 0 1em 1em 0; }
 img.right { display: inline; float: right; margin: 0 0 1em 1em; }
 img.center { display: block; text-align: center; margin: 0 auto 1em auto; }
 
-footer { display: grid; grid-template-columns: 2fr 1fr; padding: 1em 0; border-top: 1px dotted #666; font-size: 0.8rem; text-align: left; color: #3d3d3d; }
-footer img { display: inline; margin: 0; height: 0.8rem; width: auto; }
+footer { display: grid; grid-template-columns: auto 1.4rem; padding: 1em 0; border-top: 1px dotted #666; font-size: 0.8rem; text-align: left; color: #3d3d3d; }
+footer a img, footer a img:visited { display: inline; margin: 0; height: 1.25rem; width: auto; filter: invert(21%) sepia(1%) saturate(0%) hue-rotate(184deg) brightness(96%) contrast(86%); }
+footer a img:hover { filter: none; }
 footer ol { margin: 0 0 2rem 1.25rem; grid-column: 1 / span 2; }
 .footlink { vertical-align: super; padding-left: 0.1rem; font-size: 0.6rem; line-height: 0.6rem; }
 
