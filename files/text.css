@@ -1,5 +1,5 @@
 body { background-color: #fbfbfb; text-align: center; font-size: 18px; }
-article, footer { width: 80%; margin: 0 auto 3rem auto; padding: 0; }
+article, footer { width: 80%; max-width: 45rem; margin: 0 auto 3rem auto; padding: 0; }
 
 h1, h2, h3, h4, .date, footer { font-family: system-ui, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
 p, ul, ol { line-height: 1.6rem; margin: 0 0 1.6rem 0; padding: 0; }
@@ -38,7 +38,8 @@ h1 { color: #fff; }
 h2, h3, h4 { color: #DB3EB1; }
 a { color: #41B6E6; }
 footer { border-color: #999; }
-footer img { filter: invert(.6); }
+footer a img, footer a img:visited { filter: invert(82%) sepia(100%) saturate(3%) hue-rotate(265deg) brightness(107%) contrast(96%); }
+footer a img:hover { filter: invert(82%) sepia(100%) saturate(3%) hue-rotate(265deg) brightness(107%) contrast(96%); }
 }
 
 @media only screen and (orientation: portrait) {
