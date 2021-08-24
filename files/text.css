@@ -5,7 +5,7 @@ h1, h2, h3, h4, .date, footer { font-family: system-ui, BlinkMacSystemFont, Robo
 p, ul, ol { line-height: 1.8rem; margin: 0 0 2rem 0; padding: 0; }
 a { color: #000080; }
 
-h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 1.2rem; margin: 4rem auto; padding: 0; padding: 0; }
+h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 3.75rem; margin: 4rem auto; padding: 0 1rem; }
 h2 { color: #333; font-size: 1.4em; line-height: 1.2em; margin: 0 0 1em 0; padding: 0; }
 h3 { color: #333; font-size: 1.2em; line-height: 1.2em; margin: 0 0 0.5em 0; padding: 0; }
 
@@ -16,12 +16,13 @@ ul li ul { margin-top: 0.4em; margin-bottom: 0; }
 .code { font-family: ui-monospace, monospace; }
 
 img { display: block; margin: 0 0 1rem 0; }
-img.left { display: inline; float: left; margin: 0 1rem 1rem 0; }
-img.right { display: inline; float: right; margin: 0 0 1rem 1rem; }
+img.left { display: inline; width: 50%; height: auto; float: left; margin: 0 1rem 1rem 0; }
+img.right { display: inline; width: 50%; height: auto; float: right; margin: 0 0 1rem 1rem; }
 img.center { display: block; width: 100%; height: auto; margin: 1rem 0; }
 img.poster { display: block; width: 100%; height: auto; margin: 1.5rem 0; padding: 0; }
 
 footer { display: grid; grid-template-columns: auto 1.4rem; margin: 3rem auto 1rem auto; padding: 1rem 0 0 0; border-top: 1px dotted #666; font-size: 0.8rem; text-align: left; color: #3d3d3d; }
+footer p { margin-bottom: 0; }
 footer a img { display: inline; margin: 0; height: 1.25rem; width: auto; filter: invert(21%) sepia(1%) saturate(0%) hue-rotate(184deg) brightness(96%) contrast(86%); }
 footer a img:hover { filter: none; }
 footer ol { margin-bottom: 1rem; grid-column: 1 / span 2; }
@@ -46,5 +47,6 @@ footer a img:hover { filter: invert(82%) sepia(100%) saturate(3%) hue-rotate(265
 
 @media only screen and (orientation: portrait) {
 article, footer { width: 90%; min-width: 0; }
+h1 { font-size: 2.4rem; line-height: 2.8rem; }
 img.left, img.right { width: 90%; display: block; float: none; margin: 1.5em auto; }
 }
