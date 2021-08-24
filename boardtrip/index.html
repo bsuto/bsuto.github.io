@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width">
 <link rel="icon" href="../files/favicon.ico" type="image/x-icon">
 <style type="text/css">
-body { text-align: center; font: 20px/20px -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", sans-serif; color: #111; background-color: #eee; }
-h1 { width: 80%; height: 1em; margin: 1em auto; padding: 0.5em 0; text-align: center; font-size: 3em; line-height: 1em;  background-image: url(board.jpg); background-size: 100%; background-position: center; border-radius: 12px; color: #fff; text-shadow: 0 2px 2px #222; }
-section { display: block; clear: both; width: 80%; max-width: 1000px; min-width: 500px; margin: 2em auto; padding: 0; text-align: left; }
+body { text-align: center; font: 18px ui-sans-serif, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; color: #111; background-color: #fafafa; }
+h1 { margin: 2rem auto; padding: 0; text-align: center; font: 4rem/4rem Avenir, sans-serif; color: #DB3EB1; text-shadow: 0.2rem 0.2rem 0 #41B6E6; text-transform: uppercase; }
+section { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; width: 80%; margin: 2rem auto; padding: 0; text-align: left; }
+.column { width: 100%; display: inline; margin: 0; padding: 0; }
 h2 { color: #222; }
-.column { width: 46%; display: inline; margin: 0 2%; float: left; text-align: left; }
-ul, ol { font-size: 1em; line-height: 1.4em; margin: 0 0 1.6em 0; padding: 0; }
-ul { list-style-position: outside; margin-left: 1em; }
+ul, ol { font-size: 1rem; line-height: 1.4rem; margin: 0 0 2rem 0; padding: 0; }
+ul { list-style-position: outside; margin-left: 1rem; }
 ol { counter-reset: item; list-style-type: none; }
 ol.keys { counter-reset: item 29; }
-li { margin: 0 0 0.8em 0; padding: 0; }
+li { margin: 0 0 0.75rem 0; padding: 0; }
 li a, li a:active { color: #000; }
 li a:hover { color: #222; }
 li a:visited { color: #444; }
@@ -29,15 +29,8 @@ li a:active { color: #ddd; }
 }
 
 @media only screen and (orientation: portrait) {
-h1 { width: 80%; margin: 0.5em auto; }
-li { margin: 0 auto 1em auto; }
-}
-
-@media only screen and (max-width: 480px) {
-h1 { width: 94%; font-size: 2em; }
-h2 { font-size: 1.2em; text-align: center; }
-section { max-width: 100%; width: 94%; min-width: 0; }
-.column { width: 100%; display: block; margin: 0 auto; padding: 0; float: none; }
+section { width: 90%; grid-template-columns: 1fr; column-gap: 0; }
+.column { width: 100%; display: block; margin: 0 auto; }
 }
 </style>
 </head>
