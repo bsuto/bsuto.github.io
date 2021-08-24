@@ -1,7 +1,7 @@
 body { background-color: #fbfbfb; text-align: center; font-size: 18px; }
 article, footer { width: 50rem; }
 
-h1, h2, h3, h4, .date, footer { font-family: system-ui, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
+h1, h2, h3, h4, p.caption, footer { font-family: system-ui, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
 p, ul, ol { line-height: 1.8rem; margin: 0 0 2rem 0; padding: 0; }
 a { color: #000080; }
 
@@ -20,14 +20,21 @@ img.left { display: inline; width: 50%; height: auto; float: left; margin: 0 1re
 img.right { display: inline; width: 50%; height: auto; float: right; margin: 0 0 1rem 1rem; }
 img.center { display: block; width: 100%; height: auto; margin: 1rem 0; }
 img.poster { display: block; width: 100%; height: auto; margin: 1.5rem 0; padding: 0; }
+p.caption { font-size: 0.9rem; line-height: 1.4rem; color: #777; text-align: center; margin-top: 0.5rem; }
 
 footer { display: grid; grid-template-columns: auto 1.4rem; margin: 3rem auto 1rem auto; padding: 1rem 0; border-top: 1px dotted #666; font-size: 0.8rem; line-height: 1.2rem; text-align: left; color: #3d3d3d; }
 footer p { margin-bottom: 0; }
 footer a img { display: inline; margin: 0; height: 1.25rem; width: auto; filter: invert(21%) sepia(1%) saturate(0%) hue-rotate(184deg) brightness(96%) contrast(86%); }
 footer a img:hover { filter: none; }
+
 footer ol { margin-bottom: 1rem; grid-column: 1 / span 2; }
 footer ol li { margin-bottom: 0.5rem; }
 .footlink { vertical-align: super; padding-left: 0.1rem; font-size: 0.75rem; line-height: 0.75rem; }
+footer.board { grid-template-columns: 2fr 1fr 2fr; }
+.prev { text-align: left; }
+.next { text-align: right; }
+.prev, .next { text-decoration: none; }
+.prev:hover, .next:hover { text-decoration: underline; }
 
 /* CSS Lightbox from codepen.io/gschier */
 .lightbox { display: none; position: fixed; z-index: 100; width: 100%; height: 100%; text-align: center; top: 0; left: 0; background: rgba(0,0,0,0.8); }
@@ -49,4 +56,7 @@ footer a img:hover { filter: invert(82%) sepia(100%) saturate(3%) hue-rotate(265
 article, footer { width: 90%; min-width: 0; }
 h1 { font-size: 2.4rem; line-height: 2.8rem; margin: 2.4rem auto; }
 img.left, img.right { width: 90%; display: block; float: none; margin: 1.5em auto; }
+p.caption { color: #999; }
+footer.board { grid-template-columns: repeat(1, 1fr); }
+.prev, .home, .next { text-align: center; margin: 0.5rem auto; }
 }
