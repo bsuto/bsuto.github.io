@@ -16,15 +16,19 @@ h1 { margin-bottom: 4rem; }
 h2 { margin-bottom: 1.25rem; }
 a { color: #004080; }
 
-@media (prefers-color-scheme: dark) {
-}
-
 @media only screen and (orientation: portrait) {
 body { grid-template-columns: 1fr; padding-bottom: 0; }
 main, .sidebar { padding: 0; margin: 0 4rem; }
 main { margin-bottom: 3rem; }
 main p:last-child { margin-bottom: 0; }
 .sidebar { border-left: none; border-top: 0.2rem solid #004080; padding-top: 3rem; }
+}
+
+@media (prefers-color-scheme: dark) {
+body { background-color: #111; color: #fafafa; }
+h1, h2 { color: #fff; }
+a { color: #008AFF; }
+.sidebar { border-color: #008AFF; }
 }
 </style>
 </head>
