@@ -6,99 +6,64 @@
 <meta name="viewport" content="width=device-width">
 <link rel="icon" href="/files/favicon.ico" type="image/x-icon">
 <style type="text/css">
-body { text-align: center; font-size: 18px; font-family: Avenir, ui-system, sans-serif; background-color: #004080; color: #222;}
-main { max-width: 90%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; }
-.card { flex-grow: 1; border-radius: 2rem; display: inline-block; margin: 1rem; padding: 1.5rem; background-color: #fafafa; text-align: center; }
-.wide { flex-grow: 2; }
+body { font-size: 18px; line-height: 1.8rem; font-family: system-ui, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; background-color: #fafafa; color: #222; display: grid; grid-template-columns: auto 25%; margin: 0; padding: 4rem 0 2rem 0; }
+main, .sidebar { padding: 0 4rem; }
+.sidebar { border-left: 0.25rem solid #004080; font-size: 0.9rem; line-height: 1.4rem; }
+.sidebar ul { padding: 0; margin: 0 0 2rem 1.25rem; }
 
-h1 { color: #eee; margin: 2rem auto; }
-h2 { margin: 0 auto 2rem auto; }
-ul { padding: 0; list-style-position: inside; }
-.text { text-align: left; }
-.pills li { border: 1px solid #000; border-radius: 0.75rem; display: inline-block; padding: 0.5rem 1rem; margin: 0.15rem 0.15rem 0 0.15rem; }
-.pills li a { text-decoration: none; }
-.red li { border-color: red; padding-left: 0.5rem; }
-.red li::before { content: "📍";  }
-.blue li { border-color: blue; }
-.grey li { border-color: #666; }
-.grey li a, .grey li a:visited { color: #666; }
-.text li { margin-bottom: 0.5rem; }
-abbr { text-decoration: underline; }
+h1, h2 { color: #111; margin: 0; padding: 0; }
+h1 { margin-bottom: 4rem; }
+h2 { margin-bottom: 1.25rem; }
+a { color: #004080; }
 
-@media (prefers-color-scheme: dark) {}
+@media (prefers-color-scheme: dark) {
+}
 
 @media only screen and (orientation: portrait) {
-
+body { grid-template-columns: 1fr; padding-bottom: 0; }
+main, .sidebar { padding: 0; margin: 0 4rem; }
+main { margin-bottom: 3rem; }
+main p:last-child { margin-bottom: 0; }
+.sidebar { border-left: none; border-top: 0.2rem solid #004080; padding-top: 3rem; }
 }
 </style>
 </head>
 <body>
-<h1>About Brian</h1>
+
 <main>
+<h1>About</h1>
 
-<div class="card">
-<h2>Location History</h2>
-<ul class="pills red">
-<li>216</li>
-<li>909</li>
-<li>650</li>
-<li>919</li>
-<li>651</li>
-</ul>
-</div>
+<p>I grew up in Cleveland, the biggest little fan of <a href="https://www.cleveland.com/datacentral/2015/10/1995_cleveland_indians_hold_th.html">the 1995 Indians</a> and LeBron James&rsquo; ascendance. Then I went across the country to Pomona College, where I studied economics and math, first performed improv for paying audiences, and got ankle tattoos.</p>
 
-<div class="card">
-<h2>Projects</h2>
-<ul class="pills blue">
+<p>My immediate plans after college fell apart, well, immediately, so I cold applied to a couple jobs and took a customer service role at Facebook. After a brief stint answering angry questions and taking nudes off the site, I moved to the Platform Policy team, where we <a href="https://bits.blogs.nytimes.com/2009/01/15/whopper-sacrifice-de-friended-on-facebook/">shut down apps</a> when they were bad. Then I went to Twitter to start and manage their API Policy team. It was mostly <a href="https://techcrunch.com/2010/08/18/twitter-twifficiency/">more of the same</a>, though we also helped developers build better apps when we could. And that&rsquo;s where I honed a passion for user experience &ndash; whether on apps that I work on directly, or helping people better understand the apps and other products they use. Ultimately though, Silicon Valley was not for me.</p>
+
+<p>I moved to North Carolina for my second career, which was helping <a href="https://knowme.works">Know Me</a> conceive, create, and launch their apps. There were also weekends and summers presenting youth programs at a science museum, and countless nights teaching and performing improv, sketch, and standup at DSI. We were good enough to make the <a href="https://delclosemarathon.com">Del Close Marathon</a> a bunch of years in a row, and that was always fun. So I owe it a lot, and wasn&rsquo;t there at the very end, but if you know you know. In between all this I took two sabbaticals to ride a skateboard down the eastern seaboard.</p>
+
+<p>Then I moved to Florida to be closer to family. I wrapped up my work with Know Me after a major overhaul of their flagship app, and got into the local improv scene. Now, during the day, I do contract tech work remotely for small businesses, and in-home IT support for the vast network of retired Florida folks. At night, it&rsquo;s back to improv classes (both taking and teaching) and shows. I snuck in a few classes from the Burt Reynolds Institute before he passed away, even though he never showed up. And I led an improv workshop at the 2018 i3 BUILD Summit at Pitt &ndash; never invited back! Mostly though, you can find me at <a href="https://www.actorsrep.org">Actor&rsquo;s Rep</a> and <a href="https://theimprovu.com">Improv U</a>.</p>
+</main>
+
+<div class="sidebar">
+<h2>Writing</h2>
+<ul>
 <li><a href="/articles/">Articles</a></li>
 <li><a href="/boardtrip/">Board Trip</a></li>
-<li><a href="/likes/">Likes</a></li>
+<!-- <li><a href="/likes/">Likes</a></li> -->
 </ul>
-<ul class="pills grey">
-<li><a href="https://pastecard.net/">Pastecard</a></li>
+
+<h2>Projects</h2>
+<ul>
 <li><a href="https://onemorething.show/">One More Thing</a></li>
+<li><a href="https://pastecard.net/">Pastecard</a></li>
 <li><a href="https://simplebeep.com/">Simple Beep</a></li>
 </ul>
-</div>
 
-<div class="card wide">
-<h2>Work History</h2>
-<ul class="text">
-<li>2007-2009: <a href="https://bits.blogs.nytimes.com/2009/01/15/whopper-sacrifice-de-friended-on-facebook/">Facebook</a></li>
-<li>2009-2011: <a href="https://techcrunch.com/2010/08/18/twitter-twifficiency/">Twitter</a></li>
-<li>2012-2019: <a href="https://apps.apple.com/us/app/know-me-toolbox/id1399161668">Know Me</a></li>
-<li>and independent work for clients including <a href="https://www.facebook.com/Barcelona">Barcelona</a>, <a href="https://sweeps.jobs/">Sweeps</a>, &amp; more</li>
-</ul>
-</div>
-
-<div class="card wide">
-<h2>Live Comedy</h2>
-<ul class="text">
-<li>Featured player and instructor at <abbr title="ask me anything">DSI</abbr>, <a href="https://www.actorsrep.org">Actor&rsquo;s Rep</a>, and <a href="https://theimprovu.com">Improv U</a> theaters</li>
-<li>Performer at <a href="https://delclosemarathon.com">Del Close Marathon</a>, <a href="https://countdownimprovfestival.com">Countdown</a>, and other comedy festivals</li>
-<li>Guest instructor at <a href="http://www.i3-inclusion.org">i3 at Pitt</a>, never invited back!</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Tattoos</h2>
-<ul class="text">
-<li>Right ankle: moon</li>
-<li>Left ankle: sun</li>
-<li>Right wrist: board trip route</li>
-<li>Left wrist: bee</li>
-</ul>
-</div>
-
-<div class="card">
 <h2>This Site</h2>
-<ul class="text">
+<ul class="wide">
 <li>Started in <a href="paper.jpg">November 2005</a></li>
-<li>Written by hand &ndash; no libraries, CMS, nothing</li>
+<li>Made from scratch in <a href="https://support.apple.com/guide/textedit/welcome/mac">TextEdit</a> &ndash; no libraries, CMS, nothing</li>
 <li>Hosted at <a href="https://pages.github.com">Github Pages</a></li>
 </ul>
 </div>
 
-</main>
 </body>
 </html>
