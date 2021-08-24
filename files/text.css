@@ -8,7 +8,7 @@ a { color: #000080; }
 h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 3.75rem; margin: 4rem auto; padding: 0 1rem; }
 h2 { color: #333; font-size: 1.4em; line-height: 1.2em; margin: 0 0 1em 0; padding: 0; }
 h3 { color: #333; font-size: 1.2em; line-height: 1.2em; margin: 0 0 0.5em 0; padding: 0; }
-h2.info { margin: 0 auto; font-weight: normal; }
+h2.info { margin: -3.5rem auto 3.5rem auto; font-weight: normal; }
 
 article { text-align: left; margin: 0 auto; padding: 0; font-family: ui-serif, cambria, georgia, serif; color: #3d3d3d; text-rendering: optimizeLegibility; }
 ul, ol { list-style-position: outside; margin-left: 1.25rem; }
@@ -21,7 +21,7 @@ img.left { display: inline; width: 50%; height: auto; float: left; margin: 0 1re
 img.right { display: inline; width: 50%; height: auto; float: right; margin: 0 0 1rem 1rem; }
 img.center { display: block; width: 100%; height: auto; margin: 1rem 0; }
 img.poster { display: block; width: 100%; height: auto; margin: 1.5rem 0; padding: 0; }
-p.caption { font-size: 0.9rem; line-height: 1.4rem; color: #777; text-align: center; margin-top: 0.5rem; }
+p.caption { font-size: 0.9rem; line-height: 1.4rem; color: #777; text-align: center; }
 
 footer { display: grid; grid-template-columns: auto 1.4rem; margin: 3rem auto 1rem auto; padding: 1rem 0; border-top: 1px dotted #666; font-size: 0.8rem; line-height: 1.2rem; text-align: left; color: #3d3d3d; }
 footer p { margin-bottom: 0; }
@@ -58,6 +58,7 @@ footer a img:hover { filter: invert(82%) sepia(100%) saturate(3%) hue-rotate(265
 article, footer { width: 90%; min-width: 0; }
 h1 { font-size: 2.4rem; line-height: 2.8rem; margin: 2.4rem auto; }
 img.left, img.right { width: 90%; display: block; float: none; margin: 1.5em auto; }
+h2.info { margin: -1rem auto 2.5rem auto; }
 p.caption { color: #999; }
 footer.board { grid-template-columns: repeat(1, 1fr); }
 .prev, .home, .next { text-align: center; margin: 0.5rem auto; }
