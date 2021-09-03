@@ -37,11 +37,11 @@
 <p>From day one, the underlying HTML structure of Pastecard was a <span class="code">div</span> representing the card out of edit mode, and a visually-identical <span class="code">textarea</span> representing the card in edit mode. This led to a lot of extra code to translate between HTML in the div and plain text in the textarea, among other minor annoyances. As I upgraded the offline caching to a modern method with service workers, I figured I could simplify the whole app by getting rid of the div entirely, and instead apply the similarly modern (to me, at least) <span class="code">readonly</span> attribute to the textarea when it&rsquo;s not in edit mode. So, that&rsquo;s what I did. It might have resulted in the biggest code deletion in Pastecard&rsquo;s (public) history.</p>
 
 <p>There it is, Pastecard S. Leaner, safer, and future-proof. All while looking and feeling the same. Okay, I made the trademark blue border a little bigger.</p>
+</article>
 
 <footer>
 <p>May 22, 2018</p>
 <a href="/articles/" title="Articles"><img src="../files/bee.svg" alt="bee"></a>
 </footer>
-</article>
 </body>
 </html>
