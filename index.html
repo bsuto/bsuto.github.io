@@ -25,10 +25,11 @@ h2 { margin: 2rem 0 1rem 2rem; display: inline-block; font-size: 1rem; font-weig
 .social a:last-child { margin-right: 0; }
 svg { height: 1.2rem; width: auto; }
 ul { margin: 2rem; margin-top: 0; padding: 0; list-style-position: inside; }
-li { margin-bottom: 0.5rem; }
+li { margin-bottom: 0.5rem; display: grid; grid-template-columns: 3fr 1fr; }
 li a, li a:active { color: #fafafa; }
 li a:hover { color: #fff; }
 li a:visited { color: #ddd; }
+li span { text-align: right; }
 
 @media only screen and (orientation: portrait) {
 header, main { min-width: 0; width: 100%; border: none; border-radius: 0; }
@@ -56,9 +57,8 @@ h1, .social { margin: 0 auto; padding: 0; }
 <main>
 <h2 class="badge yellow">Latest</h2>
 <ul>
+<li><a href="articles/gq-interview-2021.html">The GQ Interview: 36-year-old Brian Sutorius, as 26-year-old Brian Sutorius dreamed he would be</a><span>September 22</span></li>
 <li><a href="/boardtrip/lake-to-lakes.html">Lake to Lakes Trail</a><span>July 19</span></li>
-<li><a href="/boardtrip/monon-and-others.html">Monon &amp; other trails</a><span>July 15</span></li>
-<li><a href="/articles/see-you-later.html">See You Later</a><span>July 11</span></li>
 </ul>
 </main>
 
