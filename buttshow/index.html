@@ -9,7 +9,7 @@
 <style type="text/css">
 body { text-align: center; font: 18px/22px -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", sans-serif; background-color: #fcfafc; }
 h1 { font-size: 64px; line-height: 64px; color: #222; font-weight: 900; }
-h1 img { height: 64px; width: 64px; display: inline; margin: 0 24px 0 0; vertical-align: bottom; transition:         transform .4s ease-in-out; }
+h1 img { height: 64px; width: 64px; display: inline; margin: 0 24px 0 0; vertical-align: bottom; transition: transform .4s ease-in-out; }
 h1 img:hover { transform: rotate(451deg); }
 ol { list-style-type: none; width: 700px; max-width: 90%; padding: 0; margin: 2em auto; }
 ol li { clear: both; display: block; text-align: left; margin: 0 auto; padding: 1em; color: #888; }
@@ -19,6 +19,7 @@ strong { font-weight: bold; color: #111; }
 ol li a, ol li a:visited { color: #531B93; text-decoration: none; border-bottom: 1px solid #531B93; }
 ol li a:hover { color: #fff; background-color: #531B93; }
 .divider { border-bottom: 1px solid #888; padding-bottom: 0.5em; margin-bottom: 1em; }
+#thanks { width: 20em; max-width: 700px; margin: -1em auto 2em auto; padding: 8px 4px; border: 1px solid #008000; background-color: #78c978; color: #083e00; display: none; }
 form { width: 20em; max-width: 700px; margin: -1em auto 2em auto; }
 form input[type=text] { font-size: 14px; width: 10em; }
 form input[type=submit] { margin-left: 4px; -webkit-appearance: none; background-color: #fff; border: 1px solid #531B93; border-radius: 4px; font-size: 14px; margin-left: 8px; padding: 2px 4px; color: #531B93; }
@@ -40,7 +41,21 @@ form { margin-top: 0; }
 
 <h1><img src="header.png" alt="The Butt Show">The Butt Show</h1>
 
-<!-- <form action="mailto:buttshow@bsuto.com" method="get"><input name="subject" type="hidden" value="Suggestion"><input type="text" maxlength="20" name="body" placeholder="Topic Suggestion" required><input type="submit"></form> -->
+<p id="thanks">Got it, thanks.</p>
+<form id="sheetform" name="submit-to-google-sheet"><input type="text" maxlength="20" name="suggestion" placeholder="Topic Suggestion" required><input type="submit"></form>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzQ1JNYGQzhGaRoKkZiFGQvsnIGpv1pSCcL6lQ1pdhq8HH3WEF90bGbAa2lYlO8QYy5zA/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    document.getElementById('thanks').style.display = 'block'
+    document.getElementById('sheetform').style.display = 'none'
+  })
+</script>
 
 <ol>
 <li class="divider">Season 5</li>
