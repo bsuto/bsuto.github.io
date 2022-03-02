@@ -17,10 +17,7 @@ h1 a, h1 a:visited { margin: 0 0 0 2rem; padding: 0; display: inline; font-size:
 h1 a:hover { text-decoration: underline; }
 h2 { margin: 2rem 0 1rem 2rem; display: inline-block; font-size: 1rem; font-weight: 900; }
 .badge { border: 0.125rem solid #fafafa; border-radius: 0.5rem; }
-.yellow { color: #F1D118; border-color: #F1D118; padding: 0.25rem 0.5rem; text-transform: uppercase; }
-.clear { margin-left: 1rem; padding: 0.25rem 0.5rem; background-color: rgba(255,255,255,0.15); font-size: 1rem; text-decoration: none; }
-.clear:hover { background-color: #fafafa; }
-.clear:active { background-color: #eee; }
+.yellow { color: #F1D118; border-color: #F1D118; /* padding: 0.25rem 0.5rem; */ padding: 0; text-transform: uppercase; }
 .white, .white:visited { background-color: #fafafa; padding: 0.2rem 0.2rem 0 0.2rem; }
 .white:hover { border-color: #ddd; background-color: #ddd; }
 .white:active { border-color: #bbb; background-color: #bbb; }
@@ -49,7 +46,7 @@ li { grid-template-columns: 3fr 2fr; }
 <body>
 
 <header>
-<h1><a href="about/">Brian Sutorius</a></h1>
+<h1><a href="about/" title="About">Brian Sutorius</a></h1>
 
 <div class="social">
 <a href="https://twitter.com/bsuto" title="Twitter" class="badge white"><svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" style="enable-background:new 0 0 336 235.2;"><g transform="matrix(0.12381953746080399, 0, 0, 0.12381953746080399, 1.8078195114483435, 7.765789031982436)"><path d="m154.729 400c185.669 0 287.205-153.876 287.205-287.312 0-4.37-.089-8.72-.286-13.052a205.304 205.304 0 0 0 50.352-52.29c-18.087 8.044-37.55 13.458-57.968 15.899 20.841-12.501 36.84-32.278 44.389-55.852a202.42 202.42 0 0 1 -64.098 24.511c-18.42-19.628-44.644-31.904-73.682-31.904-55.744 0-100.948 45.222-100.948 100.965 0 7.925.887 15.631 2.619 23.025-83.895-4.223-158.287-44.405-208.074-105.504a100.739 100.739 0 0 0 -13.668 50.754c0 35.034 17.82 65.961 44.92 84.055a100.172 100.172 0 0 1 -45.716-12.63c-.015.424-.015.837-.015 1.29 0 48.903 34.794 89.734 80.982 98.986a101.036 101.036 0 0 1 -26.617 3.553c-6.493 0-12.821-.639-18.971-1.82 12.851 40.122 50.115 69.319 94.296 70.135-34.549 27.089-78.07 43.224-125.371 43.224a204.9 204.9 0 0 1 -24.078-1.399c44.674 28.645 97.72 45.359 154.734 45.359" fill="#1da1f2" fill-rule="nonzero"/></g></svg></a>
@@ -59,8 +56,7 @@ li { grid-template-columns: 3fr 2fr; }
 </header>
 
 <main>
-<h2 class="badge yellow">Latest <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve"><g><path d="M52.8,311.3c-12.8-12.8-12.8-33.4,0-46.2c6.4-6.4,14.7-9.6,23.1-9.6s16.7,3.2,23.1,9.6l113.4,113.4V32.7c0-18,14.6-32.7,32.7-32.7c18,0,32.7,14.6,32.7,32.7v345.8L391,265.1c12.8-12.8,33.4-12.8,46.2,0c12.8,12.8,12.8,33.4,0,46.2L268.1,480.4c-6.1,6.1-14.4,9.6-23.1,9.6c-8.7,0-17-3.4-23.1-9.6L52.8,311.3z"/></g></svg></h2>
-<a href="articles/" class="badge clear" title="Articles">📝</a><a href="boardtrip/" class="badge clear" title="Board Trip">🛹</a>
+<h2 class="yellow">Latest <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve"><g><path d="M52.8,311.3c-12.8-12.8-12.8-33.4,0-46.2c6.4-6.4,14.7-9.6,23.1-9.6s16.7,3.2,23.1,9.6l113.4,113.4V32.7c0-18,14.6-32.7,32.7-32.7c18,0,32.7,14.6,32.7,32.7v345.8L391,265.1c12.8-12.8,33.4-12.8,46.2,0c12.8,12.8,12.8,33.4,0,46.2L268.1,480.4c-6.1,6.1-14.4,9.6-23.1,9.6c-8.7,0-17-3.4-23.1-9.6L52.8,311.3z"/></g></svg></h2>
 <ul>
 <li><a href="boardtrip/tammany-trace.html">Tammany Trace</a><span>December 31</span></li>
 <li><a href="articles/jim.html">Jim</a><span>December 15</span></li>
