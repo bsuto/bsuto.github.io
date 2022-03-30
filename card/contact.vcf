@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Sutorius;Brian;;;
+FN:Brian Sutorius
+EMAIL;type=INTERNET;type=HOME;type=pref:brian.sutorius@gmail.com
+TEL;type=CELL;type=VOICE;type=pref:+1 909 438 1069
+ADR;type=HOME;type=pref:;;;West Palm Beach;FL;;
+item1.URL;type=pref:https://read.cv/bsuto
+item1.X-ABLabel:Resume
+END:VCARD

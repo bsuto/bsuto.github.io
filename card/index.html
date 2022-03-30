@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Brian Sutorius</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" href="/files/favicon.ico" type="image/x-icon">
+<style type="text/css">
+body { background-color: #fbfbfb; text-align: center; font-size: 20px; font-family: ui-sans-serif, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
+h1, h2, a, a:visited { color: #222; }
+h2, nav { display: grid; }
+h1 { font-weight: 900; font-size: 4rem; margin: 4rem 0; padding: 0; }
+.card { width: 40rem; height: auto; min-height: 22rem; border: 0.5rem solid #222; border-radius: 2rem; margin: 4rem auto; padding: 0; background-color: #fff; transform: rotate(-0.25deg); box-shadow: -0.5rem 0.5rem 2rem #ccc; }
+h2 { display: block; grid-template-columns: 45% 4% 45%; font-size: 1.75rem; margin: 0 auto 3rem auto; padding: 0; }
+h2 svg { display: inline-block; height: 1.5rem; width: auto; fill: #222; margin: 0 1rem; padding: 0.3rem 0 0 0; vertical-align: text-top; }
+nav { grid-template-columns: 1fr 1fr; justify-content: space-between; }
+.left { text-align: left; margin-left: 2.5rem; }
+.right { text-align: right; margin-right: 2.5rem; }
+a:hover { color: #000; }
+@media (orientation: portrait) {
+.card { width: 100%; margin: 0; min-height: 0; border: 0; border-radius: 0; background-color: inherit; transform: rotate(0); box-shadow: none; }
+h2, nav { grid-template-columns: 1fr; }
+h2 span { display: block; margin: 0.25rem auto; }
+nav { margin-top: 8rem; }
+.left, .right { text-align: center; text-decoration: none; margin: 1rem; padding: 0.75rem 1.5rem; border: 0.2rem solid #222; border-radius: 1.5rem; }
+}
+@media (prefers-color-scheme: dark) {
+body { background-color: #111; }
+.card { background-color: #000; border-color: #d3d3d3; box-shadow: -0.5rem 0.5rem 2rem #444; }
+h1, h2, a, a:visited { color: #d3d3d3; }
+h2 svg { fill: #d3d3d3; }
+a:hover { color: #fff; }
+}
+@media (orientation: portrait) and (prefers-color-scheme: dark) {
+.card { background-color: inherit; box-shadow: none; }
+.left, .right { border-color: #d3d3d3; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Brian Sutorius</h1>
+<h2><span>Web Development</span><svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(0.1599999964237213, 0, 0, 0.1599999964237213, 0.02549069126446568, 9.733368555704757)"><g><path d="M194.191 0.137 C 178.747 1.685,167.988 4.784,156.706 10.933 C 127.160 27.037,109.068 56.934,108.493 90.604 C 108.429 94.394,108.352 97.494,108.324 97.494 C 108.295 97.494,106.282 96.532,103.851 95.357 C 59.521 73.919,23.800 74.919,7.173 98.064 C -2.032 110.876,-2.372 131.073,6.396 144.181 C 22.094 167.651,67.085 166.188,113.511 140.698 C 115.184 139.780,116.239 139.321,116.298 139.485 C 116.351 139.630,120.346 156.253,125.177 176.424 C 130.008 196.595,134.264 214.348,134.635 215.875 C 138.184 230.477,149.745 251.241,161.308 263.781 C 187.190 291.851,215.860 290.754,241.456 260.715 C 251.292 249.171,262.061 229.225,265.068 216.980 C 265.847 213.806,283.186 141.252,283.400 140.266 L 283.635 139.188 285.952 140.451 C 340.626 170.252,389.758 167.109,398.406 133.257 C 404.656 108.794,391.123 86.741,366.480 81.232 C 348.400 77.189,321.184 82.766,295.049 95.869 C 293.265 96.763,291.767 97.494,291.721 97.494 C 291.674 97.494,291.575 94.547,291.500 90.945 C 290.527 43.873,256.850 6.474,210.102 0.552 C 207.541 0.227,196.234 -0.067,194.191 0.137 M50.707 98.181 C 63.445 99.183,79.442 104.363,97.726 113.407 C 103.061 116.046,111.389 120.528,111.389 120.760 C 111.390 121.697,85.543 133.546,76.424 136.790 C 53.719 144.866,34.232 144.811,23.381 136.639 C 13.185 128.960,13.231 112.087,23.470 104.208 C 29.320 99.707,40.016 97.340,50.707 98.181 M361.516 98.644 C 376.760 100.828,384.441 108.687,383.991 121.640 C 383.240 143.276,355.532 149.145,319.476 135.306 C 310.626 131.908,288.610 121.517,288.610 120.737 C 288.610 120.240,304.099 112.300,310.934 109.293 C 332.256 99.913,347.693 96.663,361.516 98.644 M136.653 112.637 C 179.895 125.226,237.096 123.682,274.544 108.914 C 275.371 108.588,275.611 107.326,271.911 122.735 L 268.668 136.245 267.193 137.511 C 246.862 154.963,191.723 160.287,153.294 148.510 C 143.441 145.490,132.134 139.503,131.447 136.942 C 131.266 136.271,126.194 115.201,124.957 109.986 L 124.651 108.697 128.534 110.050 C 130.670 110.795,134.323 111.958,136.653 112.637 M258.303 179.481 C 256.171 188.373,254.327 195.605,254.165 195.710 C 253.612 196.066,249.312 197.666,246.066 198.725 C 219.284 207.457,179.310 207.455,152.557 198.720 C 148.697 197.459,145.830 196.384,145.679 196.140 C 145.579 195.976,138.041 164.676,138.041 164.420 C 138.041 164.357,139.008 164.805,140.191 165.414 C 170.924 181.261,233.067 180.624,260.706 164.178 C 261.458 163.731,262.090 163.382,262.110 163.402 C 262.131 163.423,260.418 170.658,258.303 179.481"></g></g></svg><span>Improv Comedy</span></h2>
+<nav>
+<a href="contact.vcf" class="left">Add Contact</a>
+<a href="https://read.cv/bsuto" class="right">View Resume</a>
+</nav>
+</div>
+</body>
+</html>
