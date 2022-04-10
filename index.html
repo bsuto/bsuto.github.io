@@ -7,60 +7,55 @@
 <link rel="icon" href="files/favicon.ico" type="image/x-icon">
 <link rel="alternate" href="files/feed.xml" type="application/rss+xml">
 <style type="text/css">
-html { height: 100%; }
-body { margin: 0; padding: 0; text-align: center; font: 18px ui-sans-serif, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; color: #fafafa; background-color: #004080; background: linear-gradient(180deg, rgba(0,64,128,1) 0%, rgba(0,64,128,1) 67%, rgba(20,40,80,1) 100%); background-repeat: no-repeat; background-attachment: fixed; }
-header, li { display: flex; flex-direction: row; justify-content: space-between; }
-header, main { width: 34rem; border: 0.25rem solid #fafafa; text-align: left; }
-header { margin: 4rem auto 0 auto; padding: 0; border-bottom: none; border-radius: 2rem 2rem 0 0; background-color: rgba(255,255,255,0.1); }
-main { margin: 0 auto 2rem auto; border-top: none; border-radius: 0 0 2rem 2rem; }
-h1 { margin: 2rem 0 2rem 2rem; padding: 0; display: inline; font-size: 2rem; line-height: 1em; font-weight: 200; color: #fafafa; }
-h2 { margin: 2rem 0 1rem 2rem; display: inline-block; font-size: 1rem; font-weight: 900; }
-.badge { border: 0.125rem solid #fafafa; border-radius: 0.5rem; }
-.yellow { color: #F1D118; border-color: #F1D118; /* padding: 0.25rem 0.5rem; */ padding: 0; text-transform: uppercase; }
-.white, .white:visited { background-color: #fafafa; padding: 0.2rem 0.2rem 0 0.2rem; }
-.white:hover { border-color: #ddd; background-color: #ddd; }
-.white:active { border-color: #bbb; background-color: #bbb; }
-.social { margin: 2rem 2rem 0 0; padding: 0; }
-.social a { display: inline-block; margin: 0 0.25rem; }
-.social a:last-child { margin-right: 0; }
-svg { height: 0.75rem; width: auto; margin-left: 0.25rem; }
-.white svg { height: 1.2rem; margin: 0; }
-.yellow svg { fill: #F1D118; }
-ul { margin: 2rem; margin-top: 0; padding: 0; list-style-position: inside; }
-li { margin-bottom: 0.5rem; display: grid; grid-template-columns: 3fr 1fr; }
-li a, li a:active, .footer a, .footer a:active { color: #fafafa; }
-li a:hover, .footer a:hover { color: #fff; }
-li a:visited, .footer a:visited { color: #ddd; }
-li span { text-align: right; }
+body { text-align: center; font-size: 20px; font-family: ui-monospace, Menlo, "Segoe UI Mono", "Roboto Mono", monospace; background-color: #C8CCC8; color: #545655; }
+.container { display: grid; grid-template-columns: auto auto; width: 80%; margin: 8rem auto; }
+img { height: 13rem; width: auto; }
+.right { text-align: right; margin-right: 1rem; }
+.left { text-align: left; margin-left: 1rem; }
+h1 { font-size: 2rem; font-weight: 500; margin: 0 0 2rem 0; padding: 0; }
+ul { margin: 0 0 2rem 1.34rem; padding: 0; }
+ul li, nav a { font-weight: 200; }
+ul li { font-size: 1.2rem; line-height: 1.75rem; }
+nav a { font-size: 0.9rem; margin-right: 1rem; }
+nav a, nav a:visited { color: #545655; }
+nav a:hover { color: #333; }
 
-@media only screen and (orientation: portrait) {
-header, main { min-width: 0; width: 100%; border: none; border-radius: 0; }
-header { margin-top: 0; display: block; text-align: center; padding: 1rem 0 2rem 0; }
-h1, .social { margin: 0 auto; padding: 0; }
-.social { margin-top: 1.5rem; }
-li { grid-template-columns: 3fr 2fr; }
+@media (prefers-color-scheme: dark) {
+body { background-color: #545655; color: #C8CCC8; }
+nav a, nav a:visited { color: #C8CCC8; }
+nav a:hover { color: #eee; }
+img { filter: invert(0.1) brightness(0.75) contrast(1.25); }
+}
+@media (orientation: portrait) {
+.container { grid-template-columns: 1fr; width: 90%; margin: 3rem auto; }
+.right, .left { text-align: center; margin: 0; }
+h1 { margin-top: 2rem; font-size: 1.75rem; }
+ul { text-align: left; width: 14rem; margin: 0 auto 3rem auto; padding: 0 1.6rem; }
+ul li, nav a { font-size: 1rem; }
+nav a { margin-right: 2rem; }
+nav a:first-child { margin-left: 2rem; }
 }
 </style>
 </head>
 <body>
+<div class="container">
 
-<header>
-<h1>Brian Sutorius</h1>
-
-<div class="social">
-<a href="https://twitter.com/bsuto" title="Twitter" class="badge white"><svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" style="enable-background:new 0 0 336 235.2;"><g transform="matrix(0.12381953746080399, 0, 0, 0.12381953746080399, 1.8078195114483435, 7.765789031982436)"><path d="m154.729 400c185.669 0 287.205-153.876 287.205-287.312 0-4.37-.089-8.72-.286-13.052a205.304 205.304 0 0 0 50.352-52.29c-18.087 8.044-37.55 13.458-57.968 15.899 20.841-12.501 36.84-32.278 44.389-55.852a202.42 202.42 0 0 1 -64.098 24.511c-18.42-19.628-44.644-31.904-73.682-31.904-55.744 0-100.948 45.222-100.948 100.965 0 7.925.887 15.631 2.619 23.025-83.895-4.223-158.287-44.405-208.074-105.504a100.739 100.739 0 0 0 -13.668 50.754c0 35.034 17.82 65.961 44.92 84.055a100.172 100.172 0 0 1 -45.716-12.63c-.015.424-.015.837-.015 1.29 0 48.903 34.794 89.734 80.982 98.986a101.036 101.036 0 0 1 -26.617 3.553c-6.493 0-12.821-.639-18.971-1.82 12.851 40.122 50.115 69.319 94.296 70.135-34.549 27.089-78.07 43.224-125.371 43.224a204.9 204.9 0 0 1 -24.078-1.399c44.674 28.645 97.72 45.359 154.734 45.359" fill="#1da1f2" fill-rule="nonzero"/></g></svg></a>
-<a href="https://read.cv/bsuto" title="CV" class="badge white"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="184pt" height="184pt" viewBox="0 0 184 184" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,184) scale(0.1,-0.1)"
-fill="#000000" stroke="none"><path d="M629 1600 c-41 -12 -77 -39 -98 -74 -11 -17 -42 -116 -70 -221 -27 -104 -80 -300 -116 -434 -36 -135 -65 -260 -65 -279 0 -81 64 -150 164 -176 76 -20 219 -58 490 -130 114 -31 218 -56 230 -56 33 1 98 34 128 67 24 25 45 93 148 476 66 246 120 459 120 473 0 31 -25 92 -48 117 -9 11 -30 26 -45 34 -35 17 -764 213 -792 212 -11 0 -32 -4 -46 -9z m446 -184 c305 -82 352 -98 372 -121 13 -14 23 -34 23 -45 0 -21 -215 -830 -232 -873 -6 -16 -26 -36 -43 -44 -32 -15 -42 -13 -301 56 -433 115 -473 127 -500 152 -14 13 -24 34 -24 50 0 14 41 179 91 365 50 187 101 379 114 427 25 93 36 114 70 128 29 12 45 9 430 -95z"/><path d="M708 1309 c-21 -12 -24 -52 -5 -67 6 -6 135 -43 285 -83 291 -78 304 -79 310 -26 2 17 -3 29 -15 35 -15 8 -543 153 -554 152 -2 0 -12 -5 -21 -11z"/><path d="M645 1087 c-13 -10 -16 -21 -11 -40 7 -31 13 -33 335 -118 167 -44 239 -59 250 -52 20 13 26 57 9 70 -12 9 -532 153 -554 153 -6 0 -18 -6 -29 -13z"/><path d="M578 855 c-19 -41 10 -57 191 -105 l164 -44 18 22 c27 34 14 59 -40 76 -81 26 -279 76 -301 76 -12 0 -25 -10 -32 -25z"/></g></svg></a>
+<div class="right">
+<img src="avatar-scan.jpg" alt="Dithered selfie">
 </div>
-</header>
 
-<main>
-<h2 class="yellow">Latest <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve"><g><path d="M52.8,311.3c-12.8-12.8-12.8-33.4,0-46.2c6.4-6.4,14.7-9.6,23.1-9.6s16.7,3.2,23.1,9.6l113.4,113.4V32.7c0-18,14.6-32.7,32.7-32.7c18,0,32.7,14.6,32.7,32.7v345.8L391,265.1c12.8-12.8,33.4-12.8,46.2,0c12.8,12.8,12.8,33.4,0,46.2L268.1,480.4c-6.1,6.1-14.4,9.6-23.1,9.6c-8.7,0-17-3.4-23.1-9.6L52.8,311.3z"/></g></svg></h2>
+<div class="left">
+<h1>Brian Sutorius</h1>
 <ul>
-<li><a href="boardtrip/tammany-trace.html">Tammany Trace</a><span>December 31</span></li>
-<li><a href="articles/jim.html">Jim</a><span>December 15</span></li>
+<li>Web/App Development</li>
+<li>Improv Comedy</li>
+<li>Distance Skateboarding</li>
 </ul>
-</main>
+<nav>
+<a href="https://twitter.com/bsuto" title="@bsuto on Twitter">Twitter</a> <a href="files/feed.xml" title="bsuto.com RSS feed">RSS</a> <a href="https://read.cv/bsuto" title="@bsuto on read.cv">Resume</a>
+</nav>
+</div>
 
+</div>
 </body>
 </html>
