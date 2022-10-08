@@ -9,11 +9,11 @@
 <link rel="stylesheet" href="../files/text.css" type="text/css">
 <link rel="alternate" href="../files/feed.xml" type="application/rss+xml">
 <style type="text/css">
-table { border: 1px solid #999; padding: 4px; }
-#toprow td { border-bottom: 2px solid #999; font-weight: bold; }
-td { width: 125px; }
-#wide { width: 300px; }
-#caption { font-size: 14px; line-height: 16px; color: #555; margin-top: 8px; }
+table { width: 98%; border: 1px solid #999; padding: 0.25rem;  }
+.toprow td { border-bottom: 1px solid #999; font-weight: bold; }
+td { width: 18%; padding: 0.5% 1%; }
+.wide { width: 38%; }
+p.caption { text-align: left; }
 .good { color: #080; font-weight: bold; }
 .meh { color: #777; font-weight: bold; }
 .bad { color: #b00; font-weight: bold; }
@@ -40,13 +40,13 @@ td { width: 125px; }
 </ul>
 <h2>2011 Metrics in Review</h2>
 <table>
-<tr id="toprow"><td id="wide">Metric</td><td>EOQ4 2010</td><td>EOQ4 2011</td><td>Change</td></tr>
+<tr class="toprow"><td class="wide">Metric</td><td>EOQ4 2010</td><td>EOQ4 2011</td><td>Change</td></tr>
 <tr><td>Total Registered Users</td><td>5</td><td>7</td><td class="good">+40%</td></tr>
 <tr><td>Total Active Users*</td><td>1</td><td>1</td><td class="meh">&#177;0</td></tr>
 <tr><td>Avg time per visit</td><td>7:27</td><td>5:53</td><td class="good">-21%</td></tr>
 <tr><td>Google ranking for &ldquo;pastecard&rdquo;</td><td>2</td><td>1**</td><td class="good">+100%</td></tr>
 </table>
-<p id="caption">* At least five card save actions per week, for a month<br/>
+<p class="caption">* At least five card save actions per week, for a month<br/>
 ** Suck it, myspace band named Paste Card</p>
 <h3>Pageviews Deep Dive</h3>
 <p>Pageviews are an increasingly less-relevant metric for many reasons. The launch of version 1.1 in Q1 moved the initial software loading to AJAX calls, decreasing the amount of pageviews per card session. Interest around the new version actually caused pageviews to spike after the launch, even with the new architecture. They then continued to drop for the rest of the year.</p>
