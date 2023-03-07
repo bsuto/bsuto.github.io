@@ -26,6 +26,7 @@ p.caption { font-size: 0.9rem; line-height: 1.4rem; color: #666; text-align: cen
 
 footer { display: grid; grid-template-columns: auto 1.4rem; margin: 3rem auto 1rem auto; padding: 1rem 0; border-top: 1px dotted #666; font-size: 0.8rem; line-height: 1.2rem; text-align: left; color: #3d3d3d; }
 footer p { margin-bottom: 0; }
+footer a { text-underline-position: auto; }
 footer a img { display: inline; margin: 0; height: 1.25rem; width: auto; filter: invert(21%) sepia(1%) saturate(0%) hue-rotate(184deg) brightness(96%) contrast(86%); }
 footer a img:hover { filter: none; }
 
