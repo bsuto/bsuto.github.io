@@ -1,0 +1,30 @@
+html, body { height: 100%; }
+@font-face { font-family: "vwText"; font-weight: 400; font-display: swap; src: url("vwtext.woff") format("woff"); }
+@font-face { font-family: "vwHeader"; font-weight: 700; font-display: swap; src: url("vwheader.woff") format("woff"); }
+
+body { font-family: "vwText", sans-serif; color: #000; font-size: 18px; background-color: #fff; text-align: center; }
+header, main, footer { max-width: 1000px; margin: 2rem auto; display: flex; justify-content: space-between; }
+header { align-items: flex-start; }
+main { margin: 8rem auto; gap: 1.5rem; }
+footer { flex-wrap: wrap; }
+h1, h2 { font-family: "vwHeader", sans-serif; font-weight: 700; margin: 0; padding: 0; }
+h1 { font-size: 3rem; line-height: 3.25rem; letter-spacing: -0.1rem; }
+h2 { font-size: 1.8rem; line-height: 1.8rem; letter-spacing: -0.05rem; }
+p { font-size: 1.2rem; line-height: 1.5rem; letter-spacing: -0.02rem; }
+a, a:visited { color: #001E50; }
+
+.hamburger { padding: 0.25rem; }
+.hamburger:hover { background-color: rgba(194, 202, 207, 0.2); cursor: pointer; }
+.nameblock { display: block; }
+.logo { width: 2rem; height: 2rem; }
+.youtube { max-width: 1000px; margin: 4rem auto 0 auto; }
+.video { aspect-ratio: 16/9; width: 100%; height: auto; }
+.card { flex: 1 1 30%; text-align: left; padding: 0.75rem; background-size: 100% 300%; background-position: right bottom; transition: background-position .4s ease; }
+.card:hover { background-position: left top; }
+.card img { width: 100%; height: auto; }
+.van { background-image: linear-gradient(315deg, #fff 50%, #479AF3 50%); }
+.road { background-image: linear-gradient(315deg, #fff 50%, #73A989 50%); }
+.bug { background-image: linear-gradient(315deg, #fff 50%, #F0DD61 50%); }
+.left { text-align: left; flex: 0 1 65%; }
+.right { text-align: right; flex: 0 1 35%; }
+.fineprint { font-size: 0.8rem; color: #6A767D; flex: 1 1 100%; }
