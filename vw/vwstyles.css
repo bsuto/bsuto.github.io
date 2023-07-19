@@ -37,4 +37,5 @@ main { margin: 2rem auto; }
 .nameblock { display: inline; }
 .card { background-size: 100% 350%; }
 .left, .right { font-size: 0.9rem; line-height: 1.2rem; text-align: left; flex: 1 1 0; }
+.fineprint { font-size: 0.6rem; line-height: 0.8rem; }
 }
