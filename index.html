@@ -8,53 +8,49 @@
 <link rel="alternate" href="files/feed.xml" type="application/rss+xml">
 
 <style type="text/css">
-body { text-align: center; font-size: 20px; font-family: ui-serif, Georgia, serif; background-color: #f7f2e4; color: #262523; }
-a, a.visited { color: #0074bf; }
-.container { width: 50em; margin: 4em auto; display: flex; flex-direction: row; flex-wrap: wrap; gap: 2em;  }
-.avatar { flex: 1; }
-.content { flex: 2; text-align: left; }
-img { width: 100%; height: auto; filter: sepia(25%); border-radius: 50%; transition: filter 500ms ease-out; }
-img:hover { filter: none; }
-h1 { font-family: ui-sans-serif, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; font-size: 3.2em; font-weight: 900; margin: 0; padding: 0; }
-ul { font-size: 1.2em; line-height: 1.5em; list-style-position: outside; margin: 1em 0 1em 1em; padding: 0; }
-li { margin-bottom: 0.5em; }
-p { font-size: 0.75em; }
+body { text-align: center; font-size: 20px; font-family: ui-sans-serif, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; background-color: #fff; color: #111; }
+a, a.visited { color: #006FD6; }
+.tweet { text-align: left; width: 25em; margin: 4em auto; padding: 1em; border: 1px solid #CFD9DE; border-radius: 12px; }
+header { display: flex; flex-direction: row; gap: 1em; align-items: flex-start; }
+.avatar { width: 3em; height: auto; border-radius: 50%; }
+.handle { flex-grow: 1; }
+h1 { font-size: 1.25em; font-weight: 700; margin: 0; padding: 0; color: #0F1419; }
+h2 { font-size: 0.9em; font-weight: 400; margin: 0; padding: 0; color: #536471; }
+iframe { border: 0; width: 100%; height: auto; }
+.logo { width: 1em; height: auto; }
 
-
-@media (prefers-color-scheme: dark) {
-body { background-color: #3c3c3c; color: #d2d2d2; }
-a, a.visited { color: #137fb3; }
-img { filter: grayscale(67%); }
+@media screen and (orientation: portrait) {
+body { font-size: 16px; }
+.tweet { width: 90%; margin: 3em auto; }
+.links { font-size: 0.75em; }
 }
 
-@media only screen and (orientation: portrait) {
-body { font-size: 16px; }
-.container { width: 100%; flex-direction: column; gap: 0; }
-img { width: 50%; }
-.content { padding: 1em; }
-h1, p { text-align: center; }
-h1 { font-size: 2em; }
-p { font-size: 1em; }
+@media screen and (prefers-color-scheme: dark) {
+body { background-color: #212a2e; color: #F7F9F9; }
+.tweet { background-color: #15202B; border-color: #425364; }
+h1 { color: #F7F9F9; }
+h2 { color: #8B98A5; }
+a, a.visited { color: #6BC9FB; }
+.logo { filter: invert(90%); }
 }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="tweet">
 
-<div class="avatar">
-<img src="files/avatar-2023.jpg" alt="Selfie of Brian">
-</div>
-
-<div class="content">
+<header>
+<img src="files/avatar-2023.jpg" alt="Selfie of Brian" class="avatar">
+<div class="handle">
 <h1>Brian Sutorius</h1>
-<ul>
-<li>Front-end development for websites and iOS apps</li>
-<li>Podcast production for content and audio quality</li>
-<li>Sightseeing via skateboard and improv comedy for fun</li>
-</ul>
-<p class="links"><a href="about/" title="About Brian">About</a> &bull; <a href="https://read.cv/bsuto" title="Brian's resume">CV</a> &bull; <a href="https://twitter.com/bsuto" title="@bsuto on Twitter">Twitter</a></p>
+<h2>bsuto.com</h2>
+</div>
+<img src="files/bee.svg" alt="bee" class="logo">
+</header>
+
+<iframe src="https://pastecard.net/api/poste/tweet.html"></iframe>
 </div>
 
+<p class="links"><a href="about/" title="About Brian">About</a> &bull; <a href="https://read.cv/bsuto" title="Brian's resume">CV</a></p>
 </div>
 </body>
 </html>
