@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Postecard</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="author" content="Brian Sutorius">
+<link rel="icon" href="../files/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../files/text.css" type="text/css">
+<link rel="alternate" href="../files/feed.xml" type="application/rss+xml">
+</head>
+<body>
+<h1>Postecard</h1>
+
+<article>
+<p>It&rsquo;s been more than a year since Elon Musk bought Twitter. It got demonstrably worse this January when third-party apps were cut off, and the gradual decline has continued since then. The (many) ads I see are almost all from newly-created accounts for dropshipping companies, whether under their AI-generated storefront names, or AI-generated &ldquo;real people&rdquo; and their testimonials. Many of the actual real people I followed have left, most of the media sources I followed are still there and it&rsquo;s still the most reliable and quick way for me to follow them, so I&rsquo;m still <a href="https://twitter.com/bsuto">on Twitter</a>. I&rsquo;m also on <a href="https://macaw.social/@bsuto">Mastodon</a>, <a href="https://bsky.app/profile/bsuto.com">Bluesky</a>, and <a href="https://posts.cv/bsuto">Posts</a>. I made a Threads account to reserve my handle. Too much, right?</p>
+
+<p>Too much! So I also made <a href="https://bsuto.com">a one-person Twitter app for myself</a>. Yes, another Twitter clone, the worst one possible, to add to a roster of feeds of small text posts to refresh compulsively. The goal is for it to be the place where I post tweet-sized updates that are actually meaningful to me, and I will try to reduce my use of all the other places to only reading or not at all. And this new one is broadcast only, no replies or likes or other engagement &mdash; great for mental health! Followers can either go to my website to read the latest (and only the latest) tweet, or subscribe to an RSS feed of every tweet to automatically get new ones and go through the old ones.</p>
+
+<p>I call it Postecard because it reuses the backend from Pastecard, but, you know, it makes posts.<sup><a href="#fn-1-pc" id="fr-1-pc">1</a></sup> Of course, there were a few hiccups along the way. For example, it literally uses the Pastecard backend, at the Pastecard domain, but I want it to display on my personal domain. So the actual tweet text is an <span class="code">iframe</span> within the little tweet embed, to avoid cross-domain restrictions. Otherwise, the base functionality is the same: a little PHP script that takes my tweet input and writes it to a text file, and a little Javascript that reads the text from that text file when the page loads. There&rsquo;s a little extra Javascript in that iframe to parse out and hyperlink URLs, making sure to load them in the parent frame. And, naturally, a little extra PHP to add the new tweet to the RSS feed file. I have a simple Shortcut saved as an &ldquo;app&rdquo; to both my phone and laptop that prompts for the new tweet text and sends it to the PHP script.</p>
+
+<p>One thing to come out of the downfall of Twitter has been a resurgence in the mindset of owning or controlling your content online. A blog at your own domain name, a social media presence that you can decouple from the provider and take your follows, followers, and archives with you. This simple little project is a combination of both those things. I may not stick with it for as long as I have with these other things, but I do admit it feels pretty cool here at the start.</p>
+
+</article>
+
+<footer><ol>
+<li id="fn-1-pc">I had this idea for a while for an iPhone app that, in a very straightforward way, allowed people to take a photo from their camera roll, add a message and an address, and print and mail it as a postcard for like $2 each. There have obviously been many apps like this for a long time but I thought I could do it without extraneous branding or upsells. And before I made a real Pastecard app for the App Store, I figured I could reuse that name and stash the backend for the old app somewhere on the new app&rsquo;s marketing site. The dream essentially died when I found out that <em>the</em> Bill Atkinson has already made this app, and it&rsquo;s called <a href="https://apps.apple.com/us/app/photocard-by-bill-atkinson/id333208430?platform=iphone">PhotoCard</a>. <a href="#fr-1-pc">↩︎︎</a></li>
+</ol>
+
+<p>December 15, 2023</p>
+<a href="/articles/" title="Articles"><img src="../files/bee.svg" alt="bee"></a>
+</footer>
+
+</body>
+</html>
