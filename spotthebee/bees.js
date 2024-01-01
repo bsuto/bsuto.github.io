@@ -1,4 +1,6 @@
 var images = [
+['ralphs','Ralph&rsquo;s Stand Up Bar<br>Jupiter, FL<br>December 31, 2023'],
+['dunedogs','Dune Dogs<br>Jupiter, FL<br>December 31, 2023'],
 ['boardroom','Boardroom Bar<br>Fort Lauderdale, FL<br>September 24, 2023'],
 ['robbfield','Rob Field Skate Park<br>San Diego, CA<br>May 21, 2023'],
 ['kims','Kim&rsquo;s Alley Bar<br>Fort Lauderdale, FL<br>April 16, 2023'],
