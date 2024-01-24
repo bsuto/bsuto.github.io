@@ -20,7 +20,7 @@ function renderImg() {
   document.getElementById('bee').onload = function(){
     document.getElementById('bee').alt = document.getElementById('caption').innerHTML = images[count][1];
     // history.replaceState(null, null, '#' + images[count][0]);
-    document.getElementById('copyfield').value = 'http://bsuto.com/spotthebee/#' + images[count][0];
+    document.getElementById('copyfield').value = 'https://bsuto.com/spotthebee/#' + images[count][0];
     checkNext();
     checkPrev();
   }
