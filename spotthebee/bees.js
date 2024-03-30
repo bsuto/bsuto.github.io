@@ -1,4 +1,5 @@
 var images = [
+['rubell','Rubell Museum<br>Miami, FL<br>March 29, 2024'],
 ['rhythmvine','Rhythm &amp; Vine<br>Fort Lauderdale, FL<br>February 4, 2024'],
 ['lagunilla','La Lagunilla<br>Mexico City, Mexico<br>January 21, 2024'],
 ['ralphs','Ralph&rsquo;s Stand Up Bar<br>Jupiter, FL<br>December 31, 2023'],
