@@ -16,6 +16,8 @@ li { margin: 0 0 1rem 0; padding: 0; }
 ul li ul { margin-top: 0.5rem; margin-bottom: 0; }
 .code { font-family: ui-monospace, monospace; }
 sup { padding-left: 0.1rem; font-size: 0.8rem; line-height: 0.8rem; }
+article hr { border: none; text-align: center; color: #3d3d3d; margin: 0 0 2rem 0; }
+article hr::after { content: '\2022  \2022  \2022'; }
 
 img { display: block; margin: 0 0 1rem 0; }
 .left { display: inline; width: 50%; height: auto; float: left; margin: 0 1rem 1rem 0; }
