@@ -59,6 +59,7 @@ footer a img:hover { filter: invert(82%) sepia(100%) saturate(3%) hue-rotate(265
 }
 
 @media only screen and (orientation: portrait) {
+body { font-size: 18px; }
 article, footer { width: 90%; min-width: 0; }
 h1 { font-size: 2.4rem; line-height: 1.2; margin: 2.4rem auto; }
 .left, .right { width: 90%; display: block; float: none; margin: 1.5em auto; }
