@@ -1,21 +1,21 @@
 body { background-color: #fbfbfb; text-align: center; font-size: 20px; }
-article, footer { width: 50rem; }
+article, footer { width: 90%; max-width: 50rem; }
 
 h1, h2, h3, h4, p.caption, footer { font-family: ui-sans-serif, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; }
-p, ul, ol { line-height: 2.1rem; margin: 0 0 2rem 0; padding: 0; }
+p, ul, ol { line-height: 1.5; margin: 0 0 2rem 0; padding: 0; }
 a { color: #000080; text-underline-position: under; }
 
-h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 3.75rem; margin: 4rem auto; padding: 0 1rem; }
-h2 { color: #333; font-size: 1.5rem; line-height: 1.75rem; margin: 0 0 1rem 0; padding: 0; }
-h3 { color: #333; font-size: 1.25rem; line-height: 1.5rem; margin: 0 0 0.5rem 0; padding: 0; }
-h2.info { margin: -3.5rem auto 3.5rem auto; font-weight: normal; }
+h1 { color: #222; font-weight: 900; font-size: 3rem; line-height: 1.2; width: calc(100vw - 2rem); position: relative; left: calc(-50vw + 50%); margin: 4rem auto; padding: 0 1rem; text-align: center; }
+h2 { color: #333; font-size: 1.5rem; line-height: 1.5; margin: 0 0 1rem 0; padding: 0; }
+h3 { color: #333; font-size: 1.25rem; line-height: 1.5; margin: 0 0 0.5rem 0; padding: 0; }
+h2.info { text-align: center; margin: -3.5rem auto 3.5rem auto; font-weight: normal; }
 
 article { text-align: left; margin: 0 auto; padding: 0; font-family: ui-serif, cambria, georgia, serif; color: #3d3d3d; text-rendering: optimizeLegibility; }
 ul, ol { list-style-position: outside; margin-left: 1.25rem; }
 li { margin: 0 0 1rem 0; padding: 0; }
 ul li ul { margin-top: 0.5rem; margin-bottom: 0; }
 .code { font-family: ui-monospace, monospace; }
-sup { padding-left: 0.1rem; font-size: 0.8rem; line-height: 0.8rem; }
+sup { padding-left: 0.1rem; font-size: 0.8rem; line-height: 0.8; }
 article hr { border: none; text-align: center; color: #3d3d3d; margin: 0 0 2rem 0; }
 article hr::after { content: '\2022  \2022  \2022'; }
 
@@ -23,17 +23,17 @@ img { display: block; margin: 0 0 1rem 0; }
 .left { display: inline; width: 50%; height: auto; float: left; margin: 0 1rem 1rem 0; }
 .right { display: inline; width: 50%; height: auto; float: right; margin: 0 0 1rem 1rem; }
 .center { display: block; width: 100%; height: auto; margin: 1rem 0; }
-.poster { display: block; width: 100%; height: auto; margin: 1.5rem 0; padding: 0; }
-p.caption { font-size: 0.9rem; line-height: 1.4rem; color: #666; text-align: center; }
+.poster { display: block; width: 100vw; position: relative; left: calc(-50vw + 50%); height: auto; margin: 1.5rem 0; padding: 0; }
+p.caption { font-size: 0.9rem; line-height: 1.5; color: #666; text-align: center; }
 
-footer { display: grid; grid-template-columns: auto 1.4rem; margin: 3rem auto 1rem auto; padding: 1rem 0; border-top: 1px dotted #666; font-size: 0.8rem; line-height: 1.2rem; text-align: left; color: #3d3d3d; }
+footer { display: grid; grid-template-columns: auto 1.4rem; margin: 3rem auto 1rem auto; padding: 1rem 0; border-top: 1px dotted #666; font-size: 0.8rem; line-height: 1.2; text-align: left; color: #3d3d3d; }
 footer p { margin-bottom: 0; }
 footer a { text-underline-position: auto; }
 footer a img { display: inline; margin: 0; height: 1.25rem; width: auto; filter: invert(21%) sepia(1%) saturate(0%) hue-rotate(184deg) brightness(96%) contrast(86%); }
 footer a img:hover { filter: none; }
 
 footer ol { margin-bottom: 1rem; grid-column: 1 / span 2; }
-footer ol li { margin-bottom: 0.5rem; line-height: 1.2rem; }
+footer ol li { margin-bottom: 0.5rem; line-height: 1.2; }
 footer.board { grid-template-columns: 2fr 1fr 2fr; }
 .prev { text-align: left; }
 .next { text-align: right; }
@@ -60,9 +60,9 @@ footer a img:hover { filter: invert(82%) sepia(100%) saturate(3%) hue-rotate(265
 
 @media only screen and (orientation: portrait) {
 article, footer { width: 90%; min-width: 0; }
-h1 { font-size: 2.4rem; line-height: 2.8rem; margin: 2.4rem auto; }
+h1 { font-size: 2.4rem; line-height: 1.2; margin: 2.4rem auto; }
 .left, .right { width: 90%; display: block; float: none; margin: 1.5em auto; }
-h2.info { margin: -1.75rem auto 2.5rem auto; font-size: 1.25rem; line-height: 1.5rem; }
+h2.info { margin: -1.5rem auto 2.5rem auto; font-size: 1.25rem; line-height: 1; }
 footer.board { grid-template-columns: repeat(1, 1fr); }
 .prev, .home, .next { text-align: center; margin: 0.5rem auto; }
 }
