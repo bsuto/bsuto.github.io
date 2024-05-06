@@ -19,12 +19,10 @@ h2 { font-size: 0.9em; font-weight: 400; margin: 0; padding: 0; color: #536471; 
 h2 a { text-decoration: none; }
 h2 a:hover { text-decoration: underline; }
 h3 { line-height: 1; margin: 0; }
-
 .metatext { font-size: 0.8em; }
 .metatext, .metatext a, .metatext a:visited { color: #536471; text-decoration: none; }
 .metatext a:hover { text-decoration: underline; }
 .loading { background-color: #ededed; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #ededed; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; color: rgba(255, 255, 255, 0); }
-
 a, a.visited { color: #006FD6; }
 svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
 .logo { width: 1em; height: auto; }
@@ -57,12 +55,11 @@ a, a.visited { color: #6BC9FB; }
 
 @keyframes loading { to { background-position-x: -20%; } }
 </style>
-
 <script>
 var urlRegex = /(https?:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 function urlify(text) {
 return text.replace(urlRegex, function(url) {
-  return '<a href="' + url + '" target="_top">' + url + '</a>';
+  return '<a href="' + url + '" style="word-break: break-all;" target="_top">' + url + '</a>';
 })
 }
 function render(tweetObj) {
