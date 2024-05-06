@@ -31,72 +31,71 @@ svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
 .links a { display: flex; width: 100%; padding: 1rem; border: 1px solid #CFD9DE; border-radius: 12px; text-align: left; font-size: 75%; text-decoration: none; color: #111; justify-content: space-between; }
 .links a:hover { background-color: #F7F9F9; }
 .links a:active { text-decoration: underline; }
+.breakchars { word-break: break-all; }
 .hidden { display: none !important; }
+@keyframes loading { to { background-position-x: -20%; } }
 
 @media screen and (orientation: portrait) {
-.handle { font-size: 80%; }
-.tweet { width: 86%; margin: 3em auto; }
-.links { width: 92%; margin: 3em auto; }
-.links li { flex: 1 1 100%; }
+  .handle { font-size: 80%; }
+  .tweet { width: 86%; margin: 3em auto; }
+  .links { width: 92%; margin: 3em auto; }
+  .links li { flex: 1 1 100%; }
 }
 
 @media screen and (prefers-color-scheme: dark) {
-body { background-color: #212a2e; color: #F7F9F9; }
-.tweet, .links a { background-color: #15202B; border-color: #425364; }
-h1 { color: #F7F9F9; }
-h2 { color: #8B98A5; }
-a, a.visited { color: #6BC9FB; }
-.metatext, .metatext a, .metatext a:visited { color: #8B98A5; }
-.loading { background-color: #38444d; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #38444d; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; }
-.logo { filter: invert(90%); }
-.links a { color: #F7F9F9; }
-.links a:hover { background-color: #202731; }
+  body { background-color: #212a2e; color: #F7F9F9; }
+  .tweet, .links a { background-color: #15202B; border-color: #425364; }
+  h1 { color: #F7F9F9; }
+  h2 { color: #8B98A5; }
+  a, a.visited { color: #6BC9FB; }
+  .metatext, .metatext a, .metatext a:visited { color: #8B98A5; }
+  .loading { background-color: #38444d; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #38444d; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; }
+  .logo { filter: invert(90%); }
+  .links a { color: #F7F9F9; }
+  .links a:hover { background-color: #202731; }
 }
-
-@keyframes loading { to { background-position-x: -20%; } }
 </style>
 <script>
 var urlRegex = /(https?:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 function urlify(text) {
-return text.replace(urlRegex, function(url) {
-  return '<a href="' + url + '" style="word-break: break-all;" target="_top">' + url + '</a>';
-})
+  return text.replace(urlRegex, function(url) {
+    return '<a href="' + url + '" class="breakchars">' + url + '</a>';
+  })
 }
 function render(tweetObj) {
-var html = urlify(tweetObj.text);
-var date = tweetObj.date;
-document.getElementById("bodytext").innerHTML = html;
-document.getElementById("date").innerHTML = date;
-document.getElementById("bodytext").classList.remove("loading");
-document.getElementById("date").classList.remove("loading");
+  var html = urlify(tweetObj.text);
+  var date = tweetObj.date;
+  document.getElementById("bodytext").innerHTML = html;
+  document.getElementById("date").innerHTML = date;
+  document.getElementById("bodytext").classList.remove("loading");
+  document.getElementById("date").classList.remove("loading");
 }
 </script>
 </head>
 <body>
 <div class="tweet">
-
-<header>
-<img src="files/avatar-2023.jpg" alt="Selfie of Brian" class="avatar">
-<div class="handle">
-<h1>Brian Sutorius</h1>
-<h2>bsuto.com &bull; <a href="https://pastecard.net/api/poste/postefeed.xml">Follow<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="matrix(0.07142857994352068, 0, 0, 0.07142857994352068, 0, 18.285716465541324)"><g transform="matrix(1,0,0,-1,212.61017,1346.1695)"><path d="M 384,192 Q 384,112 328,56 272,0 192,0 112,0 56,56 0,112 0,192 q 0,80 56,136 56,56 136,56 80,0 136,-56 56,-56 56,-136 z M 896,69 Q 898,41 879,21 861,0 832,0 H 697 Q 672,0 654,16.5 636,33 634,58 612,287 449.5,449.5 287,612 58,634 33,636 16.5,654 0,672 0,697 v 135 q 0,29 21,47 17,17 43,17 h 5 Q 229,883 375,815.5 521,748 634,634 748,521 815.5,375 883,229 896,69 z m 512,-2 Q 1410,40 1390,20 1372,0 1344,0 H 1201 Q 1175,0 1156.5,17.5 1138,35 1137,60 1125,275 1036,468.5 947,662 804.5,804.5 662,947 468.5,1036 275,1125 60,1138 35,1139 17.5,1157.5 0,1176 0,1201 v 143 q 0,28 20,46 18,18 44,18 h 3 Q 329,1395 568.5,1288 808,1181 994,994 1181,808 1288,568.5 1395,329 1408,67 z" style="fill:currentColor"/></g></g></svg></a></h2>
-</div>
-<a href="about/"><img src="files/bee.svg" alt="bee" class="logo"></a>
-</header>
-
-<div>
-<p id="bodytext" class="loading">&nbsp;</p>
-<p class="metatext"><span id="date" class="loading">September 18, 2023 5:00pm</span> via <a href="https://bsuto.com/articles/postecard.html" target="_top">Postecard</a></p>
-</div>
+  <header>
+  <img src="files/avatar-2023.jpg" alt="Selfie of Brian" class="avatar">
+  <div class="handle">
+    <h1>Brian Sutorius</h1>
+    <h2>bsuto.com &bull; <a href="https://pastecard.net/api/poste/postefeed.xml">Follow<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="matrix(0.07142857994352068, 0, 0, 0.07142857994352068, 0, 18.285716465541324)"><g transform="matrix(1,0,0,-1,212.61017,1346.1695)"><path d="M 384,192 Q 384,112 328,56 272,0 192,0 112,0 56,56 0,112 0,192 q 0,80 56,136 56,56 136,56 80,0 136,-56 56,-56 56,-136 z M 896,69 Q 898,41 879,21 861,0 832,0 H 697 Q 672,0 654,16.5 636,33 634,58 612,287 449.5,449.5 287,612 58,634 33,636 16.5,654 0,672 0,697 v 135 q 0,29 21,47 17,17 43,17 h 5 Q 229,883 375,815.5 521,748 634,634 748,521 815.5,375 883,229 896,69 z m 512,-2 Q 1410,40 1390,20 1372,0 1344,0 H 1201 Q 1175,0 1156.5,17.5 1138,35 1137,60 1125,275 1036,468.5 947,662 804.5,804.5 662,947 468.5,1036 275,1125 60,1138 35,1139 17.5,1157.5 0,1176 0,1201 v 143 q 0,28 20,46 18,18 44,18 h 3 Q 329,1395 568.5,1288 808,1181 994,994 1181,808 1288,568.5 1395,329 1408,67 z" style="fill:currentColor"/></g></g></svg></a></h2>
+  </div>
+  <a href="about/"><img src="files/bee.svg" alt="bee" class="logo"></a>
+  </header>
+  
+  <div>
+  <p id="bodytext" class="loading">&nbsp;</p>
+  <p class="metatext"><span id="date" class="loading">&nbsp;</span> via <a href="https://bsuto.com/articles/postecard.html">Postecard</a></p>
+  </div>
 </div>
 
 <ul class="links">
-<li><a href="https://pastecard.net"><div><h3>Pastecard</h3>App</div>📲</a></li>
-<li><a href="https://onemorething.show"><div><h3>One More Thing</h3>Podcast</div>🎙️</a></li>
-<li><a href="boardtrip/"><div><h3>Board Trip</h3>Blog</div>🛹</a></li>
-<li><a href="db/"><div><h3>DB Pooper</h3>Hedgehog</div>🦔</a></li>
-<li class="hidden"><a href="https://read.cv/bsuto"><div><h3>Resume</h3>read.cv/bsuto</div>📄</a></li>
-<li class="hidden"><a href="https://macaw.social/@bsuto" rel="me"><div><h3>Mastodon</h3>@bsuto@macaw.social</div>🐘</a></li>
+  <li><a href="https://pastecard.net"><div><h3>Pastecard</h3>App</div>📲</a></li>
+  <li><a href="https://onemorething.show"><div><h3>One More Thing</h3>Podcast</div>🎙️</a></li>
+  <li><a href="boardtrip/"><div><h3>Board Trip</h3>Blog</div>🛹</a></li>
+  <li><a href="db/"><div><h3>DB Pooper</h3>Hedgehog</div>🦔</a></li>
+  <li class="hidden"><a href="https://read.cv/bsuto"><div><h3>Resume</h3>read.cv/bsuto</div>📄</a></li>
+  <li class="hidden"><a href="https://macaw.social/@bsuto" rel="me"><div><h3>Mastodon</h3>@bsuto@macaw.social</div>🐘</a></li>
 </ul>
 
 <script>render(tweet);</script>
