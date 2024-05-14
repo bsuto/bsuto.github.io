@@ -48,7 +48,7 @@ footer.board { grid-template-columns: 2fr 1fr 2fr; }
 
 @media (prefers-color-scheme: dark) {
 body { background-color: #111; }
-article, footer { color: #d3d3d3; }
+article, article hr, footer { color: #d3d3d3; }
 p.caption { color: #999; }
 h1, h2, h3, h4 { color: #fafafa; }
 a { color: #008AFF; }

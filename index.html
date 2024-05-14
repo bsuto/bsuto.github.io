@@ -19,10 +19,10 @@ h2 { font-size: 0.9em; font-weight: 400; margin: 0; padding: 0; color: #536471; 
 h2 a { text-decoration: none; }
 h2 a:hover { text-decoration: underline; }
 h3 { line-height: 1; margin: 0; }
-.metatext { font-size: 0.8em; }
-.metatext, .metatext a, .metatext a:visited { color: #536471; text-decoration: none; }
-.metatext a:hover { text-decoration: underline; }
-.loading { width: 20em; display: inline-block; background-color: #ededed; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #ededed; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; color: rgba(255, 255, 255, 0); }
+#date { font-size: 0.8em; }
+#date, #date a, .metatext a:visited { color: #536471; text-decoration: none; }
+#date a:hover { text-decoration: underline; }
+.loading { width: 18em; display: inline-block; background-color: #ededed; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #ededed; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; color: rgba(255, 255, 255, 0); }
 a, a.visited { color: #006FD6; }
 svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
 .logo { width: 1em; height: auto; }
@@ -38,7 +38,7 @@ svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
 @media screen and (orientation: portrait) {
   .handle { font-size: 80%; }
   .tweet { width: 86%; margin: 3em auto; }
-  .links { width: 92%; margin: 3em auto; }
+  .links { width: calc(86% + 2rem + 2px); margin: 3em auto; }
   .links li { flex: 1 1 100%; }
 }
 
@@ -48,7 +48,7 @@ svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
   h1 { color: #F7F9F9; }
   h2 { color: #8B98A5; }
   a, a.visited { color: #6BC9FB; }
-  .metatext, .metatext a, .metatext a:visited { color: #8B98A5; }
+  #date, #date a, .metatext a:visited { color: #8B98A5; }
   .loading { background-color: #38444d; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #38444d; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; }
   .logo { filter: invert(90%); }
   .links a { color: #F7F9F9; }
@@ -85,7 +85,7 @@ function render(tweetObj) {
   
   <div>
   <p id="bodytext" class="loading">&nbsp;</p>
-  <p class="metatext"><span id="date" class="loading">&nbsp;</span> via <a href="https://bsuto.com/articles/postecard.html">Postecard</a></p>
+  <p id="date" class="loading">&nbsp;</p>
   </div>
 </div>
 
