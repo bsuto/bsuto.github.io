@@ -43,7 +43,7 @@ footer.board { grid-template-columns: 2fr 1fr 2fr; }
 
 /* CSS Lightbox from codepen.io/gschier */
 .lightbox { display: none; position: fixed; z-index: 100; width: 100%; height: 100%; text-align: center; top: 0; left: 0; background: rgba(0,0,0,0.8); }
-.lightbox img { max-width: 90%; max-height: 80%; margin: 5% auto 0 auto; box-shadow: 0 4px 4px #000; }
+.lightbox img { max-width: 90%; max-height: 80%; margin: 5% auto 0 auto; box-shadow: 0 0.5rem 1rem #000; }
 .lightbox:target { outline: none; display: block; }
 
 @media (prefers-color-scheme: dark) {
