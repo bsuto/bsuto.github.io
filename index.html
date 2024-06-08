@@ -87,7 +87,7 @@ function render(tweetObj) {
 </div>
 
 <ul class="links">
-  <li><a href="https://pastecard.net"><div><h3>Pastecard</h3>App</div>📲</a></li>
+  <li><a href="https://apps.apple.com/us/app/pastecard/id1341464454"><div><h3>Pastecard</h3>App</div>📲</a></li>
   <li><a href="https://onemorething.show"><div><h3>One More Thing</h3>Podcast</div>🎙️</a></li>
   <li><a href="boardtrip/"><div><h3>Board Trip</h3>Blog</div>🛹</a></li>
   <li><a href="db/"><div><h3>DB Pooper</h3>Hedgehog</div>🦔</a></li>
@@ -95,7 +95,26 @@ function render(tweetObj) {
   <li class="hidden"><a href="https://macaw.social/@bsuto" rel="me"><div><h3>Mastodon</h3>@bsuto@macaw.social</div>🐘</a></li>
 </ul>
 
-<script src="https://pastecard.net/api/poste/tweetjson.js"></script>
-<script>render(tweet);</script>
+<script>
+function loadJS(url, async) {
+  let scriptEle = document.createElement("script");
+  scriptEle.setAttribute("src", url);
+  scriptEle.setAttribute("type", "text/javascript");
+  scriptEle.setAttribute("async", async);
+  document.body.appendChild(scriptEle);
+
+  // success 
+  scriptEle.addEventListener("load", () => {
+    render(tweet);
+  });
+   // error
+  scriptEle.addEventListener("error", (ev) => {
+    console.log("Error loading tweet json", ev);
+  });
+}
+
+let cacheURL = "https://pastecard.net/api/poste/tweetjson.js?" + Date.now().toString();
+loadJS(cacheURL, false);
+</script>
 </body>
 </html>
