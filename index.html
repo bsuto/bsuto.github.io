@@ -97,25 +97,18 @@ function render(tweetObj) {
 </ul>
 
 <script>
-function loadJS(url, async) {
-  let scriptEle = document.createElement("script");
-  scriptEle.setAttribute("src", url);
-  scriptEle.setAttribute("type", "text/javascript");
-  scriptEle.setAttribute("async", async);
-  document.body.appendChild(scriptEle);
+function loadJS(url) {
+  let script = document.createElement("script");
+  script.setAttribute("src", url);
+  script.setAttribute("async", false);
+  document.body.appendChild(script);
 
-  // success 
-  scriptEle.addEventListener("load", () => {
-    render(tweet);
-  });
-   // error
-  scriptEle.addEventListener("error", (ev) => {
-    console.log("Error loading tweet json", ev);
-  });
+  script.addEventListener("load", () => { render(tweet); }); // success
+  script.addEventListener("error", (ev) => { console.log("Error loading tweet json", ev); });
 }
 
 let cacheURL = "https://pastecard.net/api/poste/tweetjson.js?" + Date.now().toString();
-loadJS(cacheURL, false);
+loadJS(cacheURL);
 </script>
 </body>
 </html>
