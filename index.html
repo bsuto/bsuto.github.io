@@ -55,6 +55,7 @@ svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
 </style>
 <script>
 var urlRegex = /(https?:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+let cacheURL = "https://pastecard.net/api/poste/tweetjson.js?" + Date.now().toString();
 function urlify(text) {
   return text.replace(urlRegex, function(url) {
     return '<a href="' + url + '" class="breakchars">' + url + '</a>';
@@ -67,6 +68,14 @@ function render(tweetObj) {
   document.getElementById("date").innerHTML = date;
   document.getElementById("bodytext").classList.remove("loading");
   document.getElementById("date").classList.remove("loading");
+}
+function loadJS(url) {
+  let script = document.createElement("script");
+  script.setAttribute("src", url);
+  script.setAttribute("async", false);
+  document.body.appendChild(script);
+  script.addEventListener("load", () => { render(tweet); });
+  script.addEventListener("error", (ev) => { console.log("Error loading tweet json", ev); });
 }
 </script>
 </head>
@@ -96,19 +105,6 @@ function render(tweetObj) {
   <li class="hidden"><a href="https://macaw.social/@bsuto" rel="me"><div><h3>Mastodon</h3>@bsuto@macaw.social</div>🐘</a></li>
 </ul>
 
-<script>
-function loadJS(url) {
-  let script = document.createElement("script");
-  script.setAttribute("src", url);
-  script.setAttribute("async", false);
-  document.body.appendChild(script);
-
-  script.addEventListener("load", () => { render(tweet); }); // success
-  script.addEventListener("error", (ev) => { console.log("Error loading tweet json", ev); });
-}
-
-let cacheURL = "https://pastecard.net/api/poste/tweetjson.js?" + Date.now().toString();
-loadJS(cacheURL);
-</script>
+<script>loadJS(cacheURL);</script>
 </body>
 </html>
