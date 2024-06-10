@@ -72,7 +72,7 @@ function render(tweetObj) {
 function loadJS(url) {
   let script = document.createElement("script");
   script.setAttribute("src", url);
-  script.setAttribute("async", false);
+  script.setAttribute("async", true);
   document.body.appendChild(script);
   script.addEventListener("load", () => { render(tweet); });
   script.addEventListener("error", (ev) => { console.log("Error loading tweet json", ev); });
