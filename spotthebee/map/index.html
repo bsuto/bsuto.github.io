@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Shpot the Bee</title>
+    <title>🐝🗺️</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAciy1HU6mQfYUFko1i6nWOzOPoafpiVf0&callback=initMap&libraries=maps"></script>
@@ -12,9 +12,8 @@
         height: 100%;
       }
 
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
+      /* makes the page fill the window */
+      html, body {
         height: 100%;
         margin: 0;
         padding: 0;
@@ -43,6 +42,11 @@
         margin-block: 1rem;
         font-weight: normal;
       }
+      @media only screen and (orientation: portrait) {
+        .beePop {
+          max-width: 200px;
+        }
+      }
     </style>
     <script src="bee-data.js"></script>
     <script>
@@ -61,7 +65,7 @@
             
             // create popup
             var popup = new google.maps.InfoWindow();
-            var popupContent = '<div class="beePop"><h2>' + bee[1] + '</h2><img src="../' + bee[0] + '.jpg" alt="' + bee[1] + '"><h3>' + bee[2] + '</h3></div>';
+            var popupContent = '<div class="beePop"><h2>' + bee[1] + '</h2><a href="../' + bee[0] + '.jpg" target="_blank"><img src="../' + bee[0] + '.jpg" alt="' + bee[1] + '"></a><h3>' + bee[2] + '</h3></div>';
             
             // add marker
             var latLng = {
