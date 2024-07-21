@@ -11,18 +11,35 @@
       #map {
         height: 100%;
       }
-
       /* makes the page fill the window */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
-      
-      .beePop {
-        max-width: 300px;
+      h1 {
+        position: fixed;
+        top: 2.5%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        background-color: #ffe800;
+        color: #111;
+        font-weight: 900;
+        line-height: 1;
+        z-index: 1000;
+        box-shadow: 0 0.25rem 0.25rem #999;
+      }
+      h1, .beePop {
         font-family: -apple-system, BlinkMacSystemFont, segoe ui, roboto, noto, sans-serif;
         text-align: center;
+      }
+      .gm-style-iw-d {
+        margin-top: -2rem !important;
+      }
+      .beePop {
+        max-width: 300px;
       }
       .beePop img {
         display: block;
@@ -51,48 +68,55 @@
     <script src="bee-data.js"></script>
     <script>
       function initMap() {
+        var zoomLevel = 4;
+        if (window.matchMedia("(orientation: portrait)").matches) {
+          zoomLevel = 3;
+        }
+        
         map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 4,
-            center: { lat: 39, lng: -100 },
-            disableDefaultUI: true,
-            styles: [{
-              stylers: [{ saturation: -50 }]
-            }]
+          zoom: zoomLevel,
+          center: { lat: 39, lng: -100 },
+          disableDefaultUI: true,
+          styles: [{
+            stylers: [{ saturation: -50 }]
+          }]
         });
+        
         var markers = [];
         for (var i = 0; i < bees.length; i++) {
-            var bee = bees[i];
-            
-            // create popup
-            var popup = new google.maps.InfoWindow();
-            var popupContent = '<div class="beePop"><h2>' + bee[1] + '</h2><a href="../' + bee[0] + '.jpg" target="_blank"><img src="../' + bee[0] + '.jpg" alt="' + bee[1] + '"></a><h3>' + bee[2] + '</h3></div>';
-            
-            // add marker
-            var latLng = {
-              lat: parseFloat(bee[3]),
-              lng: parseFloat(bee[4])
-            };
-            var marker = new google.maps.Marker({
-              position: latLng,
-              map: map,
-              icon: {
-                url: 'bee-marker.png',
-                scaledSize: new google.maps.Size(32, 32)
-              },
-              content: popupContent
-            });
-            
-            // set up popup
-            marker.addListener('click', function() {
-              popup.setContent(this.content);
-              popup.open(map, this);
-            });
-            markers.push(marker);
+        var bee = bees[i];
+        
+        // create popup
+        var popup = new google.maps.InfoWindow();
+        var popupContent = '<div class="beePop"><h2>' + bee[1] + '</h2><a href="../' + bee[0] + '.jpg" target="_blank"><img src="../' + bee[0] + '.jpg" alt="' + bee[1] + '"></a><h3>' + bee[2] + '</h3></div>';
+        
+        // add marker
+        var latLng = {
+          lat: parseFloat(bee[3]),
+          lng: parseFloat(bee[4])
+        };
+        var marker = new google.maps.Marker({
+          position: latLng,
+          map: map,
+          icon: {
+            url: 'bee-marker.png',
+            scaledSize: new google.maps.Size(32, 32)
+          },
+          content: popupContent
+        });
+        
+        // set up popup
+        marker.addListener('click', function() {
+          popup.setContent(this.content);
+          popup.open(map, this);
+        });
+        markers.push(marker);
         }
       }
     </script>
   </head>
   <body>
     <div id="map"></div>
+    <h1>Spot the Bee</h1>
   </body>
 </html>
