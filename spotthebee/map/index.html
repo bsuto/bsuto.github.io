@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shpot the Bee</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAciy1HU6mQfYUFko1i6nWOzOPoafpiVf0&callback=initMap&libraries=maps"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .beePop {
+        max-width: 300px;
+        font-family: -apple-system, BlinkMacSystemFont, segoe ui, roboto, noto, sans-serif;
+        text-align: center;
+      }
+      .beePop img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+      }
+      .beePop h2, .beePop h3 {
+        line-height: 1.2;
+        margin: 0 auto;
+        padding: 0;
+      }
+      .beePop h2 {
+        margin-bottom: 1rem;
+      }
+      .beePop h3 {
+        margin-block: 1rem;
+        font-weight: normal;
+      }
+    </style>
+    <script src="bee-data.js"></script>
+    <script>
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: { lat: 39, lng: -100 },
+            disableDefaultUI: true,
+            styles: [{
+              stylers: [{ saturation: -50 }]
+            }]
+        });
+        var markers = [];
+        for (var i = 0; i < bees.length; i++) {
+            var bee = bees[i];
+            
+            // create popup
+            var popup = new google.maps.InfoWindow();
+            var popupContent = '<div class="beePop"><h2>' + bee[1] + '</h2><img src="../' + bee[0] + '.jpg" alt="' + bee[1] + '"><h3>' + bee[2] + '</h3></div>';
+            
+            // add marker
+            var latLng = {
+              lat: parseFloat(bee[3]),
+              lng: parseFloat(bee[4])
+            };
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              icon: {
+                url: 'bee-marker.png',
+                scaledSize: new google.maps.Size(32, 32)
+              },
+              content: popupContent
+            });
+            
+            // set up popup
+            marker.addListener('click', function() {
+              popup.setContent(this.content);
+              popup.open(map, this);
+            });
+            markers.push(marker);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
