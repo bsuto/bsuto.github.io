@@ -54,16 +54,16 @@ svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
 }
 </style>
 <script>
-var urlRegex = /(https?:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-let cacheURL = "https://pastecard.net/api/poste/tweetjson.js?" + Date.now().toString();
+let urlRegex = /(https?:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+let tweetURL = "https://pastecard.net/api/poste/tweetjson.js?" + Date.now().toString();
 function urlify(text) {
   return text.replace(urlRegex, function(url) {
     return '<a href="' + url + '" class="breakchars">' + url + '</a>';
   })
 }
 function render(tweetObj) {
-  var html = urlify(tweetObj.text);
-  var date = tweetObj.date;
+  let html = urlify(tweetObj.text);
+  let date = tweetObj.date;
   document.getElementById("bodytext").innerHTML = html;
   document.getElementById("date").innerHTML = date;
   document.getElementById("bodytext").classList.remove("loading");
@@ -89,11 +89,8 @@ function loadJS(url) {
   </div>
   <a href="about/"><img src="files/bee.svg" alt="bee" class="logo"></a>
   </header>
-  
-  <div>
   <p id="bodytext" class="loading">&nbsp;</p>
   <p id="date" class="loading">&nbsp;</p>
-  </div>
 </div>
 
 <ul class="links">
@@ -105,6 +102,6 @@ function loadJS(url) {
   <li class="hidden"><a href="https://macaw.social/@bsuto" rel="me"><div><h3>Mastodon</h3>@bsuto@macaw.social</div>🐘</a></li>
 </ul>
 
-<script>loadJS(cacheURL);</script>
+<script>loadJS(tweetURL);</script>
 </body>
 </html>
