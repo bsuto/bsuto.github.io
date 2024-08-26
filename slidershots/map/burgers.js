@@ -1,4 +1,5 @@
 const burgers = [
+['quarterdeck','Quarterdeck','August 25, 2024',2,'26.101990753923072','-80.13247581061746'],
 ['white-manna','White Manna','February 22, 2024',3,'40.889196728709585','-74.03842516427876'],
 ['harrys','Harry&rsquo;s','January 10, 2024',3,'26.71065587356648','-80.05683652525133'],
 ['traderjoes2','Trader Joe&rsquo;s (Frozen)','November 17, 2023',2,'26.843852128229404','-80.07420328458258'],
