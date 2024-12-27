@@ -1,4 +1,5 @@
 const bees = [
+  ['harrysbanana','Harry&rsquo;s Banana Farm','December 7, 2024','26.6388508344713','-80.05667423642878'],
   ['trollpub','Troll Pub','October 26, 2024','38.25690556292964','-85.75297969468477'],
   ['harryreid','Harry Reid Airport','September 28, 2024','36.09267490631143','-115.14797129656978'],
   ['mackinac','Mackinac Island','September 8, 2024','45.84983090620673','-84.61818191345688'],
