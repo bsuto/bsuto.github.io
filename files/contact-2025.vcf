@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Brian Sutorius
+N:Sutorius;Brian;;;
+EMAIL;type=HOME,INTERNET:brian.sutorius@gmail.com
+TEL;TYPE=CELL,VOICE:9094381069
+ADR;TYPE=HOME:;;;Marathon;FL;;
+item1.URL:https://bsuto.com
+item1.X-ABLabel:Website
+REV:2025-01-26T17:35:29.484Z
+END:VCARD

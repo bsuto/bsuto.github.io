@@ -7,7 +7,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="feed.xml">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <style>
-body { text-align: center; font: 18px/22px -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", sans-serif; background-color: #fcfafc; }
+body { text-align: center; font: 18px/22px system-ui, ui-sans-serif, Roboto, "Segoe UI", "Helvetica Neue", sans-serif; background-color: #fcfafc; }
 h1 { font-size: 64px; line-height: 64px; color: #222; font-weight: 900; }
 h1 img { height: 64px; width: 64px; display: inline; margin: 0 24px 0 0; vertical-align: bottom; transition: transform .4s ease-in-out; }
 h1 img:hover { transform: rotate(451deg); }
@@ -24,6 +24,7 @@ form { width: 20em; max-width: 700px; margin: -1em auto 2em auto; }
 form input[type=text] { font-size: 14px; width: 10em; }
 form input[type=submit] { margin-left: 4px; -webkit-appearance: none; background-color: #fff; border: 1px solid #531B93; border-radius: 4px; font-size: 14px; margin-left: 8px; padding: 2px 4px; color: #531B93; }
 form input[type=submit]:active { color: #222; background-color: #fcfafc; }
+.disabled { color: #777 !important; text-decoration: line-through; }
 
 @media only screen and (orientation: portrait) {
 h1, ol { width: 96%; margin-left: auto; margin-right: auto; }
@@ -43,7 +44,7 @@ form { margin-top: 0; }
 <h1><img src="header.png" alt="The Butt Show">The Butt Show</h1>
 
 <p id="thanks">Got it, thanks.</p>
-<form id="sheetform" name="submit-to-google-sheet"><input type="text" maxlength="20" name="suggestion" placeholder="Topic Suggestion" required><input type="submit"></form>
+<form id="sheetform" name="submit-to-google-sheet"><input type="text" maxlength="20" name="suggestion" placeholder="Topic Suggestion" required><input type="submit" class="disabled" disabled></form>
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbzQ1JNYGQzhGaRoKkZiFGQvsnIGpv1pSCcL6lQ1pdhq8HH3WEF90bGbAa2lYlO8QYy5zA/exec'
   const form = document.forms['submit-to-google-sheet']

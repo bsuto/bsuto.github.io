@@ -8,36 +8,39 @@
 <link rel="alternate" href="files/feed.xml" type="application/rss+xml">
 
 <style>
-body { text-align: center; font-size: 20px; font-family: ui-sans-serif, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif; background-color: #fff; color: #111; }
-.tweet { text-align: left; width: 30rem; height: auto; margin: 4em auto; padding: 1rem; border: 1px solid #CFD9DE; border-radius: 12px; }
-header, .links, .links li { display: flex; flex-direction: row; gap: 1rem; align-items: flex-start; }
-.avatar { width: 3em; height: auto; border-radius: 50%; }
+body { text-align: center; font-size: 20px; font-family: system-ui, Roboto, "Segoe UI", sans-serif; background-color: #fff; color: #111; }
+.tweet { text-align: left; width: 30rem; height: auto; margin: 4rem auto; padding: 1rem; border: 1px solid #CFD9DE; border-radius: 0.75rem; }
+header, .links, .links li { display: flex; flex-direction: row; align-items: flex-start; }
+.avatar { width: 3rem; height: auto; border-radius: 50%; margin-right: 1rem; }
 .handle { flex-grow: 1; }
-h1 { font-size: 1.25em; font-weight: 700; margin: 0; padding: 0; color: #0F1419; }
-h2 { font-size: 0.9em; font-weight: 400; margin: 0; padding: 0; color: #536471; }
+h1 { font-size: 1.25rem; line-height: 1.25; font-weight: 700; margin: 0; padding: 0; color: #0F1419; }
+h2 { font-size: 0.9rem; font-weight: 400; margin: 0; padding: 0; color: #536471; }
 h2 a { text-decoration: none; }
 h2 a:hover { text-decoration: underline; }
-h3 { line-height: 1; margin: 0; }
-#date { font-size: 0.8em; color: #536471; }
-.loading { width: 18em; display: inline-block; background-color: #ededed; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #ededed; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; color: rgba(255, 255, 255, 0); }
+#bodytext { line-height: 1.25; }
+#date { font-size: 0.85rem; color: #536471; }
+.loading { width: 18rem; display: inline-block; background-color: #ededed; background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) #ededed; background-size: 200% 100%; background-position-x: 180%; animation: 1s loading ease-in-out infinite; color: rgba(255, 255, 255, 0); }
 a, a.visited { color: #006FD6; }
-svg { height: 1rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
+svg { height: 0.85rem; width: auto; margin: 0 0 -0.1rem 0.25rem; }
 .logo { width: 1em; height: auto; }
-.links { width: 32rem; margin: 4em auto; padding: 0; list-style-type: ""; flex-wrap: wrap; }
-.links li { flex: 1 1 14rem; }
-.links a { display: flex; width: 100%; padding: 1rem; border: 1px solid #CFD9DE; border-radius: 12px; text-align: left; font-size: 75%; text-decoration: none; color: #111; justify-content: space-between; }
-.links a:hover { background-color: #F7F9F9; }
-.links a:active { text-decoration: underline; }
+.links { width: 32rem; margin: 4rem auto; padding: 0; list-style-type: none; justify-content: space-between; flex-wrap: wrap; }
+.links li { width: 30%; }
+.links li a { display: flex; width: 100%; padding: 0.5rem; border: 1px solid #CFD9DE; border-radius: 0.5rem; text-align: left; font-size: 0.8rem; text-decoration: none; color: #111; justify-content: space-between; align-items: center; }
+.links li a:hover { background-color: #F7F9F9; }
+.links li a:active { text-decoration: underline; }
+.icon { height: 1rem; width: 1rem; border-radius: 0.25rem; }
 .breakchars { word-break: break-all; }
 .hidden { display: none !important; }
 @keyframes loading { to { background-position-x: -20%; } }
 
 @media screen and (orientation: portrait) {
   .handle { font-size: 80%; }
-  .tweet { width: 86%; margin: 3em auto; }
-  .loading { width: 12em; }
-  .links { width: calc(86% + 2rem + 2px); margin: 3em auto; }
-  .links li { flex: 1 1 100%; }
+  .tweet { width: 90%; margin: 3rem auto; }
+  .loading { width: 12rem; }
+  .links { width: calc(90% + 2rem + 2px); margin: 3rem auto; }
+  .links, .links li { align-items: stretch; }
+  .links li a { flex-direction: column-reverse; text-align: center; }
+  .icon { height: 1.5rem; width: 1.5rem; margin-bottom: 0.75rem; }
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -94,14 +97,10 @@ function loadJS(url) {
 </div>
 
 <ul class="links">
-  <li><a href="https://apps.apple.com/us/app/pastecard/id1341464454"><div><h3>Pastecard</h3>App</div>📲</a></li>
-  <li><a href="https://onemorething.show"><div><h3>One More Thing</h3>Podcast</div>🎙️</a></li>
-  <li><a href="boardtrip/"><div><h3>Board Trip</h3>Blog</div>🛹</a></li>
-  <li><a href="db/"><div><h3>DB Pooper</h3>Hedgehog</div>🦔</a></li>
-  <li class="hidden"><a href="https://reederapp.net/oACW-1QURa66PspWDwD4wQ"><div><h3>Reeder</h3>RSS/Tweet favorites</div>⚡️</a></li>
-  <li class="hidden"><a href="https://www.instapaper.com/p/bsuto"><div><h3>Instapaper</h3>Article favorites</div>ℹ️</a></li>
-  <li class="hidden"><a href="https://macaw.social/@bsuto" rel="me"><div><h3>Mastodon</h3>@bsuto@macaw.social</div>🐘</a></li>
-  <li class="hidden"><a href="https://read.cv/bsuto"><div><h3>Resume</h3>read.cv/bsuto</div>📄</a></li>
+  <li><a href="https://www.atlasobscura.com/users/briansutorius?view=been">Atlas Obscura<img src="files/atlas-obscura.png" alt="Atlas Obscura icon" class="icon"></a></li>
+  <li><a href="https://www.instapaper.com/p/bsuto">Instapaper<img src="files/instapaper.png" alt="Instapaper icon" class="icon"></a></li>
+  <li><a href="https://reederapp.net/oACW-1QURa66PspWDwD4wQ">Reeder<img src="files/reeder.png" alt="Reeder icon" class="icon"></a></li>
+  <li class="hidden"><a href="https://macaw.social/@bsuto" rel="me">Mastodon<span>🐘</span></a></li>
 </ul>
 
 <script>loadJS(tweetURL);</script>
