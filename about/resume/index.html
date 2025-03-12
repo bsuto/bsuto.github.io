@@ -28,17 +28,21 @@ a, a:visited { color: #004080; }
 
 @media only screen and (max-width: 600px) {
 header, .job { flex-direction: column; justify-content: flex-start; }
+header, main { width: 90%; max-width: 90%; min-width: 90%; }
 .job { margin-bottom: 3rem; }
 h1, .contact, .whenwhere, .details { width: 100%; }
 h1, .contact { text-align: center; }
-h1 { margin-bottom: 1rem; }
-.whenwhere { margin-bottom: 0.5rem; }
+h1 { font-size: 2.5em; margin-bottom: 1rem; }
+.whenwhere { margin-bottom: 0.5rem; font-size: 0.8rem; }
 .whenwhere br { display: none; }
 .whenwhere .dot { display: inline; }
+.job.bottom { text-align: center; }
+.job.bottom .details { font-size: 0.8rem; margin-bottom: 1rem; }
 }
 
 @media print { 
-body { font-size: 12px; }
+body { font-size: 14px; background-color: #fff; }
+header, main { width: 100%; max-width: 100%; }
 header { margin-top: 2rem; }
 main { margin-bottom: 0; }
 .job { margin-bottom: 3rem; }
