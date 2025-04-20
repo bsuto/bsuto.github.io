@@ -33,11 +33,11 @@ header, main { width: 90%; max-width: 90%; min-width: 90%; }
 h1, .contact, .whenwhere, .details { width: 100%; }
 h1, .contact { text-align: center; }
 h1 { font-size: 2.5em; margin-bottom: 1rem; }
-.whenwhere { margin-bottom: 0.5rem; font-size: 0.8rem; text-align: left; }
+.whenwhere { margin-bottom: 0.5rem; font-size: 0.9rem; text-align: left; }
 .whenwhere br { display: none; }
 .whenwhere .dot { display: inline; }
 .job.bottom, .job.bottom .whenwhere { text-align: center; }
-.job.bottom .details { font-size: 0.8rem; margin-bottom: 1rem; }
+.job.bottom .details { font-size: 0.9rem; margin-bottom: 1rem; }
 }
 
 @media print { 
@@ -49,12 +49,18 @@ main { margin-bottom: 0; }
 .job.bottom { margin-bottom: 1rem; }
 li { margin-bottom: 0.25rem; }
 }
+
+@media (prefers-color-scheme: dark) {
+body { background-color: #111; }
+h1, h2, p, li { color: #d3d3d3; }
+.whenwhere, a, a:visited { color: #afafaf; }
+}
 </style>
 </head>
 <body>
 <header>
 <h1>Brian Sutorius</h1>
-<p class="contact">909-438-1069<br>brian.sutorius@gmail.com</p>
+<p class="contact">brian.sutorius@gmail.com</p>
 </header>
 
 <main>
