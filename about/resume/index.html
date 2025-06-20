@@ -9,7 +9,7 @@
 body { background-color: #fdfdfd; color: #3d3d3d; text-align: center; font-family: system-ui, ui-sans-serif, Roboto, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.2; text-rendering: optimizeLegibility; }
 header, main { width: 80%; max-width: 800px; min-width: 500px; margin: 4rem auto 0 auto; }
 header, .job { display: flex; justify-content: space-between; text-align: left; }
-header { align-items: flex-end; }
+header { align-items: flex-end; padding-bottom: 1rem; border-bottom: 0.25rem solid #ccc; }
 .job { align-items: flex-start; }
 main { margin-bottom: 4rem; }
 h1, h2 { color: #333; line-height: 1; }
@@ -42,9 +42,8 @@ h1 { font-size: 2.5em; margin-bottom: 1rem; }
 
 @media print { 
 body { font-size: 14px; background-color: #fff; }
-header, main { width: 100%; max-width: 100%; }
-header { margin-top: 2rem; }
-main { margin-bottom: 0; }
+main { width: 100%; max-width: 100%; margin-bottom: 0; }
+main, header { margin-top: 2rem;  }
 .job { margin-bottom: 3rem; }
 .job.bottom { margin-bottom: 1rem; }
 li { margin-bottom: 0.25rem; }
@@ -52,6 +51,7 @@ li { margin-bottom: 0.25rem; }
 
 @media (prefers-color-scheme: dark) {
 body { background-color: #111; }
+header { border-color: #777; }
 h1, h2, p, li { color: #d3d3d3; }
 .whenwhere, a, a:visited { color: #afafaf; }
 }
@@ -66,7 +66,7 @@ h1, h2, p, li { color: #d3d3d3; }
 <main>
 
 <div class="job">
-<p class="whenwhere">Apr 2024 &ndash; Present<br>
+<p class="whenwhere">Apr 2024 &ndash; Jun 2025<br>
 <span class="dot">&middot; </span>Remote for Minneapolis, MN</p>
 <div class="details">
 <h2>Webmaster at Brandography</h2>
