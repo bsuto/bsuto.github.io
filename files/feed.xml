@@ -2304,6 +2304,81 @@ Therefore, the oldest components of our genetic material are programmed for a de
 </item>
 
 <item>
+<guid isPermaLink="false">bsutoArchive1</guid>
+<pubDate>Mon, 11 Jun 2007 13:00:00 GMT</pubDate>
+<title>Discover and Share</title>
+<link>https://bsuto.com/articles/discover-and-share.html</link>
+<category>Article</category>
+<description><![CDATA[
+<p>Earlier this year, a little website called <a href="http://www.twitter.com">Twitter</a> suddenly became white-hot popular with bloggers and podcasters, and subsequently catapulted into mainstream attention. The site asks its users, &ldquo;What are you doing?&rdquo; and broadcasts their 140-character-or-less responses to a list of friends and followers. This is <i>social networking in an instant</i>: a personal website that updates faster than a blog or profile page, and it makes sense that the concept caught on with the generation raised on 30-second commercials and LOL abbreviations.</p>
+<p>Twitter will push your textbites to friends&rsquo; cell phones, IM conversations, and RSS feeds. The bandwidth is there, but what is it carrying? Does anyone really feel fulfilled after reading these ambiguously introspective strings of alphanumerics? Obviously the answer is yes, for potentially millions of people, but I&rsquo;m not sold yet. A more interesting application of instant social networks is not &ldquo;What are you doing?&rdquo; in real life, but &ldquo;What are you doing?&rdquo; with your media.</p>
+<p>Don&rsquo;t call me a narrow-minded nerd just yet. Of course I&rsquo;m interested in your life beyond the computer, but let&rsquo;s use our real-world time to talk about that. If I&rsquo;m using a computer to read what you&rsquo;re doing, and you&rsquo;re using a computer (or similar device) to tell me, shouldn&rsquo;t the content fit the messaging system? Enter <a href="http://www.tumblr.com">Tumblr</a>, a website dedicated to creating and hosting tumbleblogs (don&rsquo;t ask), or in other words, a Twitter for your internet activity.</p>
+<p>Tumblr has a pretty smart<sup><a href="#fn-1-das" id="fr-1-das">1</a></sup> bookmarklet that sits next to your favorite sites in the bookmark bar. If you browse to a YouTube video, funny picture, interesting link, or even IM conversation that you&rsquo;d like to share, you click the &ldquo;Share on Tumblr&rdquo; link, and it (most of the time) figures out what kind of media you want to share, and posts it to your page hassle-free. Your home page on Tumblr, the &ldquo;Dashboard&rdquo; allows you to read posts shared by your Tumblr friends so you can, in effect, know what your buddies are watching, reading, and viewing online.</p>
+<p><b>Discovering and sharing.</b> This is the basic model. This is what I believe the Social Internet should be about, and Tumblr comes pretty close to achieving this. However, it could do more. Without putting words into the mouth of my coworkers, I&rsquo;m going into business this summer with the goal of engineering a product that allows its users to experience this idea of a Social Internet. We began by tackling the concept of social news, and how to make a site like <a href="http://www.digg.com">Digg</a> better than it is (Do you assign different weights to votes? Anticipate votes on consistently popular topics? Deliver unvoted content to a potential enthusiast?) but decided that its shortcomings are the result of an unfinished social network. With Facebook and Myspace in our sights, here is my personal roadmap for such a product.<sup><a href="#fn-2-das" id="fr-2-das">2</a></sup></p>
+<p>Tumblr lets you share a few forms of Internet media. A complete social network must, despite my previous comments, allow the user to share and discover media available both online and offline. Our product would allow users to share:</p>
+<ul>
+<li>Video</li>
+<li>Audio</li>
+<li>Links<ul>
+<li>Text Articles</li>
+<li>Software</li>
+<li>etc</li>
+</ul></li>
+<li><b>Offline Content and Consumables</b><ul>
+<li>Movies</li>
+<li>Albums</li>
+<li>TV Shows</li>
+<li>Products<br>i.e. Reviews, Links to Online Stores</li>
+</ul></li>
+</ul>
+<p>Posting will be accomplished much in the same way that Tumblr does now. We aim to have a widget / bookmarklet that can parse pertinent information from the page currently loaded, with basic editing functions. Allowing our users to choose from this broad range of media gives them the freedom to update as often as they need to, which keeps the &ldquo;profiles&rdquo; dynamic, fresh, and relevant. Limiting the post types to a couple formats, similar to Tumblr, prevents the pages from becoming cluttered and confusing. Facebook consistently scores points over Myspace for keeping their profile layout [relatively] locked.</p>
+<p>Social networks today are almost uniformly limited to constraining relationships under the title of &ldquo;Friend.&rdquo; Our product will allow users to designate relationships under multiple real-world categories, and use said categories to effectively filter their outgoing content streams: perhaps YouTube videos are strictly for the buddies, and article links are for coworkers. Relationships can be classified as:</p>
+<ul>
+<li>Friends<ul>
+<li>Buddies</li>
+<li>Acquaintances</li>
+<li>Significant Others</li>
+</ul></li>
+<li>Coworkers</li>
+<li>Family<ul>
+<li>Immediate</li>
+<li>Separated by Generation</li>
+<li>Second Cousin, once removed</li>
+</ul></li>
+<li>Geographic Proximity<ul>
+<li>Neighbor</li>
+<li>Roommate</li>
+<li>Again, acquaintance</li>
+</ul></li>
+</ul>
+<p>Now we have content, and we have people with whom to share it. How do we implement our model and mission statement?</p>
+<ul>
+<li><b>Share</b><ul>
+<li>Post to your page</li>
+<li>Filter to specific groups</li>
+<li>Filter / send to a specific contact</li>
+</ul></li>
+<li><b>Discover</b><ul>
+<li>Visit contact&rsquo;s pages</li>
+<li>Read contact shares from your homepage</li>
+<li>Search for content posted<ul>
+<li>By a Friend</li>
+<li>By a Family member</li>
+<li>By the entire network</li>
+<li>etc</li>
+</ul></li>
+<li>View &ldquo;Top&rdquo; lists for popular shares and share types</li>
+</ul></li>
+</ul>
+<p>The strength of this product depends on the strength and size of its user-base, of course, and that is a major obstacle to clear before this vision can be realized. Once it is, however, I&rsquo;m confident that people will appreciate the simple mission of Sharing and Discovering, and its [guaranteed] simple implementation in our product. Once we have a powerful network, we can move on to tackling bigger problems, like how to deal with inline advertising on video content and specifically how to target video ads, but I&rsquo;ll leave that up to <a href="http://www.givemeyourclothes.com">Stephen</a> to pontificate.</p>
+<ol class="footnotes">
+<li id="fn-1-das">I originally was going to call this post &ldquo;A Love Letter to <a href="http://www.davidville.com">Davidville</a>&rdquo; for the way they built and developed Tumblr, because I use it myself and truly believe it to be the best social web app for my purposes. I mean, seriously - I pay $8 a year for a domain. Tumblr hosts my tumbleblog/web presence/whatever for FREE on my own domain, and lets me customize it as much as I want. Combine that with free Gmail at my own domain, and I&rsquo;m completely set for the cost of a Quizno&rsquo;s sub a year. It&rsquo;s a remarkable setup. <a href="#fr-1-das">↩︎︎</a></li>
+<li id="fn-2-das">This information should be private and secret, but it&rsquo;s subject to change and I needed to get it down somewhere. These claims only represent the opinions and goals of myself at this point, and not of my company, <a href="http://www.low2high.com">low2High LLC</a>. But we <i>are</i> working on a revolutionary social networking app<!-- http://www.tapviva.com --> that will hopefully allow us to retire at 30. <a href="#fr-2-das">↩︎︎</a></li>
+</ol>
+]]></description>
+</item>
+
+<item>
 <guid isPermaLink="false">bsuto2</guid>
 <pubDate>Tue, 13 Feb 2007 13:00:00 GMT</pubDate>
 <title>The Birthday Party Log of Ned, Born On February 29</title>
