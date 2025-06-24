@@ -3,7 +3,7 @@
 
 <channel>
 <title>The Butt Show</title>
-<link>http://thebuttshow.com/</link>
+<link>https://thebuttshow.com/</link>
 <language>en-US</language>
 <itunes:author>Daniel Butt</itunes:author>
 <itunes:subtitle>Talking out of my butt about a new topic every episode.</itunes:subtitle>
@@ -17,6 +17,20 @@
 <itunes:category text="Comedy"/>
 <itunes:image href="http://bsuto.com/buttshow/artwork3.jpg"/>
 
+<item>
+<title>Bum Farto</title>
+<itunes:season>5</itunes:season>
+<itunes:episodeType>bonus</itunes:episodeType>
+<itunes:author>The Butt Show</itunes:author>
+<pubDate>Tue, 24 June 2025 11:40:00 +0000</pubDate>
+<guid>http://thebuttshow.com/#sp3</guid>
+<description>I talk about Bum Farto.</description>
+<itunes:summary>I talk about Bum Farto.</itunes:summary>
+<itunes:explicit>no</itunes:explicit>
+<itunes:duration>7:41</itunes:duration>
+<itunes:image href="http://bsuto.com/buttshow/artwork3.jpg"/>
+<enclosure url="http://bsuto.com/buttshow/buttshows3.mp3" length="3684284" type="audio/mpeg"/>
+</item>
 <item>
 <title>Patriots</title>
 <itunes:season>5</itunes:season>
