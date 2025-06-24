@@ -1,4 +1,5 @@
 const bees = [
+  ['dockside','Dockside','June 21, 2025','24.70852745713361','-81.08380098344689'],
   ['old7','Old 7 Mile Bridge','April 20, 2025','24.707114534979404','-81.12473635374712'],
   ['harrysbanana','Harry&rsquo;s Banana Farm','December 7, 2024','26.6388508344713','-80.05667423642878'],
   ['trollpub','Troll Pub','October 26, 2024','38.25690556292964','-85.75297969468477'],
